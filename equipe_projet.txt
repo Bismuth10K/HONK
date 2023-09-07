@@ -1,0 +1,9 @@
+chef de projet : marius 
+analyste de besoins : all
+graphiste : marius
+architecte logicielle : ewen
+dev : ewen
+testeur : jean
+
+langage = java ou python
+
