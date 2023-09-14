@@ -1,9 +1,11 @@
-chef de projet : marius 
-analyste de besoins : all
-graphiste : marius
-architecte logicielle : ewen
-dev : ewen
-testeur : jean
+Rôles principaux :
+    Chef de projet : Marius 
+    Analyste de besoins : Marius
+    Architecte logicielle : Ewen
+    Dev : Ewen
+    Testeur : Jean
 
-langage = java ou python
+Autres :
+    graphiste : Marius
 
+langage = Java
