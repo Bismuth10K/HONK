@@ -1,6 +1,6 @@
 Rôles principaux :
     Chef de projet : Marius 
-    Analyste de besoins : Marius
+    Analyste de besoins : Marius le bg
     Architecte logicielle : Ewen
     Dev : Ewen
     Testeur : Jean
