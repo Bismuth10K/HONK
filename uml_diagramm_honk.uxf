@@ -446,6 +446,7 @@ getPiece()</panel_attributes>
     <panel_attributes>Piece (M)
 --
 Dict&lt;&gt; Actions:Tamagotchis
+2DImage sprite
 Piece haut
 Piece bas
 Piece gauche
