@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>5</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1145</x>
-      <y>115</y>
-      <w>250</w>
-      <h>100</h>
+      <x>1281</x>
+      <y>721</y>
+      <w>350</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>bg=orange
 TODO
@@ -16,6 +16,8 @@ Facultatif :
 météo
 
 Done :
+Gestion sauvegarde
+Graphique de base
 Classes animaux (normalement)
 Classe game (save, timer)
 Classes pièces + classe maison (penser à fonction pour savoir qui agit où)
@@ -26,10 +28,10 @@ Classe interface</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>475</y>
-      <w>130</w>
-      <h>140</h>
+      <x>350</x>
+      <y>560</y>
+      <w>182</w>
+      <h>196</h>
     </coordinates>
     <panel_attributes>style=autoresize
 /&lt;&lt;Abstract&gt;&gt;/
@@ -54,10 +56,10 @@ Tamagotchis (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1150</x>
-      <y>360</y>
-      <w>80</w>
-      <h>35</h>
+      <x>1288</x>
+      <y>1078</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Energie
@@ -68,10 +70,10 @@ Energie
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
-      <y>475</y>
-      <w>80</w>
-      <h>35</h>
+      <x>217</x>
+      <y>560</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Chien
@@ -82,10 +84,10 @@ Chien
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
-      <y>515</y>
-      <w>80</w>
-      <h>35</h>
+      <x>217</x>
+      <y>616</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Chat
@@ -96,10 +98,10 @@ Chat
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
-      <y>555</y>
-      <w>80</w>
-      <h>35</h>
+      <x>217</x>
+      <y>672</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Lapin
@@ -110,10 +112,10 @@ Lapin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>385</x>
-      <y>595</y>
-      <w>80</w>
-      <h>35</h>
+      <x>217</x>
+      <y>728</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Robot
@@ -124,10 +126,10 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>475</y>
-      <w>30</w>
-      <h>15</h>
+      <x>322</x>
+      <y>560</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
@@ -135,10 +137,10 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>515</y>
-      <w>30</w>
-      <h>15</h>
+      <x>322</x>
+      <y>616</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
@@ -146,10 +148,10 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>555</y>
-      <w>30</w>
-      <h>15</h>
+      <x>322</x>
+      <y>672</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
@@ -157,10 +159,10 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>460</x>
-      <y>595</y>
-      <w>30</w>
-      <h>15</h>
+      <x>322</x>
+      <y>728</y>
+      <w>42</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
@@ -168,10 +170,10 @@ Robot
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>640</y>
-      <w>60</w>
-      <h>50</h>
+      <x>616</x>
+      <y>812</y>
+      <w>84</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Jauge (V)
@@ -185,10 +187,10 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>860</x>
-      <y>650</y>
-      <w>40</w>
-      <h>20</h>
+      <x>763</x>
+      <y>826</y>
+      <w>56</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>style=autoresize
 jaugePoids
@@ -198,10 +200,10 @@ jaugePoids
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>860</x>
-      <y>675</y>
-      <w>45</w>
-      <h>20</h>
+      <x>763</x>
+      <y>861</y>
+      <w>63</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>style=autoresize
 jaugeCoeurs
@@ -211,57 +213,57 @@ jaugeCoeurs
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>805</x>
-      <y>650</y>
-      <w>65</w>
-      <h>15</h>
+      <x>693</x>
+      <y>826</y>
+      <w>84</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>805</x>
-      <y>675</y>
-      <w>65</w>
-      <h>15</h>
+      <x>693</x>
+      <y>861</y>
+      <w>84</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>745</x>
-      <y>475</y>
-      <w>70</w>
-      <h>115</h>
+      <x>679</x>
+      <y>609</y>
+      <w>105</w>
+      <h>161</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Statistiques (M)
 --
-int value
-int max
-int palierMin (en %)
-int palierMax (en %)
-Timer time
-Jauge jauge
+- int value
+- int max
+- int palierMin (en %)
+- int palierMax (en %)
+- Timer time
+- Jauge jauge
 --
-getValue()
-setValue()
-setMax()
-save()
-toPercent()</panel_attributes>
++ getValue()
++ setValue()
++ setMax()
++ save()
++ toPercent()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1150</x>
-      <y>320</y>
-      <w>80</w>
-      <h>35</h>
+      <x>1288</x>
+      <y>1022</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Satiete
@@ -272,10 +274,10 @@ Satiete
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1150</x>
-      <y>280</y>
-      <w>80</w>
-      <h>35</h>
+      <x>1288</x>
+      <y>966</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Repos
@@ -286,10 +288,10 @@ Repos
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1150</x>
-      <y>240</y>
-      <w>80</w>
-      <h>35</h>
+      <x>1288</x>
+      <y>910</y>
+      <w>112</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Hygiene
@@ -300,96 +302,101 @@ Hygiene
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>830</x>
-      <y>565</y>
-      <w>80</w>
-      <h>40</h>
+      <x>798</x>
+      <y>735</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Poids
 --
-jaugePoids jauge
+- jaugePoids jauge
+--
 (les valeurs par défaut seront différentes)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>830</x>
-      <y>475</y>
-      <w>80</w>
-      <h>40</h>
+      <x>798</x>
+      <y>609</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Vie
 --
-jaugeCoeurs jauge
+- jaugeCoeurs jauge
+--
 (les valeurs par défaut seront différentes)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>830</x>
-      <y>520</y>
-      <w>80</w>
-      <h>40</h>
+      <x>798</x>
+      <y>672</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Bonheur
 --
-jaugeCoeurs jauge
+- jaugeCoeurs jauge
+--
 (les valeurs par défaut seront différentes)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>520</y>
-      <w>30</w>
-      <h>15</h>
+      <x>777</x>
+      <y>672</y>
+      <w>35</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>475</y>
-      <w>30</w>
-      <h>15</h>
+      <x>777</x>
+      <y>609</y>
+      <w>35</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>565</x>
-      <y>155</y>
-      <w>70</w>
-      <h>75</h>
+      <x>777</x>
+      <y>420</y>
+      <w>98</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>Maison (C)
 --
-Piece cur
+- fleche Piece cur
+- flechesDirection dir
 --
-getPiece()
-goUp()
-goDown()
-goLeft()
-goRight()</panel_attributes>
++ getPiece()
++ setPiece()
++ goUp()
++ goDown()
++ goLeft()
++ goRight()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>460</x>
-      <y>100</y>
-      <w>60</w>
-      <h>80</h>
+      <x>966</x>
+      <y>378</y>
+      <w>84</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Piece (M)
@@ -407,10 +414,10 @@ Piece (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>820</x>
-      <y>255</y>
-      <w>55</w>
-      <h>65</h>
+      <x>497</x>
+      <y>252</y>
+      <w>77</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Actions (C)
@@ -426,28 +433,45 @@ Actions (C)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>250</y>
-      <w>105</w>
-      <h>170</h>
+      <x>567</x>
+      <y>427</y>
+      <w>147</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>style=wordwrap
-Game (C)
-/Basiquement, ce script va être la backbone du projet./
-/Il va tout gérer du début à la fin (de la création de la partie à la fermeture)/
+Game (M)
 --
 - Timer time
 - Tamagotchis tama
 - Maison house
-- Menu menus
-- Actions actions
 --
 + save()
-+ createMainMenu()
-+ createSaveMenu()
-+ createGame()
-+ createSaveMenu()
-+ createHouse()
++ createHouse()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>644</x>
+      <y>182</y>
+      <w>168</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>style=wordwrap
+Menu (C)
+/Basiquement, ce script va être la backbone du projet./
+/Il va tout gérer du début à la fin (de la création de la partie à la fermeture)/
+--
+- mainMenu ecranTitre
+- sameMenu options
+- gameView ecranPrincipal
+- Game game
+- Actions actions
+--
++ newGame()
++ loadGame()
++ chooseTama()
++ sendDataGame()
 + applyStatsActions()
 + applyStatsTime()</panel_attributes>
     <additional_attributes/>
@@ -455,28 +479,10 @@ Game (C)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>435</x>
-      <y>285</y>
-      <w>105</w>
-      <h>95</h>
-    </coordinates>
-    <panel_attributes>Menu (C)
---
-
---
-newGame()
-loadGame()
-chooseTama()
-- sendDataGame()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>435</x>
-      <y>185</y>
-      <w>85</w>
-      <h>75</h>
+      <x>931</x>
+      <y>497</y>
+      <w>119</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>style=autoresize
 flechesDirection (V)
@@ -493,10 +499,10 @@ flechesDirection (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>285</x>
-      <y>285</y>
-      <w>105</w>
-      <h>20</h>
+      <x>868</x>
+      <y>182</y>
+      <w>147</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>mainMenu (V)
 --
@@ -506,10 +512,10 @@ flechesDirection (V)
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1150</x>
-      <y>400</y>
-      <w>125</w>
-      <h>55</h>
+      <x>1288</x>
+      <y>1134</y>
+      <w>175</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>bg=blue
 style=wordwrap
@@ -520,10 +526,10 @@ J'ai un doute sur le java, mais pour les 4 stats de gauche, je me demande s'il y
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>285</x>
-      <y>310</y>
-      <w>105</w>
-      <h>20</h>
+      <x>868</x>
+      <y>224</y>
+      <w>147</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>saveMenu (V)
 --
@@ -533,65 +539,53 @@ J'ai un doute sur le java, mais pour les 4 stats de gauche, je me demande s'il y
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>605</x>
-      <y>475</y>
-      <w>150</w>
-      <h>25</h>
+      <x>525</x>
+      <y>609</y>
+      <w>168</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=1
 m2=7
 m2pos=0,0
-un tamagotchi a besoin des
-7 différentes statistiques</panel_attributes>
-    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+un tamagotchi a besoin de 
+4 statistiques + 1 Vie + 
+1 Bonheur + 1 Poids</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>100</y>
-      <w>85</w>
-      <h>65</h>
+      <x>868</x>
+      <y>420</y>
+      <w>112</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=1..n</panel_attributes>
-    <additional_attributes>140.0;110.0;140.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>515</x>
-      <y>190</y>
-      <w>60</w>
-      <h>20</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>385</x>
-      <y>285</y>
-      <w>60</w>
-      <h>20</h>
+      <x>805</x>
+      <y>182</y>
+      <w>77</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>775</x>
-      <y>585</y>
-      <w>100</w>
-      <h>65</h>
+      <x>630</x>
+      <y>763</y>
+      <w>133</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=1
@@ -600,15 +594,15 @@ m1pos=0,-15
 m2pos=0,15
 Les statistiques globales 
 utilisent une jauge normale</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>140.0;10.0;140.0;40.0;40.0;40.0;40.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>895</x>
-      <y>560</y>
-      <w>90</w>
-      <h>110</h>
+      <x>812</x>
+      <y>728</y>
+      <w>203</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=1
@@ -620,15 +614,15 @@ jauge spéciale
 pour représenter 
 les trois états.
 </panel_attributes>
-    <additional_attributes>30.0;20.0;50.0;20.0;50.0;190.0;10.0;190.0</additional_attributes>
+    <additional_attributes>140.0;20.0;160.0;20.0;160.0;150.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>900</x>
-      <y>500</y>
-      <w>170</w>
-      <h>195</h>
+      <x>819</x>
+      <y>644</y>
+      <w>315</w>
+      <h>245</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m2=1
@@ -637,15 +631,15 @@ m2pos=-18,0
 La vie et le bonheur 
 auront une jauge spéciale 
 constituée de coeurs.</panel_attributes>
-    <additional_attributes>30.0;10.0;160.0;10.0;160.0;360.0;10.0;360.0</additional_attributes>
+    <additional_attributes>140.0;10.0;270.0;10.0;270.0;320.0;10.0;320.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>905</x>
-      <y>470</y>
-      <w>20</w>
-      <h>70</h>
+      <x>903</x>
+      <y>602</y>
+      <w>28</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>m1=1
 m2=1
@@ -656,21 +650,21 @@ m2pos=-18,-15</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>565</y>
-      <w>30</w>
-      <h>15</h>
+      <x>777</x>
+      <y>735</y>
+      <w>35</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1145</x>
-      <y>225</y>
-      <w>190</w>
-      <h>235</h>
+      <x>1281</x>
+      <y>889</y>
+      <w>266</w>
+      <h>329</h>
     </coordinates>
     <panel_attributes>Corbeille
 --
@@ -680,68 +674,129 @@ bg=orange</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>385</x>
-      <y>310</y>
-      <w>60</w>
-      <h>20</h>
+      <x>805</x>
+      <y>224</y>
+      <w>77</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>535</x>
-      <y>285</y>
-      <w>105</w>
-      <h>20</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>590</x>
-      <y>395</y>
-      <w>50</w>
-      <h>90</h>
+      <x>504</x>
+      <y>511</y>
+      <w>77</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;160.0;10.0;10.0;80.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;20.0;90.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>160</y>
-      <w>50</w>
-      <h>100</h>
+      <x>707</x>
+      <y>434</y>
+      <w>84</w>
+      <h>35</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0;70.0;180.0</additional_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>730</x>
-      <y>255</y>
-      <w>100</w>
-      <h>20</h>
+      <x>567</x>
+      <y>259</y>
+      <w>91</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>182</y>
+      <w>147</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Launcher
+--
++ main()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>581</x>
+      <y>182</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>868</x>
+      <y>273</y>
+      <w>147</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>gameView (V)
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>805</x>
+      <y>273</y>
+      <w>77</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>679</x>
+      <y>385</y>
+      <w>21</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>868</x>
+      <y>497</y>
+      <w>77</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
   </element>
 </diagram>
