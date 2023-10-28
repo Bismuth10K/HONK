@@ -1,4 +1,4 @@
-public class Statistiques {
+public class Statistique {
 	private int value;
 	private int max;
 	private final int palierMin;
@@ -6,7 +6,7 @@ public class Statistiques {
 	// Timer time;
 	// Jauge jauge;
 	
-	public Statistiques(int max, int palierMin, int palierMax) {
+	public Statistique(int max, int palierMin, int palierMax) {
 		this.max = max;
 		value = max;
 		this.palierMin = palierMin;
@@ -16,13 +16,11 @@ public class Statistiques {
 	public int getValue() {
 		return value;
 	}
+	public int getPalierMin() { return palierMin; }
+	public int getPalierMax() { return palierMax; }
 	
 	public void setValue(int newValue) {
 		value = newValue;
-	}
-	
-	public void setMax(int newMax) {
-		max = newMax;
 	}
 	
 	public int toPercent() {

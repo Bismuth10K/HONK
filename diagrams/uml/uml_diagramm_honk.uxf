@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>7</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1274</x>
-      <y>616</y>
-      <w>350</w>
-      <h>161</h>
+      <x>1672</x>
+      <y>847</y>
+      <w>550</w>
+      <h>253</h>
     </coordinates>
     <panel_attributes>bg=orange
 TODO
@@ -28,23 +28,23 @@ Classe interface</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>364</x>
-      <y>406</y>
-      <w>182</w>
-      <h>196</h>
+      <x>242</x>
+      <y>517</y>
+      <w>286</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>style=autoresize
 /&lt;&lt;Abstract&gt;&gt;/
 Tamagotchis (M)
 --
-- Dict&lt;&gt; Actions:Piece
-- Energie nrj
+- HashMap&lt;Piece,String&gt;
+- Statistiques nrj
 - Satiete sat
 - Repos rep
 - Hygiene hyg
 - Poids poi
 - Vie vie
-- Bonheur bonh
+- Bonheur bhr
 - int niv
 - 2DImage sprite
 --
@@ -56,10 +56,10 @@ Tamagotchis (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1281</x>
-      <y>973</y>
-      <w>112</w>
-      <h>49</h>
+      <x>1683</x>
+      <y>1408</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Energie
@@ -70,10 +70,10 @@ Energie
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>406</y>
-      <w>112</w>
-      <h>49</h>
+      <x>0</x>
+      <y>517</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Chien
@@ -84,10 +84,10 @@ Chien
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>462</y>
-      <w>112</w>
-      <h>49</h>
+      <x>0</x>
+      <y>605</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Chat
@@ -98,10 +98,10 @@ Chat
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>518</y>
-      <w>112</w>
-      <h>49</h>
+      <x>0</x>
+      <y>693</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Lapin
@@ -112,10 +112,10 @@ Lapin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>210</x>
-      <y>574</y>
-      <w>112</w>
-      <h>49</h>
+      <x>0</x>
+      <y>781</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Robot
@@ -126,10 +126,10 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>406</y>
-      <w>63</w>
-      <h>21</h>
+      <x>165</x>
+      <y>517</y>
+      <w>99</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -137,10 +137,10 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>462</y>
-      <w>63</w>
-      <h>21</h>
+      <x>165</x>
+      <y>605</y>
+      <w>99</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -148,10 +148,10 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>518</y>
-      <w>63</w>
-      <h>21</h>
+      <x>165</x>
+      <y>693</y>
+      <w>99</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -159,10 +159,10 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>574</y>
-      <w>63</w>
-      <h>21</h>
+      <x>165</x>
+      <y>781</y>
+      <w>99</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
@@ -170,10 +170,10 @@ Robot
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>658</x>
-      <y>672</y>
-      <w>84</w>
-      <h>70</h>
+      <x>704</x>
+      <y>935</y>
+      <w>132</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Jauge (V)
@@ -187,10 +187,10 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>805</x>
-      <y>686</y>
-      <w>63</w>
-      <h>21</h>
+      <x>935</x>
+      <y>957</y>
+      <w>99</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>jaugePoids</panel_attributes>
     <additional_attributes/>
@@ -198,10 +198,10 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>805</x>
-      <y>721</y>
-      <w>63</w>
-      <h>21</h>
+      <x>935</x>
+      <y>1012</y>
+      <w>99</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>jaugeCoeurs</panel_attributes>
     <additional_attributes/>
@@ -209,10 +209,10 @@ Jauge (V)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>735</x>
-      <y>686</y>
-      <w>84</w>
-      <h>21</h>
+      <x>825</x>
+      <y>957</y>
+      <w>132</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
@@ -220,10 +220,10 @@ Jauge (V)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>735</x>
-      <y>721</y>
-      <w>84</w>
-      <h>21</h>
+      <x>825</x>
+      <y>1012</y>
+      <w>132</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
@@ -231,10 +231,10 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>721</x>
-      <y>469</y>
-      <w>105</w>
-      <h>161</h>
+      <x>803</x>
+      <y>616</y>
+      <w>165</w>
+      <h>253</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Statistiques (M)
@@ -256,10 +256,10 @@ Statistiques (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1281</x>
-      <y>917</y>
-      <w>112</w>
-      <h>49</h>
+      <x>1683</x>
+      <y>1320</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Satiete
@@ -270,10 +270,10 @@ Satiete
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1281</x>
-      <y>861</y>
-      <w>112</w>
-      <h>49</h>
+      <x>1683</x>
+      <y>1232</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Repos
@@ -284,10 +284,10 @@ Repos
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1281</x>
-      <y>805</y>
-      <w>112</w>
-      <h>49</h>
+      <x>1683</x>
+      <y>1144</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Hygiene
@@ -298,10 +298,10 @@ Hygiene
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>840</x>
-      <y>595</y>
-      <w>112</w>
-      <h>56</h>
+      <x>990</x>
+      <y>814</y>
+      <w>176</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Poids
@@ -314,29 +314,13 @@ Poids
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>840</x>
-      <y>469</y>
-      <w>112</w>
-      <h>56</h>
+      <x>990</x>
+      <y>715</y>
+      <w>176</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>style=wordwrap
-Vie
---
-- jaugeCoeurs jauge
---
-(les valeurs par défaut seront différentes)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>840</x>
-      <y>532</y>
-      <w>112</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>style=wordwrap
-Bonheur
+Sante
 --
 - jaugeCoeurs jauge
 --
@@ -346,21 +330,10 @@ Bonheur
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>819</x>
-      <y>532</y>
-      <w>35</w>
-      <h>21</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>819</x>
-      <y>469</y>
-      <w>35</w>
-      <h>21</h>
+      <x>957</x>
+      <y>715</y>
+      <w>55</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
@@ -368,35 +341,36 @@ Bonheur
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>812</x>
-      <y>315</y>
-      <w>98</w>
-      <h>119</h>
+      <x>946</x>
+      <y>374</y>
+      <w>154</w>
+      <h>187</h>
     </coordinates>
     <panel_attributes>Maison (C)
 --
-- fleche Piece cur
+- Piece piece
 - flechesDirection dir
 --
 + getPiece()
 + setPiece()
-+ goUp()
-+ goDown()
-+ goLeft()
-+ goRight()</panel_attributes>
++ goHaut()
++ goBas()
++ goGauche()
++ goDroite()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1001</x>
-      <y>273</y>
-      <w>84</w>
-      <h>112</h>
+      <x>1243</x>
+      <y>286</y>
+      <w>132</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Piece (M)
 --
+- String piece
 - 2DImage sprite
 - Piece haut
 - Piece bas
@@ -410,10 +384,10 @@ Piece (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
-      <y>147</y>
-      <w>77</w>
-      <h>84</h>
+      <x>440</x>
+      <y>110</y>
+      <w>121</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Actions (C)
@@ -428,10 +402,10 @@ Actions (C)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>602</x>
-      <y>322</y>
-      <w>147</w>
-      <h>84</h>
+      <x>616</x>
+      <y>385</y>
+      <w>231</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Game (M)
@@ -447,10 +421,10 @@ Game (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>637</x>
-      <y>77</y>
-      <w>168</w>
-      <h>224</h>
+      <x>671</x>
+      <y>0</y>
+      <w>264</w>
+      <h>352</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Menu (C)
@@ -475,10 +449,10 @@ Menu (C)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>966</x>
-      <y>392</y>
-      <w>119</w>
-      <h>84</h>
+      <x>1188</x>
+      <y>495</y>
+      <w>187</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>style=autoresize
 flechesDirection (V)
@@ -493,10 +467,10 @@ flechesDirection (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>861</x>
-      <y>77</y>
-      <w>70</w>
-      <h>21</h>
+      <x>1023</x>
+      <y>0</y>
+      <w>110</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>mainMenu (V)</panel_attributes>
     <additional_attributes/>
@@ -504,10 +478,10 @@ flechesDirection (V)
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1281</x>
-      <y>1029</y>
-      <w>175</w>
-      <h>77</h>
+      <x>1683</x>
+      <y>1496</y>
+      <w>275</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>bg=blue
 style=wordwrap
@@ -518,10 +492,10 @@ J'ai un doute sur le java, mais pour les 4 stats de gauche, je me demande s'il y
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>861</x>
-      <y>105</y>
-      <w>70</w>
-      <h>21</h>
+      <x>1023</x>
+      <y>44</y>
+      <w>110</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>saveMenu (V)</panel_attributes>
     <additional_attributes/>
@@ -529,40 +503,40 @@ J'ai un doute sur le java, mais pour les 4 stats de gauche, je me demande s'il y
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>539</x>
-      <y>469</y>
-      <w>196</w>
-      <h>42</h>
+      <x>517</x>
+      <y>616</y>
+      <w>308</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=1
 m2=7
 m2pos=0,0
-un tamagotchi a besoin de 
-4 statistiques + 1 Vie + 
-1 Bonheur + 1 Poids</panel_attributes>
+Un Tamagotchi a besoin de 
+4 'Statistique' + 2 'Sante'
++ 1 'Poids'</panel_attributes>
     <additional_attributes>10.0;20.0;260.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>903</x>
-      <y>315</y>
-      <w>112</w>
-      <h>28</h>
+      <x>1089</x>
+      <y>374</y>
+      <w>176</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=1..n</panel_attributes>
+m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>798</x>
-      <y>77</y>
-      <w>77</w>
-      <h>28</h>
+      <x>924</x>
+      <y>0</y>
+      <w>121</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -572,10 +546,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>623</y>
-      <w>133</w>
-      <h>63</h>
+      <x>726</x>
+      <y>858</y>
+      <w>209</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=1
@@ -589,16 +563,16 @@ utilisent une jauge normale</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>861</x>
-      <y>588</y>
-      <w>196</w>
-      <h>140</h>
+      <x>1023</x>
+      <y>803</y>
+      <w>308</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=1
 m2=1
-m1pos=-18,-15
-m2pos=-18,0
+m1pos=-17,-15
+m2pos=-5,0
 Le poids aura une 
 jauge spéciale 
 pour représenter 
@@ -609,41 +583,28 @@ les trois états.
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>861</x>
-      <y>504</y>
-      <w>315</w>
-      <h>245</h>
+      <x>1023</x>
+      <y>704</y>
+      <w>495</w>
+      <h>352</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
+m1=1
 m2=1
-m1pos=0,-15
-m2pos=-18,0
+m1pos=-17,-15
+m2pos=-5,0
 La vie et le bonheur 
 auront une jauge spéciale 
 constituée de coeurs.</panel_attributes>
-    <additional_attributes>140.0;10.0;270.0;10.0;270.0;320.0;10.0;320.0</additional_attributes>
+    <additional_attributes>130.0;20.0;270.0;20.0;270.0;290.0;10.0;290.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>945</x>
-      <y>462</y>
-      <w>28</w>
-      <h>98</h>
-    </coordinates>
-    <panel_attributes>m1=1
-m2=1
-m1pos=-18,0
-m2pos=-18,-15</panel_attributes>
-    <additional_attributes>10.0;110.0;20.0;110.0;20.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>819</x>
-      <y>595</y>
-      <w>35</w>
-      <h>21</h>
+      <x>957</x>
+      <y>814</y>
+      <w>55</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
@@ -651,10 +612,10 @@ m2pos=-18,-15</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1274</x>
-      <y>784</y>
-      <w>266</w>
-      <h>329</h>
+      <x>1672</x>
+      <y>1111</y>
+      <w>418</w>
+      <h>517</h>
     </coordinates>
     <panel_attributes>Corbeille
 --
@@ -664,10 +625,10 @@ bg=orange</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>798</x>
-      <y>105</y>
-      <w>77</w>
-      <h>28</h>
+      <x>924</x>
+      <y>44</y>
+      <w>121</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -677,10 +638,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>518</x>
-      <y>357</y>
-      <w>98</w>
-      <h>63</h>
+      <x>484</x>
+      <y>440</y>
+      <w>154</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -691,10 +652,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>742</x>
-      <y>329</y>
-      <w>84</w>
-      <h>35</h>
+      <x>836</x>
+      <y>396</y>
+      <w>132</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -705,10 +666,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>154</y>
-      <w>91</w>
-      <h>28</h>
+      <x>550</x>
+      <y>121</y>
+      <w>143</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -718,10 +679,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>77</y>
-      <w>49</w>
-      <h>35</h>
+      <x>506</x>
+      <y>0</y>
+      <w>77</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>Launcher
 --
@@ -731,10 +692,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>574</x>
-      <y>77</y>
-      <w>77</w>
-      <h>21</h>
+      <x>572</x>
+      <y>0</y>
+      <w>121</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
@@ -742,10 +703,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>861</x>
-      <y>133</y>
-      <w>70</w>
-      <h>21</h>
+      <x>1023</x>
+      <y>88</y>
+      <w>110</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>gameView (V)</panel_attributes>
     <additional_attributes/>
@@ -753,10 +714,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>798</x>
-      <y>133</y>
-      <w>77</w>
-      <h>28</h>
+      <x>924</x>
+      <y>88</y>
+      <w>121</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -766,10 +727,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>714</x>
-      <y>294</y>
-      <w>21</w>
-      <h>42</h>
+      <x>792</x>
+      <y>341</y>
+      <w>33</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
@@ -777,10 +738,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>903</x>
-      <y>392</y>
-      <w>77</w>
-      <h>28</h>
+      <x>1089</x>
+      <y>495</y>
+      <w>121</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
