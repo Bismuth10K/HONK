@@ -21,11 +21,21 @@ public class Statistique {
 	
 	public void setValue(int newValue) {
 		value = newValue;
+		if (value < 0)
+			value = 0;
+		else if (value > max)
+			value = max;
+	}
+	
+	public void add(int toAdd) {
+		value += toAdd;
+		if (value < 0)
+			value = 0;
+		else if (value > max)
+			value = max;
 	}
 	
 	public int toPercent() {
 		return value / max * 100;
 	}
-	
-	
 }

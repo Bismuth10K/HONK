@@ -35,7 +35,7 @@ Classe interface</panel_attributes>
     </coordinates>
     <panel_attributes>style=autoresize
 /&lt;&lt;Abstract&gt;&gt;/
-Tamagotchis (M)
+Tamagotchi (M)
 --
 - HashMap&lt;Piece,String&gt;
 - Statistiques nrj
@@ -232,9 +232,9 @@ Jauge (V)
     <id>UMLClass</id>
     <coordinates>
       <x>803</x>
-      <y>616</y>
+      <y>605</y>
       <w>165</w>
-      <h>253</h>
+      <h>264</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Statistiques (M)
@@ -248,6 +248,7 @@ Statistiques (M)
 --
 + getValue()
 + setValue()
++ add()
 + setMax()
 + save()
 + toPercent()</panel_attributes>
@@ -386,11 +387,13 @@ Piece (M)
     <coordinates>
       <x>440</x>
       <y>110</y>
-      <w>121</w>
-      <h>132</h>
+      <w>143</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>style=autoresize
 Actions (C)
+--
+- Tamagotchi tama
 --
 + manger()
 + dormir()
@@ -411,7 +414,7 @@ Actions (C)
 Game (M)
 --
 - Timer time
-- Tamagotchis tama
+- Tamagotchi tama
 - Maison house
 --
 + save()
@@ -666,15 +669,15 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
+      <x>572</x>
       <y>121</y>
-      <w>143</w>
+      <w>121</w>
       <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
