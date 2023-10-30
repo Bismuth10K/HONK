@@ -1,10 +1,10 @@
 public class Game {
 	// private Timer time;
-	private Tamagotchi tama;
+	private final Tamagotchi tama;
 	private Maison house;
 	
 	public Game(String typeTama) throws Exception {
-		switch(typeTama) {
+		switch (typeTama) {
 			case "chat":
 				tama = new Chat();
 				break;
@@ -19,7 +19,6 @@ public class Game {
 				break;
 			default:
 				throw new Exception("Pas un Tamagotchi valide.");
-				
 		}
 	}
 }
