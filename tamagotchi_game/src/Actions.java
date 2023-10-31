@@ -1,23 +1,31 @@
 public class Actions {
-	
 	Tamagotchi tama;
 	
-	public Actions(Tamagotchi tama){
+	/**
+	 * La classe Actions reçoit en paramètre le tamagotchi créé.
+	 * À chaque fois que le joueur fait une action,
+	 * nous appliquerons des modifications aux statistiques du Tamagotchi.
+	 * <p>
+	 * Toutes les fonctions suivantes sont associées à une action possible et
+	 * appliquent les modifications sur les statistiques selon la matrice d'incidence.
+	 * @param tama Tamagotchi : Le tamagotchi sur lequel nous appliquerons les modifications.
+	 */
+	public Actions(Tamagotchi tama) {
 		this.tama = tama;
 	}
 	
-	public void manger(){
+	public void manger() {
 		tama.getNrj().add(30);
 		tama.getSat().add(75);
 	}
 	
-	public void dormir(){
+	public void dormir() {
 		tama.getNrj().add(80);
 		tama.getSat().add(-50);
 		tama.getRep().add(100);
 	}
 	
-	public void jouer(){
+	public void jouer() {
 		tama.getNrj().add(-30);
 		tama.getSat().add(-20);
 		tama.getRep().add(-20);
@@ -26,7 +34,7 @@ public class Actions {
 		tama.getBhr().add(1);
 	}
 	
-	public void promenade(){
+	public void promenade() {
 		tama.getNrj().add(-60);
 		tama.getSat().add(-45);
 		tama.getRep().add(-50);
@@ -35,7 +43,7 @@ public class Actions {
 		tama.getBhr().add(3);
 	}
 	
-	public void toilette(){
+	public void toilette() {
 		tama.getHyg().add(100);
 	}
 }
