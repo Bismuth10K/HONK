@@ -1,10 +1,10 @@
 public class Piece {
 	private final String nom;
 	// 2DImage sprite;
-	private Piece droite;
 	private Piece haut;
 	private Piece bas;
 	private Piece gauche;
+	private Piece droite;
 	
 	/**
 	 * La classe pour une pièce.

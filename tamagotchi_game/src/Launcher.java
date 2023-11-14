@@ -4,6 +4,9 @@ import java.util.Random;
 // then press Enter. You can now see whitespace characters in your code.
 public class Launcher {
 	public static void main(String[] args) throws Exception {
+		Chronometer chronometer = new Chronometer();
+		System.out.println(chronometer);
+		
 		Chat cat = new Chat();
 		cat.printListeActions();
 		Robot rob = new Robot();
@@ -12,8 +15,8 @@ public class Launcher {
 		Maison house = new Maison();
 		System.out.println(house.getPiece().getPiece());
 		Random random = new Random();
-		for (int i = 0; i <= 10; i++){
-			switch(random.nextInt(4)){
+		for (int i = 0; i <= 20; i++) {
+			switch (random.nextInt(4)) {
 				case 0:
 					System.out.print("going up to ");
 					house.goHaut();
@@ -33,5 +36,6 @@ public class Launcher {
 			}
 			System.out.println(house.getPiece().getPiece());
 		}
+		System.out.println(chronometer);
 	}
 }

@@ -113,3 +113,65 @@ abstract class Tamagotchi {
 		return poi;
 	}
 }
+
+
+/***************************************************\
+ *	Classe pour tous les tamagotchis ci-dessous. 	*
+ *	Chat / Chien / Lapin / Robot					*
+ \**************************************************/
+
+class Chat extends Tamagotchi {
+	/**
+	 * Classe enfant de Tamagotchi pour le chat avec les valeurs par défaut adaptées.
+	 */
+	public Chat() throws Exception {
+		super(110, 110, 120, 100);
+		this.addListeActions("cuisine", "manger");
+		this.addListeActions("salon", "dormir");
+		this.addListeActions("jardin", "jouer");
+		this.addListeActions("hall", "jouer");
+		this.addListeActions("sdb", "toilette");
+	}
+}
+
+class Chien extends Tamagotchi {
+	/**
+	 * Classe enfant de Tamagotchi pour le chien avec les valeurs par défaut adaptées.
+	 */
+	public Chien() throws Exception {
+		super(125, 100, 100, 75);
+		this.addListeActions("cuisine", "manger");
+		this.addListeActions("salon", "dormir");
+		this.addListeActions("jardin", "jouer");
+		this.addListeActions("hall", "jouer");
+		this.addListeActions("sdb", "toilette");
+	}
+}
+
+class Lapin extends Tamagotchi {
+	/**
+	 * Classe enfant de Tamagotchi pour le lapin avec les valeurs par défaut adaptées.
+	 */
+	public Lapin() throws Exception {
+		super(105, 75, 80, 140);
+		this.addListeActions("cuisine", "manger");
+		this.addListeActions("chambre", "dormir");
+		this.addListeActions("jardin", "jouer");
+		this.addListeActions("hall", "jouer");
+		this.addListeActions("sdb", "toilette");
+	}
+}
+
+class Robot extends Tamagotchi {
+	/**
+	 * Classe enfant de Tamagotchi pour le robot avec les valeurs par défaut adaptées.
+	 */
+	public Robot() throws Exception {
+		super(180, 20, 150, 50);
+		this.addListeActions("garage", "manger");
+		this.addListeActions("chambre", "dormir");
+		this.addListeActions("jardin", "jouer");
+		this.addListeActions("salon", "jouer");
+		this.addListeActions("cuisine", "toilette");
+	}
+}
