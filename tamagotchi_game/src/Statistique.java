@@ -1,10 +1,12 @@
+import static java.lang.System.currentTimeMillis;
+
 public class Statistique {
 	// Elles sont "final" car elles ne changeront jamais.
-	private final int max;
+	protected final int max;
 	private final int palierMin;
 	private final int palierMax;
-	private int value;
-	// Timer time;
+	protected int value;
+	protected long lastUpdated;
 	// Jauge jauge;
 	
 	/**
@@ -23,6 +25,7 @@ public class Statistique {
 			this.palierMax = palierMax;
 		} else throw new Exception("Les valeurs pour les paliers min ou max ne sont pas entre 0 et 100.");
 		else throw new Exception("La valeur de palierMin est supérieure à celle de palierMax.");
+		lastUpdated = currentTimeMillis();
 	}
 	
 	/**
@@ -63,12 +66,14 @@ public class Statistique {
 	 * Ajout d'une valeur à la statistique.
 	 * Si value devient négatif, on la remet à 0.
 	 * Si elle devient supérieure à max, elle revient à max.
+	 * De plus, on réinitialise lastUpdated.
 	 * @param toAdd int : Valeur à additionner (peut être positif ou négatif).
 	 */
 	public void add(int toAdd) {
 		value += toAdd;
 		if (value < 0) value = 0;
 		else if (value > max) value = max;
+		lastUpdated = currentTimeMillis();
 	}
 	
 	/**
@@ -77,5 +82,31 @@ public class Statistique {
 	 */
 	public int toPercent() {
 		return value / max * 100;
+	}
+	
+	/**
+	 * Getter de lastUpdated
+	 * @return long : lastUpdated
+	 */
+	public long getLastUpdated() {
+		return lastUpdated;
+	}
+	
+	/**
+	 * Pour reset lastUpdated.
+	 */
+	public void resetLastUpdated() {
+		lastUpdated = currentTimeMillis();
+	}
+	
+	/**
+	 * Renvoie une valeur en fonction des intervalles de stabilite.
+	 * @return -1 si <= palierMin, 1 si >= palierMax, 0 sinon
+	 */
+	public int posIntervalleStabilite() {
+		int valuePercent = toPercent();
+		if (valuePercent >= palierMax) return 1;
+		else if (valuePercent > palierMin) return 0;
+		else return -1;
 	}
 }

@@ -30,8 +30,8 @@ abstract class Tamagotchi {
 		sat = new Statistique(maxSat, 50, 90);
 		rep = new Statistique(maxRep, 30, 75);
 		hyg = new Statistique(maxHyg, 10, 95);
-		vie = new Sante();
-		bhr = new Sante();
+		vie = new Sante("sante");
+		bhr = new Sante("bonheur");
 		poi = new Poids();
 		// Tous les Tamagotchis peuvent faire l'action promenade depuis le jardin,
 		// donc on l'ajoute dans la super-classe.
