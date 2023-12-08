@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d111828-5bb9-416a-8f64-56973264120b" name="Changes" comment="" />
+    <list default="true" id="5d111828-5bb9-416a-8f64-56973264120b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +19,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -26,19 +37,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/ewen/projets/UBS_MIS/HONK/tamagotchi_game/src/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main__java",
+    "last_opened_file_path": "/home/ewen/projets/UBS_MIS/HONK/tamagotchi_game",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "onboarding.tips.debug.path": "/home/ewen/projets/UBS_MIS/HONK/tamagotchi_game/src/Main.java",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.gutterIcons",
+    "settings.editor.splitter.proportion": "0.3006012",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": [
+    ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Launcher" />
+      <module name="tamagotchi_game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Launcher" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,10 +90,34 @@
       <option name="presentableId" value="Default" />
       <updated>1697118061789</updated>
       <workItem from="1697118062775" duration="8034000" />
+      <workItem from="1698500670737" duration="82000" />
+      <workItem from="1698500759409" duration="61000" />
+      <workItem from="1698500846494" duration="13449000" />
+      <workItem from="1698523251987" duration="9712000" />
+      <workItem from="1698658794133" duration="6989000" />
+      <workItem from="1698677305601" duration="1768000" />
+      <workItem from="1698688716419" duration="844000" />
+      <workItem from="1698689658405" duration="3985000" />
+      <workItem from="1698694760087" duration="10826000" />
+      <workItem from="1699025367970" duration="655000" />
+      <workItem from="1699026029280" duration="1998000" />
+      <workItem from="1699624494129" duration="3283000" />
+      <workItem from="1699965689978" duration="3732000" />
+      <workItem from="1699971542090" duration="150000" />
+      <workItem from="1699975975693" duration="20000" />
+      <workItem from="1699981646683" duration="31000" />
+      <workItem from="1700314656606" duration="1798000" />
+      <workItem from="1700729060084" duration="5535000" />
+      <workItem from="1701074301404" duration="4199000" />
+      <workItem from="1701110592590" duration="1406000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
