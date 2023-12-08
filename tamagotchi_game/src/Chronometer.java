@@ -31,26 +31,26 @@ public final class Chronometer {
 	 * @return temps écoulé de begin à end en millisecondes.
 	 */
 	public long getMilliseconds() {
-		return end - begin;
+		return (end - begin) * cheat_vit;
 	}
 	
 	/**
 	 * @return temps écoulé de begin à end en secondes.
 	 */
-	public long getSeconds() { return (long)(floor(getMilliseconds() * cheat_vit / 1000.0))  % 60; }
+	public long getSeconds() { return (long)(floor(getMilliseconds() / 1000.0))  % 60; }
 	
 	/**
 	 * @return temps écoulé de begin à end en minutes.
 	 */
 	public long getMinutes() {
-		return (long)(floor(getMilliseconds() * cheat_vit / 60000.0)) % 60;
+		return (long)(floor(getMilliseconds() / 60000.0)) % 60;
 	}
 	
 	/**
 	 * @return temps écoulé de begin à end en heures.
 	 */
 	public long getHours() {
-		return (long)floor(getMilliseconds() * cheat_vit / 3600000.0);
+		return (long)floor(getMilliseconds() / 3600000.0);
 	}
 	
 	/**
@@ -59,7 +59,8 @@ public final class Chronometer {
 	 */
 	public String toString() {
 		stop();
-		return getHours() + ":" + getMinutes() + ":" + getSeconds();
+		long min = getMinutes();
+		return getHours() + ":" + (min < 10 ? "0" + min : min) + ":" + getSeconds();
 	}
 	
 	/**
@@ -69,7 +70,16 @@ public final class Chronometer {
 	 */
 	public long getTimeStats(long lastUpdatedStats) {
 		stop();
-		return end - lastUpdatedStats;
+		return (end - lastUpdatedStats) * cheat_vit;
+	}
+	
+	/**
+	 * Convertir un nombre d'heures en millisecondes.
+	 * @param hour int
+	 * @return long : heures en millisecondes.
+	 */
+	public long toMillis(int hour) {
+		return (long) hour * 60 * 60 * 1000;
 	}
 	
 	/**

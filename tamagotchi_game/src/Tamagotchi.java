@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import static java.lang.Math.floor;
+import static java.lang.Math.log;
 
 abstract class Tamagotchi {
 	// Elles sont "final" car elles ne changeront pas, juste leurs valeurs changent
@@ -10,7 +12,7 @@ abstract class Tamagotchi {
 	private final Sante vie;
 	private final Sante bhr;
 	private final Poids poi;
-	private final int XP = 0;
+	private int XP = 0;
 	// Dictionnaire qui va contenir les actions possibles (sous forme d'ArrayList) dans une pièce.
 	HashMap<String, ArrayList<String>> listeActions = new HashMap<String, ArrayList<String>>();
 	// private 2DImage sprite;
@@ -112,6 +114,131 @@ abstract class Tamagotchi {
 	public Statistique getPoi() {
 		return poi;
 	}
+	
+	/**
+	 * Getter de XP
+	 * @return int : XP
+	 */
+	public int getXP() {
+		return XP;
+	}
+	
+	/**
+	 * To increment the number of XP by toAdd
+	 * @param toAdd int : number added to XP
+	 */
+	public void addXP(int toAdd) {
+		XP += toAdd;
+	}
+	
+	/**
+	 * Returns the current level of the tamagotchi thanks to the formula.
+	 * @return int : current level.
+	 */
+	public int toLevel() {
+		return (int)floor(XP / 16 * log(XP * XP));
+	}
+	
+	/**
+	 * Fonction manger.
+	 */
+	public void manger() {
+		nrj.add(30);
+		sat.add(75);
+	}
+	
+	/**
+	 * Fonction dormir.
+	 */
+	public void dormir() {
+		nrj.add(80);
+		sat.add(-50);
+		rep.add(100);
+	}
+	
+	/**
+	 * Fonction jouer.
+	 */
+	public void jouer() {
+		nrj.add(-30);
+		sat.add(-20);
+		rep.add(-20);
+		hyg.add(-15);
+		poi.add(-5);
+		bhr.add(1);
+	}
+	
+	/**
+	 * Fonction se promener.
+	 */
+	public void promenade() {
+		nrj.add(-60);
+		sat.add(-45);
+		rep.add(-50);
+		hyg.add(-40);
+		poi.add(-10);
+		bhr.add(3);
+	}
+	
+	/**
+	 * Fonction se laver.
+	 */
+	public void toilette() {
+		hyg.add(100);
+	}
+	
+	/**
+	 * Fonction de l'influence du temps sur les statistiques.
+	 */
+	public void applyStatsTime(Chronometer chronometer) {
+		long toMillis24 = chronometer.toMillis(24);
+		if (chronometer.getTimeStats(nrj.getLastUpdated()) >= chronometer.toMillis(1)) {
+			nrj.add(-5);
+		}
+		if (chronometer.getTimeStats(sat.getLastUpdated()) >= chronometer.toMillis(2)) {
+			sat.add(-15);
+		}
+		if (chronometer.getTimeStats(rep.getLastUpdated()) >= chronometer.toMillis(2)) {
+			rep.add(-10);
+		}
+		if (chronometer.getTimeStats(hyg.getLastUpdated()) >= chronometer.toMillis(2)) {
+			hyg.add(-5);
+		}
+		if (chronometer.getTimeStats(poi.getLastUpdated()) >= toMillis24) {
+			if (poi.posIntervalleStabilite() == -1) poi.add(-10);
+			else if (poi.posIntervalleStabilite() == 0) poi.add(-5);
+			else poi.add(+10);
+			poi.resetLastUpdated();
+		}
+		if (chronometer.getTimeStats(bhr.getLastUpdated()) >= toMillis24) {
+			bhr.add(-4);
+			bhr.resetLastUpdated();
+		}
+		if (chronometer.getTimeStats(vie.getLastUpdated()) >= toMillis24) {
+			int conditionsVie = nrj.posIntervalleStabilite() +
+					sat.posIntervalleStabilite() +
+					rep.posIntervalleStabilite() +
+					hyg.posIntervalleStabilite() +
+					(poi.posIntervalleStabilite() == 0 ? 1 : -1);
+			vie.add(conditionsVie);
+		}
+		if((chronometer.getMilliseconds() % toMillis24) >= toMillis24){
+			int nbCoeurs = (vie.getValue() + bhr.getValue()) / 2;
+			int gamma = 10;
+			XP += nbCoeurs * gamma;
+		}
+	}
+	
+	public String toString() {
+		return "Energie : \t" + nrj + " ;\n" +
+				"Satiete : \t" + sat + " ;\n" +
+				"Repos : \t" + rep + " ;\n" +
+				"Hygiene : \t" + hyg + " ;\n" +
+				"Vie : \t\t" + vie + " ;\n" +
+				"Bonheur : \t" + bhr + " ;\n" +
+				"Poids : \t" + poi + " ;\n" +
+				"Niv : \t\t" + toLevel() + " ;\n";
+	}
 }
 
 
@@ -132,6 +259,10 @@ class Chat extends Tamagotchi {
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
 	}
+	
+	public String toString() {
+		return "--Chat--\n" + super.toString();
+	}
 }
 
 class Chien extends Tamagotchi {
@@ -145,6 +276,10 @@ class Chien extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
+	}
+	
+	public String toString() {
+		return "--Chien--\n" + super.toString();
 	}
 }
 
@@ -160,6 +295,10 @@ class Lapin extends Tamagotchi {
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
 	}
+	
+	public String toString() {
+		return "--Lapin--\n" + super.toString();
+	}
 }
 
 class Robot extends Tamagotchi {
@@ -173,5 +312,9 @@ class Robot extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("salon", "jouer");
 		this.addListeActions("cuisine", "toilette");
+	}
+	
+	public String toString() {
+		return "--Robot--\n" + super.toString();
 	}
 }

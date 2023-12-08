@@ -5,7 +5,7 @@
     <id>UMLNote</id>
     <coordinates>
       <x>1448</x>
-      <y>704</y>
+      <y>616</y>
       <w>400</w>
       <h>184</h>
     </coordinates>
@@ -28,50 +28,41 @@ Classe interface</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>408</x>
-      <y>464</y>
+      <x>464</x>
+      <y>448</y>
       <w>208</w>
-      <h>224</h>
+      <h>288</h>
     </coordinates>
     <panel_attributes>style=autoresize
 /&lt;&lt;Abstract&gt;&gt;/
 Tamagotchi (M)
 --
 - HashMap&lt;Piece,String&gt;
-- Statistiques nrj
-- Satiete sat
-- Repos rep
-- Hygiene hyg
+- Statistique nrj
+- Statistique sat
+- Statistique rep
+- Statistique hyg
 - Poids poi
-- Vie vie
-- Bonheur bhr
-- int niv
+- Sante vie
+- Sante bhr
+- int XP
 - 2DImage sprite
 --
 + save()
 + (setters/getters pour toutes les stats)
-- upgrade()</panel_attributes>
++ manger()
++ dormir()
++ jouer()
++ promenade()
++ toilette()
++ applyStatsTime()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1456</x>
-      <y>1112</y>
-      <w>128</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>style=wordwrap
-Energie
---
-(les valeurs par défaut seront différentes)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>232</x>
-      <y>464</y>
+      <x>288</x>
+      <y>448</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -84,8 +75,8 @@ Chien
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>528</y>
+      <x>288</x>
+      <y>512</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -98,8 +89,8 @@ Chat
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>592</y>
+      <x>288</x>
+      <y>576</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -112,8 +103,8 @@ Lapin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>656</y>
+      <x>288</x>
+      <y>640</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -126,8 +117,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
-      <y>464</y>
+      <x>408</x>
+      <y>448</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -137,8 +128,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
-      <y>528</y>
+      <x>408</x>
+      <y>512</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -148,8 +139,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
-      <y>592</y>
+      <x>408</x>
+      <y>576</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -159,8 +150,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>352</x>
-      <y>656</y>
+      <x>408</x>
+      <y>640</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -170,8 +161,8 @@ Robot
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>744</x>
-      <y>768</y>
+      <x>800</x>
+      <y>752</y>
       <w>96</w>
       <h>80</h>
     </coordinates>
@@ -187,8 +178,8 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>912</x>
-      <y>784</y>
+      <x>968</x>
+      <y>768</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -198,8 +189,8 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>912</x>
-      <y>824</y>
+      <x>968</x>
+      <y>808</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -209,8 +200,8 @@ Jauge (V)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
-      <y>784</y>
+      <x>888</x>
+      <y>768</y>
       <w>96</w>
       <h>24</h>
     </coordinates>
@@ -220,8 +211,8 @@ Jauge (V)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>832</x>
-      <y>824</y>
+      <x>888</x>
+      <y>808</y>
       <w>96</w>
       <h>24</h>
     </coordinates>
@@ -231,8 +222,8 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>816</x>
-      <y>528</y>
+      <x>872</x>
+      <y>512</y>
       <w>120</w>
       <h>192</h>
     </coordinates>
@@ -243,7 +234,7 @@ Statistiques (M)
 - int max
 - int palierMin (en %)
 - int palierMax (en %)
-- Timer timeStat
+- long lastUpdated
 - Jauge jauge
 --
 + getValue()
@@ -257,50 +248,8 @@ Statistiques (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1456</x>
-      <y>1048</y>
-      <w>128</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>style=wordwrap
-Satiete
---
-(les valeurs par défaut seront différentes)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1456</x>
-      <y>984</y>
-      <w>128</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>style=wordwrap
-Repos
---
-(les valeurs par défaut seront différentes)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1456</x>
-      <y>920</y>
-      <w>128</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>style=wordwrap
-Hygiene
---
-(les valeurs par défaut seront différentes)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>952</x>
-      <y>680</y>
+      <x>1008</x>
+      <y>664</y>
       <w>128</w>
       <h>64</h>
     </coordinates>
@@ -315,8 +264,8 @@ Poids
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>952</x>
-      <y>608</y>
+      <x>1008</x>
+      <y>592</y>
       <w>128</w>
       <h>64</h>
     </coordinates>
@@ -331,8 +280,8 @@ Sante
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>928</x>
-      <y>608</y>
+      <x>984</x>
+      <y>592</y>
       <w>40</w>
       <h>24</h>
     </coordinates>
@@ -342,8 +291,8 @@ Sante
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>920</x>
-      <y>360</y>
+      <x>976</x>
+      <y>344</y>
       <w>112</w>
       <h>136</h>
     </coordinates>
@@ -363,8 +312,8 @@ Sante
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1136</x>
-      <y>296</y>
+      <x>1192</x>
+      <y>280</y>
       <w>96</w>
       <h>144</h>
     </coordinates>
@@ -385,35 +334,15 @@ Piece (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>552</x>
-      <y>168</y>
-      <w>104</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>style=autoresize
-Actions (C)
---
-- Tamagotchi tama
---
-+ manger()
-+ dormir()
-+ jouer()
-+ promenade()
-+ toilette()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>680</x>
-      <y>368</y>
+      <x>736</x>
+      <y>352</y>
       <w>168</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>style=wordwrap
 Game (M)
 --
-- Timer time
+- Chronometer chronometer
 - Tamagotchi tama
 - Maison house
 --
@@ -423,8 +352,8 @@ Game (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>88</y>
+      <x>776</x>
+      <y>72</y>
       <w>192</w>
       <h>256</h>
     </coordinates>
@@ -437,22 +366,22 @@ Menu (C)
 - sameMenu options
 - gameView ecranPrincipal
 - Game game
-- Actions actions
 --
 + newGame()
 + loadGame()
++ startMainMenu()
 + startGameView()
 + chooseTama()
 + sendDataGame()
 + applyStatsActions()
-+ applyStatsTime()</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1096</x>
-      <y>448</y>
+      <x>1152</x>
+      <y>432</y>
       <w>136</w>
       <h>96</h>
     </coordinates>
@@ -469,8 +398,8 @@ flechesDirection (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>88</y>
+      <x>1032</x>
+      <y>72</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -478,24 +407,10 @@ flechesDirection (V)
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>1456</x>
-      <y>1176</y>
-      <w>200</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>bg=blue
-style=wordwrap
-J'ai un doute sur le java, mais pour les 4 stats de gauche, je me demande s'il y a vraiment besoin de sous-classe.
-À voir au moment de l'implémentation.</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>120</y>
+      <x>1032</x>
+      <y>104</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -505,8 +420,8 @@ J'ai un doute sur le java, mais pour les 4 stats de gauche, je me demande s'il y
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>608</x>
-      <y>536</y>
+      <x>664</x>
+      <y>520</y>
       <w>224</w>
       <h>48</h>
     </coordinates>
@@ -522,8 +437,8 @@ Un Tamagotchi a besoin de
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1024</x>
-      <y>360</y>
+      <x>1080</x>
+      <y>344</y>
       <w>128</w>
       <h>32</h>
     </coordinates>
@@ -535,8 +450,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>904</x>
-      <y>88</y>
+      <x>960</x>
+      <y>72</y>
       <w>88</w>
       <h>32</h>
     </coordinates>
@@ -548,8 +463,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>760</x>
-      <y>712</y>
+      <x>816</x>
+      <y>696</y>
       <w>152</w>
       <h>72</h>
     </coordinates>
@@ -565,8 +480,8 @@ utilisent une jauge normale</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>976</x>
-      <y>672</y>
+      <x>1032</x>
+      <y>656</y>
       <w>224</w>
       <h>160</h>
     </coordinates>
@@ -585,8 +500,8 @@ les trois états.
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>976</x>
-      <y>600</y>
+      <x>1032</x>
+      <y>584</y>
       <w>360</w>
       <h>256</h>
     </coordinates>
@@ -603,8 +518,8 @@ constituée de coeurs.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>928</x>
-      <y>680</y>
+      <x>984</x>
+      <y>664</y>
       <w>40</w>
       <h>24</h>
     </coordinates>
@@ -612,23 +527,10 @@ constituée de coeurs.</panel_attributes>
     <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>1448</x>
-      <y>896</y>
-      <w>304</w>
-      <h>376</h>
-    </coordinates>
-    <panel_attributes>Corbeille
---
-bg=orange</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>904</x>
-      <y>120</y>
+      <x>960</x>
+      <y>104</y>
       <w>88</w>
       <h>32</h>
     </coordinates>
@@ -640,8 +542,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>584</x>
-      <y>408</y>
+      <x>640</x>
+      <y>392</y>
       <w>112</w>
       <h>72</h>
     </coordinates>
@@ -654,8 +556,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>840</x>
-      <y>376</y>
+      <x>896</x>
+      <y>360</y>
       <w>96</w>
       <h>40</h>
     </coordinates>
@@ -666,23 +568,10 @@ m2=1
     <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>648</x>
-      <y>176</y>
-      <w>88</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>600</x>
-      <y>88</y>
+      <x>656</x>
+      <y>72</y>
       <w>56</w>
       <h>40</h>
     </coordinates>
@@ -694,8 +583,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>88</y>
+      <x>704</x>
+      <y>72</y>
       <w>88</w>
       <h>24</h>
     </coordinates>
@@ -705,8 +594,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>152</y>
+      <x>1032</x>
+      <y>136</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -716,8 +605,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>904</x>
-      <y>152</y>
+      <x>960</x>
+      <y>136</y>
       <w>88</w>
       <h>32</h>
     </coordinates>
@@ -729,8 +618,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>808</x>
-      <y>336</y>
+      <x>864</x>
+      <y>320</y>
       <w>24</w>
       <h>48</h>
     </coordinates>
@@ -740,8 +629,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1024</x>
-      <y>448</y>
+      <x>1080</x>
+      <y>432</y>
       <w>88</w>
       <h>32</h>
     </coordinates>
@@ -749,5 +638,31 @@ m2=1</panel_attributes>
 m1=1
 m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>144</y>
+      <w>96</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+Chronometer
+--
+- long begin
+- long end
+- int cheat_vit
+--
++ start
++ stop
++ getMilliseconds
++ getSeconds
++ getMinutes
++ getHours
++ toString
++ getTimeStats
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

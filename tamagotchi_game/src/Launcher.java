@@ -5,7 +5,7 @@ import java.lang.Thread;
 // then press Enter. You can now see whitespace characters in your code.
 public class Launcher {
 	public static void main(String[] args) throws Exception {
-		Chronometer chronometer = new Chronometer(10);
+		Chronometer chronometer = new Chronometer(10000);
 		System.out.println(chronometer);
 		
 		Chat cat = new Chat();
@@ -17,6 +17,7 @@ public class Launcher {
 		System.out.println(house.getPiece().getPiece());
 		Random random = new Random();
 		for (int i = 0; i <= 1000; i++) {
+			/*
 			switch (random.nextInt(4)) {
 				case 0:
 					System.out.print("going up to ");
@@ -34,10 +35,12 @@ public class Launcher {
 					System.out.print("going right to ");
 					house.goDroite();
 					break;
-			}
+			}*/
 			// System.out.println(house.getPiece().getPiece());
 			Thread.sleep(1000);
 			System.out.println(chronometer);
+			cat.applyStatsTime(chronometer);
+			System.out.println(cat);
 		}
 		System.out.println(chronometer);
 	}

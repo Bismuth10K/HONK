@@ -81,7 +81,7 @@ public class Statistique {
 	 * @return int : pourcentage, valeur entre 0 et 100.
 	 */
 	public int toPercent() {
-		return value / max * 100;
+		return value * 100 / max;
 	}
 	
 	/**
@@ -108,5 +108,9 @@ public class Statistique {
 		if (valuePercent >= palierMax) return 1;
 		else if (valuePercent > palierMin) return 0;
 		else return -1;
+	}
+	
+	public String toString() {
+		return value + "/" + max + " : " + toPercent();
 	}
 }
