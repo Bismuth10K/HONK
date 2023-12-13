@@ -136,7 +136,7 @@ abstract class Tamagotchi {
 	 * @return int : current level.
 	 */
 	public int toLevel() {
-		return (int)floor(XP / 16 * log(XP * XP));
+		return (int)floor(((double) XP / 16) * log(XP * XP));
 	}
 	
 	/**
@@ -221,8 +221,7 @@ abstract class Tamagotchi {
 					hyg.posIntervalleStabilite() +
 					(poi.posIntervalleStabilite() == 0 ? 1 : -1);
 			vie.add(conditionsVie);
-		}
-		if((chronometer.getMilliseconds() % toMillis24) >= toMillis24){
+			
 			int nbCoeurs = (vie.getValue() + bhr.getValue()) / 2;
 			int gamma = 10;
 			XP += nbCoeurs * gamma;
@@ -237,7 +236,7 @@ abstract class Tamagotchi {
 				"Vie : \t\t" + vie + " ;\n" +
 				"Bonheur : \t" + bhr + " ;\n" +
 				"Poids : \t" + poi + " ;\n" +
-				"Niv : \t\t" + toLevel() + " ;\n";
+				"Niv : \t\t" + XP + " " + toLevel() + " ;\n";
 	}
 }
 

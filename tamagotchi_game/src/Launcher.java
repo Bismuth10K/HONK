@@ -5,7 +5,7 @@ import java.lang.Thread;
 // then press Enter. You can now see whitespace characters in your code.
 public class Launcher {
 	public static void main(String[] args) throws Exception {
-		Chronometer chronometer = new Chronometer(10000);
+		Chronometer chronometer = new Chronometer(15000);
 		System.out.println(chronometer);
 		
 		Chat cat = new Chat();
