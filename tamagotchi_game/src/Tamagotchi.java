@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import static java.lang.Math.floor;
 import static java.lang.Math.log;
 
@@ -12,9 +13,9 @@ abstract class Tamagotchi {
 	private final Sante vie;
 	private final Sante bhr;
 	private final Poids poi;
-	private int XP = 0;
 	// Dictionnaire qui va contenir les actions possibles (sous forme d'ArrayList) dans une pièce.
 	HashMap<String, ArrayList<String>> listeActions = new HashMap<String, ArrayList<String>>();
+	private int XP = 0;
 	// private 2DImage sprite;
 	
 	/**
@@ -57,6 +58,10 @@ abstract class Tamagotchi {
 	 */
 	public void printListeActions() {
 		System.out.println(listeActions);
+	}
+	
+	public ArrayList<String> getActionByPiece(String piece) {
+		return listeActions.get(piece);
 	}
 	
 	/**
@@ -136,7 +141,7 @@ abstract class Tamagotchi {
 	 * @return int : current level.
 	 */
 	public int toLevel() {
-		return (int)floor(((double) XP / 16) * log(XP * XP));
+		return (int) floor(((double) XP / 16) * log(XP * XP));
 	}
 	
 	/**
@@ -192,16 +197,17 @@ abstract class Tamagotchi {
 	 */
 	public void applyStatsTime(Chronometer chronometer) {
 		long toMillis24 = chronometer.toMillis(24);
+		long toMillis2 = chronometer.toMillis(2);
 		if (chronometer.getTimeStats(nrj.getLastUpdated()) >= chronometer.toMillis(1)) {
 			nrj.add(-5);
 		}
-		if (chronometer.getTimeStats(sat.getLastUpdated()) >= chronometer.toMillis(2)) {
+		if (chronometer.getTimeStats(sat.getLastUpdated()) >= toMillis2) {
 			sat.add(-15);
 		}
-		if (chronometer.getTimeStats(rep.getLastUpdated()) >= chronometer.toMillis(2)) {
+		if (chronometer.getTimeStats(rep.getLastUpdated()) >= toMillis2) {
 			rep.add(-10);
 		}
-		if (chronometer.getTimeStats(hyg.getLastUpdated()) >= chronometer.toMillis(2)) {
+		if (chronometer.getTimeStats(hyg.getLastUpdated()) >= toMillis2) {
 			hyg.add(-5);
 		}
 		if (chronometer.getTimeStats(poi.getLastUpdated()) >= toMillis24) {
@@ -215,11 +221,7 @@ abstract class Tamagotchi {
 			bhr.resetLastUpdated();
 		}
 		if (chronometer.getTimeStats(vie.getLastUpdated()) >= toMillis24) {
-			int conditionsVie = nrj.posIntervalleStabilite() +
-					sat.posIntervalleStabilite() +
-					rep.posIntervalleStabilite() +
-					hyg.posIntervalleStabilite() +
-					(poi.posIntervalleStabilite() == 0 ? 1 : -1);
+			int conditionsVie = nrj.posIntervalleStabilite() + sat.posIntervalleStabilite() + rep.posIntervalleStabilite() + hyg.posIntervalleStabilite() + (poi.posIntervalleStabilite() == 0 ? 1 : -1);
 			vie.add(conditionsVie);
 			
 			int nbCoeurs = (vie.getValue() + bhr.getValue()) / 2;
@@ -229,14 +231,7 @@ abstract class Tamagotchi {
 	}
 	
 	public String toString() {
-		return "Energie : \t" + nrj + " ;\n" +
-				"Satiete : \t" + sat + " ;\n" +
-				"Repos : \t" + rep + " ;\n" +
-				"Hygiene : \t" + hyg + " ;\n" +
-				"Vie : \t\t" + vie + " ;\n" +
-				"Bonheur : \t" + bhr + " ;\n" +
-				"Poids : \t" + poi + " ;\n" +
-				"Niv : \t\t" + XP + " " + toLevel() + " ;\n";
+		return "Energie : \t" + nrj + " ;\n" + "Satiete : \t" + sat + " ;\n" + "Repos : \t" + rep + " ;\n" + "Hygiene : \t" + hyg + " ;\n" + "Vie : \t" + vie + " ;\n" + "Bonheur : \t" + bhr + " ;\n" + "Poids : \t" + poi + " ;\n" + "Level : \t" + XP + " " + toLevel() + " ;\n";
 	}
 }
 

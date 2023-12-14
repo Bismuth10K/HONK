@@ -67,7 +67,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Launcher" />
       <module name="tamagotchi_game" />
@@ -75,8 +75,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="tamagotchi_game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Launcher" />
       </list>
     </recent_temporary>
@@ -114,6 +122,7 @@
       <workItem from="1701777835930" duration="8138000" />
       <workItem from="1702048283256" duration="6023000" />
       <workItem from="1702477433072" duration="1403000" />
+      <workItem from="1702543374798" duration="10872000" />
     </task>
     <servers />
   </component>
