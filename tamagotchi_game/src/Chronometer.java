@@ -3,6 +3,7 @@ import static java.lang.Math.floor;
 public final class Chronometer {
 	private long begin, end;
 	private final int cheat_vit;
+	private long timeSkip = 0;
 	
 	/**
 	 * Classe du chronometre. Sera utile pour tenir compte du temps passe depuis le debut du jeu.
@@ -31,7 +32,7 @@ public final class Chronometer {
 	 * @return temps écoulé de begin à end en millisecondes.
 	 */
 	public long getMilliseconds() {
-		return (end - begin) * cheat_vit;
+		return (end + timeSkip - begin) * cheat_vit;
 	}
 	
 	/**
@@ -78,10 +79,14 @@ public final class Chronometer {
 	 * @param hour int
 	 * @return long : heures en millisecondes.
 	 */
-	public long toMillis(int hour) {
+	public long toMillis(double hour) {
 		return (long) hour * 60 * 60 * 1000;
 	}
 	
+	
+	public void addTimeSkip(long toAdd) {
+		timeSkip += toAdd;
+	}
 	/**
 	 * Retourne le temps au'il sera dans X secondes, X etant le temps passe en parametre
 	 * @param seconds int
