@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.Thread;
 import java.util.ArrayList;
 
 public class Main extends JFrame {
@@ -15,7 +14,12 @@ public class Main extends JFrame {
 	private JButton down;
 	private JButton left;
 	private JButton right;
+	private JButton manger;
+	private JPanel actionPanel;
+	private JButton mangerButton;
+	private JButton dormirButton;
 	Maison house;
+	Tamagotchi tama;
 	
 	public Main() {
 		setContentPane(mainPanel);
@@ -69,7 +73,7 @@ public class Main extends JFrame {
 		
 		main.house = new Maison();
 		while (true) {
-			// Thread.sleep(1000);
+			Thread.sleep(50);
 			cat.applyStatsTime(chronometer);
 			main.setStatsTama(cat.toString());
 			main.chrono.setText(chronometer.toString() + "\nPièce actuelle : " + main.house.getPiece().getPiece());
