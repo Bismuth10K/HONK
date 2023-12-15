@@ -145,6 +145,14 @@ abstract class Tamagotchi {
 	}
 	
 	/**
+	 * Return whether the Tamagotchi is dead.
+	 * @return true if the value of bhr or vie is 0, else false.
+	 */
+	public boolean isDead() {
+		return bhr.getValue() == 0 || vie.getValue() == 0;
+	}
+	
+	/**
 	 * Fonction manger.
 	 */
 	public void manger() {
