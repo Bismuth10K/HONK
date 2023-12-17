@@ -239,7 +239,14 @@ abstract class Tamagotchi {
 	}
 	
 	public String toString() {
-		return "Energie : \t" + nrj + " ;\n" + "Satiete : \t" + sat + " ;\n" + "Repos : \t" + rep + " ;\n" + "Hygiene : \t" + hyg + " ;\n" + "Vie : \t" + vie + " ;\n" + "Bonheur : \t" + bhr + " ;\n" + "Poids : \t" + poi + " ;\n" + "Level : \t" + XP + " " + toLevel() + " ;\n";
+		return "Energie : \t" + nrj + " ;\n" +
+				"Satiete : \t" + sat + " ;\n" +
+				"Repos : \t" + rep + " ;\n" +
+				"Hygiene : \t" + hyg + " ;\n" +
+				"Vie : \t" + vie + " ;\n" +
+				"Bonheur : \t" + bhr + " ;\n" +
+				"Poids : \t" + poi + " ;\n" +
+				"Expérience : \t" + (int)currentXP + "/" + (int)maxXP + " - Level " + playerLevel + " ;\n";
 	}
 }
 
