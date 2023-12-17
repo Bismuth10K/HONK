@@ -15,7 +15,11 @@ abstract class Tamagotchi {
 	private final Poids poi;
 	// Dictionnaire qui va contenir les actions possibles (sous forme d'ArrayList) dans une pièce.
 	HashMap<String, ArrayList<String>> listeActions = new HashMap<String, ArrayList<String>>();
-	private int XP = 0;
+	// Variables pour l'XP
+	private int playerLevel = 0; // niveau actuel du tama
+	private double currentXP = 0; // nombre d'XP collectés
+	private double maxXP = 100; // le maximum à atteindre avant de passer au niveau suivant
+	private double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
 	// private 2DImage sprite;
 	
 	/**
@@ -60,6 +64,11 @@ abstract class Tamagotchi {
 		System.out.println(listeActions);
 	}
 	
+	/**
+	 * Renvoie les actions possibles dans une pièce.
+	 * @param piece String : nom d'une pièce
+	 * @return ArrayList<String> contenant les actions, null si la pièce n'existe pas.
+	 */
 	public ArrayList<String> getActionByPiece(String piece) {
 		return listeActions.get(piece);
 	}
@@ -118,30 +127,6 @@ abstract class Tamagotchi {
 	 */
 	public Statistique getPoi() {
 		return poi;
-	}
-	
-	/**
-	 * Getter de XP
-	 * @return int : XP
-	 */
-	public int getXP() {
-		return XP;
-	}
-	
-	/**
-	 * To increment the number of XP by toAdd
-	 * @param toAdd int : number added to XP
-	 */
-	public void addXP(int toAdd) {
-		XP += toAdd;
-	}
-	
-	/**
-	 * Returns the current level of the tamagotchi thanks to the formula.
-	 * @return int : current level.
-	 */
-	public int toLevel() {
-		return (int) floor(((double) XP / 16) * log(XP * XP));
 	}
 	
 	/**
@@ -232,14 +217,27 @@ abstract class Tamagotchi {
 			int conditionsVie = nrj.posIntervalleStabilite() + sat.posIntervalleStabilite() + rep.posIntervalleStabilite() + hyg.posIntervalleStabilite() + (poi.posIntervalleStabilite() == 0 ? 1 : -1);
 			vie.add(conditionsVie);
 			
-			int nbCoeurs = (vie.getValue() + bhr.getValue()) / 2;
-			int gamma = 10;
-			XP += nbCoeurs * gamma;
+			// rien à voir avec la vie, on gère l'expérience là, ainsi, c'est fait tous les 24h.
+			currentXP += (int)((vie.getValue() + bhr.getValue()) / 2) * 10;
+			
+			if(currentXP >= maxXP) {
+				double reste = currentXP - maxXP;
+				playerLevel++;
+				currentXP = 0;
+				maxXP *= rateXP;
+			}
 		}
 	}
 	
 	public String toString() {
-		return "Energie : \t" + nrj + " ;\n" + "Satiete : \t" + sat + " ;\n" + "Repos : \t" + rep + " ;\n" + "Hygiene : \t" + hyg + " ;\n" + "Vie : \t" + vie + " ;\n" + "Bonheur : \t" + bhr + " ;\n" + "Poids : \t" + poi + " ;\n" + "Level : \t" + XP + " " + toLevel() + " ;\n";
+		return "Energie : \t" + nrj + " ;\n" +
+				"Satiete : \t" + sat + " ;\n" +
+				"Repos : \t" + rep + " ;\n" +
+				"Hygiene : \t" + hyg + " ;\n" +
+				"Vie : \t" + vie + " ;\n" +
+				"Bonheur : \t" + bhr + " ;\n" +
+				"Poids : \t" + poi + " ;\n" +
+				"Expérience : \t" + currentXP + "/" + maxXP + " - Level " + playerLevel + " ;\n";
 	}
 }
 
