@@ -20,7 +20,7 @@ abstract class Tamagotchi {
 	private int playerLevel = 0; // niveau actuel du tama
 	private double currentXP = 0; // nombre de XP collectés
 	private double maxXP = 100; // le maximum à atteindre avant de passer au niveau suivant
-	private double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
+	private final double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
 	// private 2DImage sprite;
 	
 	/**
@@ -213,7 +213,7 @@ abstract class Tamagotchi {
 			int conditionsVie = nrj.posIntervalleStabilite() + sat.posIntervalleStabilite() + rep.posIntervalleStabilite() + hyg.posIntervalleStabilite() + (poi.posIntervalleStabilite() == 0 ? 1 : -1);
 			vie.add(conditionsVie);
 			
-			currentXP += (int)((vie.getValue() + bhr.getValue()) / 2) * 10;
+			currentXP += ((vie.getValue() + bhr.getValue()) / 2) * 10;
 			
 			if(currentXP >= maxXP) {
 				double reste = currentXP - maxXP;
