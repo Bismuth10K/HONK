@@ -28,10 +28,10 @@ Classe interface</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>464</x>
-      <y>472</y>
-      <w>208</w>
-      <h>288</h>
+      <x>480</x>
+      <y>416</y>
+      <w>136</w>
+      <h>416</h>
     </coordinates>
     <panel_attributes>style=autoresize
 /&lt;&lt;Abstract&gt;&gt;/
@@ -48,8 +48,18 @@ Tamagotchi (M)
 - int XP
 - 2DImage sprite
 --
++ getNrj()
++ getSat()
++ getRep()
++ getHyg()
++ getPoi()
++ getVie()
++ getBhr()
++ addListeActions()
++ printListeActions()
++ getActionByPiece()
 + save()
-+ (setters/getters pour toutes les stats)
++ isDead()
 + manger()
 + dormir()
 + jouer()
@@ -61,8 +71,8 @@ Tamagotchi (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>472</y>
+      <x>304</x>
+      <y>416</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -75,8 +85,8 @@ Chien
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>536</y>
+      <x>304</x>
+      <y>480</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -89,8 +99,8 @@ Chat
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>600</y>
+      <x>304</x>
+      <y>544</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -103,8 +113,8 @@ Lapin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>288</x>
-      <y>664</y>
+      <x>304</x>
+      <y>608</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -117,8 +127,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>472</y>
+      <x>424</x>
+      <y>416</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -128,8 +138,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>536</y>
+      <x>424</x>
+      <y>480</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -139,8 +149,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>600</y>
+      <x>424</x>
+      <y>544</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -150,8 +160,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>408</x>
-      <y>664</y>
+      <x>424</x>
+      <y>608</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -340,11 +350,12 @@ Piece (M)
       <h>96</h>
     </coordinates>
     <panel_attributes>style=wordwrap
-Game (M)
+Game (C)
 --
 - Chronometer chronometer
 - Tamagotchi tama
 - Maison house
+- gameView gv
 --
 + save()</panel_attributes>
     <additional_attributes/>
@@ -364,7 +375,6 @@ Menu (C)
 --
 - mainMenu ecranTitre
 - sameMenu options
-- gameView ecranPrincipal
 - Game game
 --
 + newGame()
@@ -375,24 +385,6 @@ Menu (C)
 + sendDataGame()
 + applyStatsActions()
 </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1152</x>
-      <y>456</y>
-      <w>136</w>
-      <h>96</h>
-    </coordinates>
-    <panel_attributes>style=autoresize
-flechesDirection (V)
---
-- 2DSprite flecheHaut
-- 2DSprite flecheBas
-- 2DSprite flecheGauche
-- 2DSprite flecheDroite
-- 2DSprite bgImage</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -420,9 +412,9 @@ flechesDirection (V)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>664</x>
+      <x>608</x>
       <y>544</y>
-      <w>224</w>
+      <w>280</w>
       <h>48</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
@@ -432,7 +424,7 @@ m2pos=0,0
 Un Tamagotchi a besoin de 
 4 'Statistique' + 2 'Sante'
 + 1 'Poids'</panel_attributes>
-    <additional_attributes>10.0;20.0;260.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;330.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -442,7 +434,7 @@ Un Tamagotchi a besoin de
       <w>128</w>
       <h>32</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
@@ -542,16 +534,15 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
+      <x>608</x>
       <y>416</y>
-      <w>112</w>
-      <h>72</h>
+      <w>144</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-m1=1
 m2=1
 </panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;20.0;120.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -627,28 +618,15 @@ m2=1</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1080</x>
-      <y>456</y>
-      <w>88</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>168</y>
+      <x>520</x>
+      <y>208</y>
       <w>96</w>
       <h>192</h>
     </coordinates>
     <panel_attributes>style=autoresize
-Chronometer
+Chronometer (M)
 --
 - long begin
 - long end
@@ -663,6 +641,50 @@ Chronometer
 + toString
 + getTimeStats
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>328</y>
+      <w>144</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=1
+</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;70.0;160.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>456</y>
+      <w>88</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1152</x>
+      <y>456</y>
+      <w>136</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>style=autoresize
+flechesDirection (V)
+--
+- 2DSprite flecheHaut
+- 2DSprite flecheBas
+- 2DSprite flecheGauche
+- 2DSprite flecheDroite
+- 2DSprite bgImage</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
