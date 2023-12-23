@@ -3,9 +3,6 @@ package honk.model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static java.lang.Math.floor;
-import static java.lang.Math.log;
-
 abstract class Tamagotchi {
 	// Elles sont "final" car elles ne changeront pas, juste leurs valeurs changent
 	private final Statistique nrj;
@@ -17,7 +14,12 @@ abstract class Tamagotchi {
 	private final Poids poi;
 	// Dictionnaire qui va contenir les actions possibles (sous forme d'ArrayList) dans une pièce.
 	HashMap<String, ArrayList<String>> listeActions = new HashMap<String, ArrayList<String>>();
-	private int XP = 0;
+	
+	// Variables pour le XP
+	private int playerLevel = 0; // niveau actuel du tama
+	private double currentXP = 0; // nombre de XP collectés
+	private double maxXP = 100; // le maximum à atteindre avant de passer au niveau suivant
+	private final double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
 	// private 2DImage sprite;
 	
 	/**
@@ -123,27 +125,11 @@ abstract class Tamagotchi {
 	}
 	
 	/**
-	 * Getter de XP
-	 * @return int : XP
+	 * Return whether the Tamagotchi is dead.
+	 * @return true if the value of bhr or vie is 0, else false.
 	 */
-	public int getXP() {
-		return XP;
-	}
-	
-	/**
-	 * To increment the number of XP by toAdd
-	 * @param toAdd int : number added to XP
-	 */
-	public void addXP(int toAdd) {
-		XP += toAdd;
-	}
-	
-	/**
-	 * Returns the current level of the tamagotchi thanks to the formula.
-	 * @return int : current level.
-	 */
-	public int toLevel() {
-		return (int) floor(((double) XP / 16) * log(XP * XP));
+	public boolean isDead() {
+		return bhr.getValue() == 0 || vie.getValue() == 0;
 	}
 	
 	/**
@@ -226,14 +212,26 @@ abstract class Tamagotchi {
 			int conditionsVie = nrj.posIntervalleStabilite() + sat.posIntervalleStabilite() + rep.posIntervalleStabilite() + hyg.posIntervalleStabilite() + (poi.posIntervalleStabilite() == 0 ? 1 : -1);
 			vie.add(conditionsVie);
 			
-			int nbCoeurs = (vie.getValue() + bhr.getValue()) / 2;
-			int gamma = 10;
-			XP += nbCoeurs * gamma;
+			currentXP += ((vie.getValue() + bhr.getValue()) / 2) * 10;
+			
+			if(currentXP >= maxXP) {
+				double reste = currentXP - maxXP;
+				playerLevel++;
+				currentXP = 0;
+				maxXP *= rateXP;
+			}
 		}
 	}
 	
 	public String toString() {
-		return "Energie : \t" + nrj + " ;\n" + "Satiete : \t" + sat + " ;\n" + "Repos : \t" + rep + " ;\n" + "Hygiene : \t" + hyg + " ;\n" + "Vie : \t" + vie + " ;\n" + "Bonheur : \t" + bhr + " ;\n" + "Poids : \t" + poi + " ;\n" + "Level : \t" + XP + " " + toLevel() + " ;\n";
+		return "Energie : \t" + nrj + " ;\n" +
+				"Satiete : \t" + sat + " ;\n" +
+				"Repos : \t" + rep + " ;\n" +
+				"Hygiene : \t" + hyg + " ;\n" +
+				"Vie : \t" + vie + " ;\n" +
+				"Bonheur : \t" + bhr + " ;\n" +
+				"Poids : \t" + poi + " ;\n" +
+				"Expérience : \t" + (int)currentXP + "/" + (int)maxXP + " - Level " + playerLevel + " ;\n";
 	}
 }
 

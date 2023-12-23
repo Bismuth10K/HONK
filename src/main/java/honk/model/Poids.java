@@ -1,4 +1,5 @@
 package honk.model;
+
 public class Poids extends Statistique {
 	public Poids() throws Exception {
 		super(100, 33, 66);

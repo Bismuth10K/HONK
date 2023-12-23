@@ -1,4 +1,5 @@
 package honk.model;
+
 public class Piece {
 	private final String nom;
 	// 2DImage sprite;

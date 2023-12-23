@@ -1,4 +1,5 @@
 package honk.model;
+
 public class Maison {
 	private Piece piece;
 	

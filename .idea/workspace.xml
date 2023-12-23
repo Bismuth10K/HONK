@@ -50,6 +50,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HonkApplication.executor": "Run",
     "Application.Launcher.executor": "Run",
     "Application.Main.executor": "Debug",
     "Application.Test X11.executor": "Run",
@@ -64,6 +65,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "vue.rearranger.settings.migration": "true"
   }
@@ -77,7 +81,7 @@
       <recent name="$PROJECT_DIR$/src/com.HONK/com.HONK.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test X11">
+  <component name="RunManager" selected="Application.HonkApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="com.HONK" />
       <method v="2">
@@ -87,6 +91,19 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="com.HONK" />
       <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HonkApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="honk.HonkApplication" />
+      <module name="testMaven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="honk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,13 +127,22 @@
     </configuration>
     <list>
       <item itemvalue="Application.Test X11" />
+      <item itemvalue="Application.HonkApplication" />
       <item itemvalue="Application.Launcher" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HonkApplication" />
         <item itemvalue="Application.Launcher" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-29f91840" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
