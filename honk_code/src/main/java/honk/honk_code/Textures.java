@@ -1,4 +1,4 @@
-package honk.view;
+package honk.honk_code;
 
 import javafx.scene.image.Image;
 

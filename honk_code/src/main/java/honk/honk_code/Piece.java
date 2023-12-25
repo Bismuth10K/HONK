@@ -1,4 +1,4 @@
-package honk.model;
+package honk.honk_code;
 
 public class Piece {
 	private final String nom;

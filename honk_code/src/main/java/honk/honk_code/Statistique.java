@@ -1,4 +1,4 @@
-package honk.model;
+package honk.honk_code;
 
 import static java.lang.System.currentTimeMillis;
 

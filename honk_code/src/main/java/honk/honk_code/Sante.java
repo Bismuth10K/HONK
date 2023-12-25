@@ -1,10 +1,13 @@
-package honk.model;
+package honk.honk_code;
 
-public class Poids extends Statistique {
-	public Poids() throws Exception {
-		super(100, 33, 66);
-		// Au début, le poids est à 50%.
-		this.setValue(50);
+import static java.lang.System.currentTimeMillis;
+
+public class Sante extends Statistique {
+	private final int is_bnh;
+	
+	public Sante(String type) throws Exception {
+		super(10, 0, 10);
+		is_bnh = type.equals("bonheur") ? 1 : 0;
 	}
 	
 	/**
@@ -18,5 +21,6 @@ public class Poids extends Statistique {
 		value += toAdd;
 		if (value < 0) value = 0;
 		else if (value > max) value = max;
+		if (is_bnh == 0) lastUpdated = currentTimeMillis();
 	}
 }

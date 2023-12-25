@@ -1,4 +1,4 @@
-package honk.model;
+package honk.honk_code;
 
 public class Maison {
 	private Piece piece;
