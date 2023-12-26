@@ -65,7 +65,8 @@ public final class Chronometer {
 	public String toString() {
 		stop();
 		long min = getMinutes();
-		return getHours() + ":" + (min < 10 ? "0" + min : min) + ":" + getSeconds();
+		long sec = getSeconds();
+		return getHours() + ":" + (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
 	}
 	
 	/**

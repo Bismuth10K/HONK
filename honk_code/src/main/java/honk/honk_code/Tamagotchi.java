@@ -212,15 +212,23 @@ abstract class Tamagotchi {
 			int conditionsVie = nrj.posIntervalleStabilite() + sat.posIntervalleStabilite() + rep.posIntervalleStabilite() + hyg.posIntervalleStabilite() + (poi.posIntervalleStabilite() == 0 ? 1 : -1);
 			vie.add(conditionsVie);
 			
-			currentXP += ((vie.getValue() + bhr.getValue()) / 2) * 10;
+			currentXP += ((double) (vie.getValue() + bhr.getValue()) / 2) * 10;
 			
 			if(currentXP >= maxXP) {
 				double reste = currentXP - maxXP;
 				playerLevel++;
-				currentXP = 0;
+				currentXP = reste;
 				maxXP *= rateXP;
 			}
 		}
+	}
+	
+	public double XPToPercent() {
+		return currentXP / maxXP;
+	}
+	
+	public int getPlayerLevel() {
+		return playerLevel;
 	}
 	
 	public String toString() {

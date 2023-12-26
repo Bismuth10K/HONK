@@ -43,6 +43,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
    <top>
@@ -51,12 +52,12 @@
             <VBox alignment="CENTER" prefHeight="94.0" prefWidth="209.0" BorderPane.alignment="CENTER">
                <children>
                   <Label id="HungerBarLabel" text="Hunger" />
-                  <ProgressBar id="HungerProBar" prefWidth="200.0" progress="0.61">
+                  <ProgressBar id="HungerProBar" fx:id="HungerPBar" prefWidth="200.0">
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
                   </ProgressBar>
-                  <ProgressBar id="SleepProBar" prefWidth="200.0" progress="0.55">
+                  <ProgressBar id="SleepProBar" fx:id="SleepPBar" prefWidth="200.0">
                      <padding>
                         <Insets top="5.0" />
                      </padding>
@@ -69,12 +70,12 @@
             <VBox alignment="CENTER" prefHeight="121.0" prefWidth="209.0" BorderPane.alignment="CENTER">
                <children>
                   <Label id="HygienaBarLabel" text="Hygiena" />
-                  <ProgressBar id="HygienaProBar" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" progress="0.5">
+                  <ProgressBar id="HygienaProBar" fx:id="HygPBar" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0">
                      <padding>
                         <Insets bottom="5.0" />
                      </padding>
                   </ProgressBar>
-                  <ProgressBar id="EnergyProBar" prefWidth="200.0" progress="0.69">
+                  <ProgressBar id="EnergyProBar" fx:id="EnergyPBar" prefWidth="200.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -92,8 +93,8 @@
          <bottom>
             <VBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="768.0" BorderPane.alignment="CENTER">
                <children>
-                  <ProgressBar id="XpProBar" prefHeight="11.0" prefWidth="156.0" />
-                  <Label id="LevelLabel" text="Niveau : 01" />
+                  <ProgressBar id="XpProBar" fx:id="XPPBar" prefHeight="11.0" prefWidth="156.0" />
+                  <Label id="LevelLabel" fx:id="textXP" text="Niveau : 01" />
                </children>
             </VBox>
          </bottom>
@@ -110,7 +111,11 @@
                   <Button id="DownButton" fx:id="DownButton" layoutX="79.0" layoutY="124.0" mnemonicParsing="false" onAction="#ActionDown" prefHeight="32.0" prefWidth="32.0" text="D" />
                </children>
             </Pane>
-            <Pane prefHeight="170.0" prefWidth="388.0" HBox.hgrow="ALWAYS" />
+            <Pane prefHeight="170.0" prefWidth="388.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text fx:id="textChronometer" layoutX="174.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="textPiece" layoutX="174.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children></Pane>
             <VBox id="ActionButtonsPane" alignment="CENTER" prefHeight="170.0" prefWidth="205.0">
                <children>
                   <Button id="WalkButton" fx:id="WalkButton" mnemonicParsing="false" onAction="#ActionWalk" prefHeight="22.0" prefWidth="110.0" style="-fx-background-color: darkgreen; -fx-text-fill: white;" text="Walk">

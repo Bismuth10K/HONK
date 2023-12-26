@@ -82,8 +82,8 @@ public class Statistique {
 	 * Pour convertir la valeur en pourcentage pour l'affichage des jauges.
 	 * @return int : pourcentage, valeur entre 0 et 100.
 	 */
-	public int toPercent() {
-		return value * 100 / max;
+	public double toPercent() {
+		return (double) value / max;
 	}
 	
 	/**
@@ -106,7 +106,7 @@ public class Statistique {
 	 * @return -1 si <= palierMin, 1 si >= palierMax, 0 sinon
 	 */
 	public int posIntervalleStabilite() {
-		int valuePercent = toPercent();
+		int valuePercent = (int) (toPercent() * 100);
 		if (valuePercent >= palierMax) return 1;
 		else if (valuePercent > palierMin) return 0;
 		else return -1;
