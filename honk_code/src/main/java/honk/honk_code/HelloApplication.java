@@ -21,7 +21,13 @@ public class HelloApplication extends Application {
 		stage.show();
 	}
 	
-	public static void main(String[] args) {
+	public void launcher() {
 		launch();
+	}
+	
+	public static void main(String[] args) {
+		HelloApplication hp = new HelloApplication();
+		hp.launcher();
+		
 	}
 }
