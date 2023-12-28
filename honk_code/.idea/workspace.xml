@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="075518d4-ae6e-47a3-b859-11ee5f6b96c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Textures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Textures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,36 +44,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Game.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Menu.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [site].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [test].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.honk_code [verify].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main__java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Game.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Menu.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Maven.honk_code [clean].executor": "Run",
+    "Maven.honk_code [compile].executor": "Run",
+    "Maven.honk_code [deploy].executor": "Run",
+    "Maven.honk_code [install].executor": "Run",
+    "Maven.honk_code [package].executor": "Run",
+    "Maven.honk_code [site].executor": "Run",
+    "Maven.honk_code [test].executor": "Run",
+    "Maven.honk_code [validate].executor": "Run",
+    "Maven.honk_code [verify].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main__java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Menu">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="honk.honk_code.Game" />
@@ -152,11 +155,15 @@
       <workItem from="1703605744931" duration="10073000" />
       <workItem from="1703617709653" duration="124000" />
       <workItem from="1703696264421" duration="12836000" />
-      <workItem from="1703758617229" duration="18127000" />
+      <workItem from="1703758617229" duration="19499000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

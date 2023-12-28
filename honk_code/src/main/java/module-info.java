@@ -10,7 +10,8 @@ module honk.honk_code {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
-
-    opens honk.honk_code to javafx.fxml;
+	requires json.simple;
+	
+	opens honk.honk_code to javafx.fxml;
     exports honk.honk_code;
 }
