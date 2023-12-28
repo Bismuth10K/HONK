@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.controllerChooseTama">
    <children>
-      <Button id="PlayButton" layoutX="210.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="C'est parti !" />
+      <Button id="playButton" layoutX="210.0" layoutY="346.0" mnemonicParsing="false" onAction="#createNewGame" prefHeight="40.0" prefWidth="180.0" text="C'est parti !" />
       <ScrollPane layoutX="187.0" layoutY="62.0" prefHeight="277.0" prefWidth="226.0">
          <content>
             <VBox prefHeight="275.0" prefWidth="204.0">
