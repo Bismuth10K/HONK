@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(1);
+	final Chronometer chronometer = new Chronometer(1000);
 	private Tamagotchi tama;
 	private String typeTama;
 	private ArrayList<String> actionsPossibles;
@@ -64,6 +64,7 @@ public class Game implements Initializable {
 	 * @throws Exception Au cas où typeTama n'est pas bon.
 	 */
 	public void setTama(String typeTama) throws Exception {
+		this.typeTama = typeTama;
 		switch (typeTama) {
 			case "chat":
 				tama = new Chat();
@@ -180,6 +181,13 @@ public class Game implements Initializable {
 								WashButton.setDisable(false);
 								break;
 						}
+					}
+				}
+				if(chronometer.getHours() >= 24) {
+					try {
+						Saver.save(chronometer, typeTama, tama);
+					} catch (Exception ex) {
+						throw new RuntimeException(ex);
 					}
 				}
 			} else {
