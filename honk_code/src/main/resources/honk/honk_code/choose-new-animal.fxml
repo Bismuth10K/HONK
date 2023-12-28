@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.controllerChooseTama">
    <children>
       <Button id="PlayButton" layoutX="210.0" layoutY="346.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="C'est parti !" />
       <ScrollPane layoutX="187.0" layoutY="62.0" prefHeight="277.0" prefWidth="226.0">
@@ -21,7 +14,11 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="200.0">
                      <children>
-                        <ImageView id="DogImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="DogImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@textures/animals/DogFull-export.png" />
+                           </image>
+                        </ImageView>
                         <RadioButton id="DogButton" mnemonicParsing="false" prefHeight="64.0" text="Chien">
                            <toggleGroup>
                               <ToggleGroup fx:id="animal" />
@@ -31,19 +28,31 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="64.0" prefWidth="200.0">
                      <children>
-                        <ImageView id="CatImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="CatImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@textures/animals/CatFull.png" />
+                           </image>
+                        </ImageView>
                         <RadioButton id="CatButton" mnemonicParsing="false" prefHeight="64.0" text="Chat" toggleGroup="$animal" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="74.0" prefHeight="64.0" prefWidth="200.0">
                      <children>
-                        <ImageView id="RabbitImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="RabbitImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@textures/animals/RabbitFull.png" />
+                           </image>
+                        </ImageView>
                         <RadioButton id="RabbitButton" mnemonicParsing="false" prefHeight="64.0" text="Lapin" toggleGroup="$animal" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="138.0" prefHeight="64.0" prefWidth="200.0">
                      <children>
-                        <ImageView id="RobotImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="RobotImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@textures/animals/RobotFull.png" />
+                           </image>
+                        </ImageView>
                         <RadioButton id="RobotButton" mnemonicParsing="false" prefHeight="64.0" text="Robot" toggleGroup="$animal" />
                      </children>
                   </HBox>
@@ -80,5 +89,6 @@
             <Font size="21.0" />
          </font>
       </Label>
+      <Button id="backButton" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#goBack" text="Retour" />
    </children>
 </AnchorPane>
