@@ -7,9 +7,11 @@
     <list default="true" id="075518d4-ae6e-47a3-b859-11ee5f6b96c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/choose-new-animal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/choose-new-animal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerOptions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Application.Menu">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="honk.honk_code.Game" />
       <module name="honk_code" />
@@ -124,9 +126,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.Game" />
-        <item itemvalue="Application.Menu" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +153,7 @@
       <workItem from="1703605744931" duration="10073000" />
       <workItem from="1703617709653" duration="124000" />
       <workItem from="1703696264421" duration="12836000" />
-      <workItem from="1703758617229" duration="11363000" />
+      <workItem from="1703758617229" duration="15238000" />
     </task>
     <servers />
   </component>

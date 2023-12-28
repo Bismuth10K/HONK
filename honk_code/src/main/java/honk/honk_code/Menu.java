@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,9 +19,6 @@ public class Menu extends Application {
 	FXMLLoader loadFile;
 	FXMLLoader chooseTama;
 	
-	@FXML
-	private Button newGame;
-	
 	public static void main(String[] args) {
 		Menu menu = new Menu();
 		menu.launcher();
@@ -29,15 +27,10 @@ public class Menu extends Application {
 	@Override
 	public void start(Stage stage) throws IOException {
 		BorderPane root = new BorderPane();
-		System.out.println(getClass().getResource("load-file.fxml"));
 		titleScreen = new FXMLLoader(getClass().getResource("title-screen.fxml"));
-		loadFile = new FXMLLoader(getClass().getResource("load-file.fxml"));
-		chooseTama = new FXMLLoader(getClass().getResource("choose-new-animal.fxml"));
-		
 		root.setCenter(titleScreen.load());
-		
 		Scene scene = new Scene(root, 768, 576);
-		stage.setTitle("Hello!");
+		stage.setTitle("H.O.N.K.!");
 		stage.setScene(scene);
 		stage.show();
 	}
@@ -46,7 +39,14 @@ public class Menu extends Application {
 		launch();
 	}
 	
+	public void close(ActionEvent event) {
+		final Node source = (Node) event.getSource();
+		final Stage stage = (Stage) source.getScene().getWindow();
+		stage.close();
+	}
+	
 	public void createNewGame(ActionEvent event) throws IOException {
+		close(event);
 		Parent root = FXMLLoader.load(getClass().getResource("choose-new-animal.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
@@ -58,6 +58,7 @@ public class Menu extends Application {
 	
 	
 	public void createLoadGame(ActionEvent event) throws IOException {
+		close(event);
 		Parent root = FXMLLoader.load(getClass().getResource("load-file.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
@@ -68,6 +69,7 @@ public class Menu extends Application {
 	}
 	
 	public void createOptions(ActionEvent event) throws IOException {
+		close(event);
 		Parent root = FXMLLoader.load(getClass().getResource("load-file.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();

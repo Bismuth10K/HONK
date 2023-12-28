@@ -2,17 +2,13 @@ package honk.honk_code;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -79,6 +75,18 @@ public class Game implements Initializable {
 				tama = new Lapin();
 				break;
 			case "robot":
+				tama = new Robot();
+				break;
+			case "renard":
+				tama = new Chat();
+				break;
+			case "lynx":
+				tama = new Chien();
+				break;
+			case "lapin de paques":
+				tama = new Lapin();
+				break;
+			case "uwucopter":
 				tama = new Robot();
 				break;
 			default:
