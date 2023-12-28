@@ -51,7 +51,9 @@ public class Maison {
 	/**
 	 * Fonctions pour se déplacer vers la pièce en haut.
 	 */
-	public void goHaut() { this.setPiece(piece.getHaut()); }
+	public void goHaut() {
+		this.setPiece(piece.getHaut());
+	}
 	
 	/**
 	 * Fonctions pour se déplacer vers la pièce en bas.

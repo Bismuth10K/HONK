@@ -2,12 +2,11 @@ package honk.honk_code;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -30,6 +29,7 @@ public class Menu extends Application {
 		titleScreen = new FXMLLoader(getClass().getResource("title-screen.fxml"));
 		root.setCenter(titleScreen.load());
 		Scene scene = new Scene(root, 768, 576);
+		stage.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
 		stage.setTitle("H.O.N.K.!");
 		stage.setScene(scene);
 		stage.show();
@@ -50,6 +50,7 @@ public class Menu extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("choose-new-animal.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
+		stage.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
 		stage.setTitle("Choisissez votre Tamagotchi !!!");
 		stage.setScene(scene);
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -62,6 +63,7 @@ public class Menu extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("load-file.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
+		stage.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
 		stage.setTitle("Choisissez votre sauvegarde !!!");
 		stage.setScene(scene);
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -73,6 +75,7 @@ public class Menu extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("load-file.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
+		stage.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
 		stage.setTitle("Les options");
 		stage.setScene(scene);
 		stage.initModality(Modality.APPLICATION_MODAL);

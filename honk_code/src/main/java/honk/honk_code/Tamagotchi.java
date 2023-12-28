@@ -12,14 +12,13 @@ abstract class Tamagotchi {
 	private final Sante vie;
 	private final Sante bhr;
 	private final Poids poi;
+	private final double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
 	// Dictionnaire qui va contenir les actions possibles (sous forme d'ArrayList) dans une pièce.
 	HashMap<String, ArrayList<String>> listeActions = new HashMap<String, ArrayList<String>>();
-	
 	// Variables pour le XP
 	private int playerLevel = 0; // niveau actuel du tama
 	private double currentXP = 0; // nombre de XP collectés
 	private double maxXP = 100; // le maximum à atteindre avant de passer au niveau suivant
-	private final double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
 	// private 2DImage sprite;
 	
 	/**
@@ -214,7 +213,7 @@ abstract class Tamagotchi {
 			
 			currentXP += ((double) (vie.getValue() + bhr.getValue()) / 2) * 10;
 			
-			if(currentXP >= maxXP) {
+			if (currentXP >= maxXP) {
 				double reste = currentXP - maxXP;
 				playerLevel++;
 				currentXP = reste;
@@ -232,14 +231,7 @@ abstract class Tamagotchi {
 	}
 	
 	public String toString() {
-		return "Energie : \t" + nrj + " ;\n" +
-				"Satiete : \t" + sat + " ;\n" +
-				"Repos : \t" + rep + " ;\n" +
-				"Hygiene : \t" + hyg + " ;\n" +
-				"Vie : \t" + vie + " ;\n" +
-				"Bonheur : \t" + bhr + " ;\n" +
-				"Poids : \t" + poi + " ;\n" +
-				"Expérience : \t" + (int)currentXP + "/" + (int)maxXP + " - Level " + playerLevel + " ;\n";
+		return "Energie : \t" + nrj + " ;\n" + "Satiete : \t" + sat + " ;\n" + "Repos : \t" + rep + " ;\n" + "Hygiene : \t" + hyg + " ;\n" + "Vie : \t" + vie + " ;\n" + "Bonheur : \t" + bhr + " ;\n" + "Poids : \t" + poi + " ;\n" + "Expérience : \t" + (int) currentXP + "/" + (int) maxXP + " - Level " + playerLevel + " ;\n";
 	}
 }
 

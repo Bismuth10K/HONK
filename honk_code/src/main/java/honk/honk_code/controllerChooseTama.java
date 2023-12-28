@@ -5,14 +5,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -39,6 +38,7 @@ public class controllerChooseTama implements Initializable {
 		AnchorPane anchorPane = fxmlLoader.load();
 		Scene scene = new Scene(anchorPane, 768, 576);
 		Stage stageTama = new Stage();
+		stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
 		stageTama.setTitle("H.O.N.K.!");
 		stageTama.setScene(scene);
 		stageTama.show();
@@ -57,6 +57,7 @@ public class controllerChooseTama implements Initializable {
 			game.setTama(rb.getText().toLowerCase());
 			Scene scene = new Scene(borderPane, 768, 576);
 			Stage stageTama = new Stage();
+			stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
 			stageTama.setTitle("Let's play!");
 			stageTama.setScene(scene);
 			stageTama.show();
