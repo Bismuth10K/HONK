@@ -7,6 +7,7 @@
     <list default="true" id="075518d4-ae6e-47a3-b859-11ee5f6b96c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/choose-new-animal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/choose-new-animal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" afterDir="false" />
@@ -46,6 +47,15 @@
       <change beforePath="$PROJECT_DIR$/../media/textures/gauges-and-buttons/UpArrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/../media/textures/gauges-and-buttons/UpArrow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../media/textures/gauges-and-buttons/WalkButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/../media/textures/gauges-and-buttons/WalkButton.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../media/textures/gauges-and-buttons/WashButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/../media/textures/gauges-and-buttons/WashButton.png" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Saver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Statistique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Statistique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Tamagotchi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Tamagotchi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerOptions.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,11 +203,15 @@
       <workItem from="1703696264421" duration="12836000" />
       <workItem from="1703758617229" duration="24173000" />
       <workItem from="1703842015031" duration="686000" />
+<<<<<<< Updated upstream
       <workItem from="1703852605932" duration="1572000" />
       <workItem from="1703855118534" duration="4835000" />
       <workItem from="1703860090835" duration="476000" />
       <workItem from="1703861658814" duration="2812000" />
       <workItem from="1703868404240" duration="2843000" />
+=======
+      <workItem from="1703864532125" duration="7997000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
