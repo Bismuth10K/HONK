@@ -16,16 +16,24 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class controllerLoadGame implements Initializable {
-	@FXML
-	private Button backButton;
 	
+	/**
+	 * Doit être là par défaut.
+	 * @param url
+	 * @param resourceBundle
+	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-	
+		// Comment ça va ?
 	}
 	
-	public void goBack(ActionEvent event) throws IOException, InterruptedException {
-
+	/**
+	 * Action lors de l'appui sur le bouton retour.
+	 * Ferme la fenêtre load pour revenir au menu.
+	 * @param event ActionEvent : appui du bouton
+	 * @throws IOException
+	 */
+	public void goBack(ActionEvent event) throws IOException {
 		final Node source = (Node) event.getSource();
 		final Stage stage = (Stage) source.getScene().getWindow();
 		stage.close();

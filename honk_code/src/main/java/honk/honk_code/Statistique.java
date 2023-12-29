@@ -9,7 +9,6 @@ public class Statistique {
 	private final int palierMax;
 	protected int value;
 	protected long lastUpdated;
-	// Jauge jauge;
 	
 	/**
 	 * Classe pour une statistique.

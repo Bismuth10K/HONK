@@ -63,6 +63,11 @@ abstract class Tamagotchi {
 		System.out.println(listeActions);
 	}
 	
+	/**
+	 * Renvoie l'ArrayList des actions par rapport au paramètre piece.
+	 * @param piece Piece : une pièce dont on veut savoir quelles actions sont possibles là.
+	 * @return ArrayList<String> : liste des actions
+	 */
 	public ArrayList<String> getActionByPiece(String piece) {
 		return listeActions.get(piece);
 	}

@@ -19,11 +19,22 @@ public class controllerOptions implements Initializable {
 	@FXML
 	private Button backButton;
 	
+	/**
+	 * Doit être là par défaut.
+	 * @param url
+	 * @param resourceBundle
+	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-	
+		// Votre journée se passe bien ?
 	}
 	
+	/**
+	 * Action lors de l'appui sur le bouton retour.
+	 * Ferme la fenêtre des options pour revenir au menu.
+	 * @param event ActionEvent : appui du bouton
+	 * @throws IOException
+	 */
 	public void goBack(ActionEvent event) throws IOException {
 		final Node source = (Node) event.getSource();
 		final Stage stage = (Stage) source.getScene().getWindow();

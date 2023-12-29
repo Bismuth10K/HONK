@@ -88,7 +88,11 @@ public final class Chronometer {
 		return (long) (hour * 60 * 60 * 1000);
 	}
 	
-	
+	/**
+	 * Ajoute du temps à la variable timeSkip.
+	 * Se fait quand le Tamagotchi fait une action.
+	 * @param toAdd long : un nombre de millisecondes à rajouter au timer.
+	 */
 	public void addTimeSkip(long toAdd) {
 		timeSkip += toAdd;
 	}

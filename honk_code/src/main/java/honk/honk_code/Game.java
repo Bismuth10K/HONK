@@ -95,95 +95,125 @@ public class Game implements Initializable {
 		}
 	}
 	
+	/**
+	 * Lors de l'appui sur un bouton de direction.
+	 * Pour aller en haut.
+	 * @param event ActionEvent : appui du bouton.
+	 */
 	public void ActionUp(ActionEvent event) {
 		house.goHaut();
 	}
 	
+	/**
+	 * Lors de l'appui sur un bouton de direction.
+	 * Pour aller à gauche.
+	 * @param event ActionEvent : appui du bouton.
+	 */
 	public void ActionLeft(ActionEvent event) {
 		house.goGauche();
 	}
 	
+	/**
+	 * Lors de l'appui sur un bouton de direction.
+	 * Pour aller à droite.
+	 * @param event ActionEvent : appui du bouton.
+	 */
 	public void ActionRight(ActionEvent event) {
 		house.goDroite();
 	}
 	
+	/**
+	 * Lors de l'appui sur un bouton de direction.
+	 * Pour aller en bas.
+	 * @param event ActionEvent : appui du bouton.
+	 */
 	public void ActionDown(ActionEvent event) {
 		house.goBas();
 	}
 	
-	public void ActionEat(ActionEvent event){
+	/**
+	 * Lors de l'appui sur un bouton d'action.
+	 * Pour manger.
+	 * @param event ActionEvent : appui du bouton.
+	 */
+	public void ActionEat(ActionEvent event) {
 		tama.manger();
 		chronometer.addTimeSkip(chronometer.toMillis(1));
 	}
 	
+	/**
+	 * Lors de l'appui sur un bouton d'action.
+	 * Pour dormir.
+	 * @param event ActionEvent : appui du bouton.
+	 */
 	public void ActionSleep(ActionEvent event) {
 		tama.dormir();
 		chronometer.addTimeSkip(chronometer.toMillis(8));
 	}
 	
+	/**
+	 * Lors de l'appui sur un bouton d'action.
+	 * Pour jouer.
+	 * @param event ActionEvent : appui du bouton.
+	 */
 	public void ActionPlay(ActionEvent event) {
 		tama.jouer();
 		chronometer.addTimeSkip(chronometer.toMillis(2));
 	}
 	
+	/**
+	 * Lors de l'appui sur un bouton d'action.
+	 * Pour aller se promener.
+	 * @param event ActionEvent : appui du bouton.
+	 */
 	public void ActionWalk(ActionEvent event) {
 		tama.promenade();
 		chronometer.addTimeSkip(chronometer.toMillis(3));
 	}
 	
+	/**
+	 * Lors de l'appui sur un bouton d'action.
+	 * Pour se laver.
+	 * @param event ActionEvent : appui du bouton.
+	 */
 	public void ActionWash(ActionEvent event) {
 		tama.toilette();
 		chronometer.addTimeSkip(chronometer.toMillis(0.75));
 	}
 	
+	/**
+	 * Initialize nous sert ici à réactualiser le jeu régulièrement avec Timeline.
+	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
+		// Tous les 0.2 seconde, on applique le code qui est dedans.
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
-			if (!tama.isDead()) {
-				tama.applyStatsTime(chronometer);
+			if (!tama.isDead()) { // Tant que le tamagotchi n'est pas mort :
+				tama.applyStatsTime(chronometer); // on voit si des statistiques peuvent baisser à cause du temps.
 				
-				textChronometer.setText(chronometer.toString());
+				textChronometer.setText(chronometer.toString()); // maj des textes (chronomètre et pièce).
 				textPiece.setText(house.getPiece().getPiece());
-				HungerPBar.setProgress(tama.getSat().toPercent());
+				
+				HungerPBar.setProgress(tama.getSat().toPercent()); // maj des progress bars.
 				SleepPBar.setProgress(tama.getRep().toPercent());
 				HygPBar.setProgress(tama.getHyg().toPercent());
 				EnergyPBar.setProgress(tama.getNrj().toPercent());
 				XPPBar.setProgress(tama.XPToPercent());
-				textXP.setText("Niveau : " + tama.getPlayerLevel());
+				textXP.setText("Niveau : " + tama.getPlayerLevel()); // maj du texte des niveaux.
 				
-				UpButton.setDisable(house.getPiece().getHaut() == null);
+				UpButton.setDisable(house.getPiece().getHaut() == null); // on disable une des directions s'il n'y a pas de pièce à cet endroit.
 				LeftButton.setDisable(house.getPiece().getGauche() == null);
 				RightButton.setDisable(house.getPiece().getDroite() == null);
 				DownButton.setDisable(house.getPiece().getBas() == null);
 				
-				actionsPossibles = tama.getActionByPiece(house.getPiece().getPiece());
-				EatButton.setDisable(true);
-				SleepButton.setDisable(true);
-				PlayButton.setDisable(true);
-				WalkButton.setDisable(true);
-				WashButton.setDisable(true);
-				if (actionsPossibles != null) {
-					for (String piece : actionsPossibles) {
-						switch (piece) {
-							case "manger":
-								EatButton.setDisable(false);
-								break;
-							case "dormir":
-								SleepButton.setDisable(false);
-								break;
-							case "jouer":
-								PlayButton.setDisable(false);
-								break;
-							case "promenade":
-								WalkButton.setDisable(false);
-								break;
-							case "toilette":
-								WashButton.setDisable(false);
-								break;
-						}
-					}
-				}
-				if(chronometer.getHours() >= 24) {
+				actionsPossibles = tama.getActionByPiece(house.getPiece().getPiece()); // on récupère les actions possibles dans la pièce.
+				EatButton.setDisable(!actionsPossibles.contains("manger")); // si un String est dans la liste, dans ce cas, on renvoie false.
+				SleepButton.setDisable(!actionsPossibles.contains("dormir"));
+				PlayButton.setDisable(!actionsPossibles.contains("jouer"));
+				WalkButton.setDisable(!actionsPossibles.contains("promenade"));
+				WashButton.setDisable(!actionsPossibles.contains("toilette"));
+				
+				if (chronometer.getHours() == 24) { // test de création de save.
 					try {
 						Saver.save(chronometer, typeTama, tama);
 					} catch (Exception ex) {
@@ -191,12 +221,12 @@ public class Game implements Initializable {
 					}
 				}
 			} else {
-				EatButton.setDisable(true);
+				EatButton.setDisable(true); // Quand le tamagotchi meurt, on disable les actions.
 				SleepButton.setDisable(true);
 				PlayButton.setDisable(true);
 				WalkButton.setDisable(true);
 				WashButton.setDisable(true);
-				textPiece.setText("Lol t mor uwu");
+				textPiece.setText("Lol t mor uwu"); // On met un texte.
 			}
 		}));
 		timeline.setCycleCount(Timeline.INDEFINITE);
