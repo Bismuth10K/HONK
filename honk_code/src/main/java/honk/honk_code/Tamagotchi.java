@@ -227,28 +227,49 @@ abstract class Tamagotchi {
 		}
 	}
 	
+	/**
+	 * Renvoie le pourcentage de currentXP par rapport à maxXP en valeur comprise entre 0 et 1.
+	 * @return nombre décimal compris entre 0 et 1.
+	 */
 	public double XPToPercent() {
 		return currentXP / maxXP;
 	}
 	
+	/**
+	 * Getter playerLevel.
+	 * @return int : playerLevel
+	 */
 	public int getPlayerLevel() {
 		return playerLevel;
 	}
 	
+	/**
+	 * Getter currentXP.
+	 * @return double : currentXP
+	 */
 	public double getCurrentXP() { return currentXP; }
 	
+	/**
+	 * Getter de maxXP.
+	 * @return double : maxXP
+	 */
 	public double getMaxXP() { return maxXP; }
 	
+	/**
+	 * toString est une fonction qui s'appelle automatiquement lorsqu'on veut print cet objet.
+	 * Il sert à des fins de débogage afin de voir sans interface graphique si les valeurs fonctionnent correctement.
+	 * @return String : les infos du Tamagotchi.
+	 */
 	public String toString() {
 		return "Energie : \t" + nrj + " ;\n" + "Satiete : \t" + sat + " ;\n" + "Repos : \t" + rep + " ;\n" + "Hygiene : \t" + hyg + " ;\n" + "Vie : \t" + vie + " ;\n" + "Bonheur : \t" + bhr + " ;\n" + "Poids : \t" + poi + " ;\n" + "Expérience : \t" + (int) currentXP + "/" + (int) maxXP + " - Level " + playerLevel + " ;\n";
 	}
 }
 
+/**
+ * Classe pour tous les tamagotchis ci-dessous.
+ * Chat / Chien / Lapin / Robot
+ */
 
-/***************************************************\
- *	Classe pour tous les tamagotchis ci-dessous. 	*
- *	Chat / Chien / Lapin / Robot					*
- \**************************************************/
 
 class Chat extends Tamagotchi {
 	/**
