@@ -127,23 +127,23 @@ Button {
 }
 
 #HappiHeartImage1 {
-    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+    -fx-image: url("textures/gauges-and-buttons/HappyFull.png");
 }
 
 #HappiHeartImage2 {
-    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+    -fx-image: url("textures/gauges-and-buttons/HappyFull.png");
 }
 
 #HappiHeartImage3 {
-    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+    -fx-image: url("textures/gauges-and-buttons/HappyFull.png");
 }
 
 #HappiHeartImage4 {
-    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+    -fx-image: url("textures/gauges-and-buttons/HappyFull.png");
 }
 
 #HappiHeartImage5 {
-    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+    -fx-image: url("textures/gauges-and-buttons/HappyFull.png");
 }
 
 #backButton {

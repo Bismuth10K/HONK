@@ -2,12 +2,18 @@ package honk.honk_code;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ToolBar;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -55,7 +61,10 @@ public class Game implements Initializable {
 	private ProgressBar XPPBar;
 	@FXML
 	private Label textXP;
-	
+	@FXML
+	private ToolBar HappyHeartBar;
+	@FXML
+	private ToolBar LifeHeartBar;
 	
 	/**
 	 * Game gère tout ce qui concerne le jeu.
@@ -181,6 +190,33 @@ public class Game implements Initializable {
 		chronometer.addTimeSkip(chronometer.toMillis(0.75));
 	}
 	
+	public void updateHearts() {
+		double nbLife = (double) tama.getVie().getValue() / 2;
+		double nbHappy = (double) tama.getBhr().getValue() / 2;
+		ImageView LifeIV;
+		ImageView HappyIV;
+		for (int i = 4; i >= 0 ; i--) {
+			LifeIV = (ImageView) LifeHeartBar.getItems().get(i);
+			HappyIV = (ImageView) HappyHeartBar.getItems().get(i);
+			if(nbLife >= 1)
+				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeFull.png"))));
+			else if (nbLife == 0.5)
+				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeHalf.png"))));
+			else
+				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeEmpty.png"))));
+			
+			if(nbHappy >= 1)
+				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyFull.png"))));
+			else if (nbHappy == 0.5)
+				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyHalf.png"))));
+			else
+				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyEmpty.png"))));
+			
+			nbLife--;
+			nbHappy--;
+		}
+	}
+	
 	/**
 	 * Initialize nous sert ici à réactualiser le jeu régulièrement avec Timeline.
 	 */
@@ -190,9 +226,11 @@ public class Game implements Initializable {
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
 			if (!tama.isDead()) { // Tant que le tamagotchi n'est pas mort :
 				tama.applyStatsTime(chronometer); // on voit si des statistiques peuvent baisser à cause du temps.
+				updateHearts();
 				
 				textChronometer.setText(chronometer.toString()); // maj des textes (chronomètre et pièce).
 				textPiece.setText(house.getPiece().getPiece());
+				
 				
 				HungerPBar.setProgress(tama.getSat().toPercent()); // maj des progress bars.
 				SleepPBar.setProgress(tama.getRep().toPercent());

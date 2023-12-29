@@ -247,13 +247,17 @@ abstract class Tamagotchi {
 	 * Getter currentXP.
 	 * @return double : currentXP
 	 */
-	public double getCurrentXP() { return currentXP; }
+	public double getCurrentXP() {
+		return currentXP;
+	}
 	
 	/**
 	 * Getter de maxXP.
 	 * @return double : maxXP
 	 */
-	public double getMaxXP() { return maxXP; }
+	public double getMaxXP() {
+		return maxXP;
+	}
 	
 	/**
 	 * toString est une fonction qui s'appelle automatiquement lorsqu'on veut print cet objet.
