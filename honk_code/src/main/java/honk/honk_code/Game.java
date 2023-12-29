@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(1000);
+	final Chronometer chronometer = new Chronometer(1);
 	private Tamagotchi tama;
 	private String typeTama;
 	private ArrayList<String> actionsPossibles;

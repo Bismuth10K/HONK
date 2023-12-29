@@ -34,7 +34,7 @@ public final class Chronometer {
 	 * @return temps écoulé de begin à end en millisecondes.
 	 */
 	public long getMilliseconds() {
-		return (end + timeSkip - begin) * cheat_vit;
+		return (end - begin) * cheat_vit + timeSkip;
 	}
 	
 	/**
@@ -85,19 +85,11 @@ public final class Chronometer {
 	 * @return long : heures en millisecondes.
 	 */
 	public long toMillis(double hour) {
-		return (long) hour * 60 * 60 * 1000;
+		return (long) (hour * 60 * 60 * 1000);
 	}
 	
 	
 	public void addTimeSkip(long toAdd) {
 		timeSkip += toAdd;
 	}
-	/**
-	 * Retourne le temps au'il sera dans X secondes, X etant le temps passe en parametre
-	 * @param seconds int
-	 * @return
-	 */
-	/*public long getTimeFromNow(long seconds) {
-		return begin + seconds * 1000;
-	} */
 }
