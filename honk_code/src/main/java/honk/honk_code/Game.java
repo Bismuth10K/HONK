@@ -207,11 +207,19 @@ public class Game implements Initializable {
 				DownButton.setDisable(house.getPiece().getBas() == null);
 				
 				actionsPossibles = tama.getActionByPiece(house.getPiece().getPiece()); // on récupère les actions possibles dans la pièce.
-				EatButton.setDisable(!actionsPossibles.contains("manger")); // si un String est dans la liste, dans ce cas, on renvoie false.
-				SleepButton.setDisable(!actionsPossibles.contains("dormir"));
-				PlayButton.setDisable(!actionsPossibles.contains("jouer"));
-				WalkButton.setDisable(!actionsPossibles.contains("promenade"));
-				WashButton.setDisable(!actionsPossibles.contains("toilette"));
+				if (actionsPossibles != null) {
+					EatButton.setDisable(!actionsPossibles.contains("manger")); // si un String est dans la liste, dans ce cas, on renvoie false.
+					SleepButton.setDisable(!actionsPossibles.contains("dormir"));
+					PlayButton.setDisable(!actionsPossibles.contains("jouer"));
+					WalkButton.setDisable(!actionsPossibles.contains("promenade"));
+					WashButton.setDisable(!actionsPossibles.contains("toilette"));
+				} else {
+					EatButton.setDisable(true); // si un String est dans la liste, dans ce cas, on renvoie false.
+					SleepButton.setDisable(true);
+					PlayButton.setDisable(true);
+					WalkButton.setDisable(true);
+					WashButton.setDisable(true);
+				}
 				
 				if (chronometer.getHours() == 24) { // test de création de save.
 					try {

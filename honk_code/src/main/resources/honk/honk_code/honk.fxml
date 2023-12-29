@@ -46,13 +46,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
+<BorderPane id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
    <top>
       <BorderPane id="StatsPane" prefHeight="113.0" prefWidth="708.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
          <left>
             <VBox alignment="CENTER" prefHeight="94.0" prefWidth="209.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label id="HungerBarLabel" text="Hunger" />
+                  <Label id="HungerBarLabel" text="Satiété" />
                   <ProgressBar id="HungerProBar" fx:id="HungerPBar" prefWidth="200.0">
                      <padding>
                         <Insets bottom="5.0" />
@@ -63,14 +63,14 @@
                         <Insets top="5.0" />
                      </padding>
                   </ProgressBar>
-                  <Label id="SleepBarLabel" text="Sleep" />
+                  <Label id="SleepBarLabel" text="Repos" />
                </children>
             </VBox>
          </left>
          <right>
             <VBox alignment="CENTER" prefHeight="121.0" prefWidth="209.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label id="HygienaBarLabel" text="Hygiena" />
+                  <Label id="HygienaBarLabel" text="Hygiène" />
                   <ProgressBar id="HygienaProBar" fx:id="HygPBar" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0">
                      <padding>
                         <Insets bottom="5.0" />
@@ -84,7 +84,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </ProgressBar>
-                  <Label id="EnergyBarLabel" text="Energy" />
+                  <Label id="EnergyBarLabel" text="Énergie" />
                </children>
             </VBox>
          </right>
@@ -97,7 +97,7 @@
             </VBox>
          </bottom>
          <center>
-            <Text fx:id="textChronometer" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" BorderPane.alignment="CENTER" />
+            <Text fx:id="textChronometer" strokeType="OUTSIDE" strokeWidth="0.0" text="8:59:60" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </top>
@@ -106,11 +106,11 @@
          <children>
             <Pane id="MoveButtonsPane" prefHeight="170.0" prefWidth="201.0">
                <children>
-                  <Button id="UpButton" fx:id="UpButton" layoutX="79.0" layoutY="14.0" mnemonicParsing="false" onAction="#ActionUp" prefHeight="32.0" prefWidth="32.0" text="U" />
-                  <Button id="LeftButton" fx:id="LeftButton" layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionLeft" prefHeight="32.0" prefWidth="32.0" text="L" />
-                  <Button id="RightButton" fx:id="RightButton" layoutX="146.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionRight" prefHeight="32.0" prefWidth="32.0" text="R" />
-                  <Button id="DownButton" fx:id="DownButton" layoutX="79.0" layoutY="124.0" mnemonicParsing="false" onAction="#ActionDown" prefHeight="32.0" prefWidth="32.0" text="D" />
-                  <Text fx:id="textPiece" fill="WHITE" layoutX="82.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Button id="UpButton" fx:id="UpButton" layoutX="79.0" layoutY="14.0" mnemonicParsing="false" onAction="#ActionUp" prefHeight="32.0" prefWidth="32.0" />
+                  <Button id="LeftButton" fx:id="LeftButton" layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionLeft" prefHeight="32.0" prefWidth="32.0" />
+                  <Button id="RightButton" fx:id="RightButton" layoutX="146.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionRight" prefHeight="32.0" prefWidth="32.0" />
+                  <Button id="DownButton" fx:id="DownButton" layoutX="79.0" layoutY="124.0" mnemonicParsing="false" onAction="#ActionDown" prefHeight="32.0" prefWidth="32.0" />
+                  <Text fx:id="textPiece" fill="WHITE" layoutX="82.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KOUIZINE" />
                </children>
             </Pane>
             <Pane prefHeight="177.0" prefWidth="314.0" HBox.hgrow="ALWAYS" />
@@ -118,17 +118,17 @@
                <children>
                   <VBox id="ActionButtonsPane" alignment="TOP_CENTER" prefHeight="132.0" prefWidth="131.0">
                      <children>
-                        <Button id="EatButton" fx:id="EatButton" contentDisplay="CENTER" layoutX="56.0" layoutY="76.0" mnemonicParsing="false" onAction="#ActionEat" prefHeight="40.0" prefWidth="100.0" text="Eat">
+                        <Button id="EatButton" fx:id="EatButton" contentDisplay="CENTER" layoutX="56.0" layoutY="76.0" mnemonicParsing="false" onAction="#ActionEat" prefHeight="40.0" prefWidth="100.0">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button id="SleepButton" fx:id="SleepButton" mnemonicParsing="false" onAction="#ActionSleep" prefHeight="40.0" prefWidth="100.0" text="Sleep">
+                        <Button id="SleepButton" fx:id="SleepButton" mnemonicParsing="false" onAction="#ActionSleep" prefHeight="40.0" prefWidth="100.0">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button id="WashButton" fx:id="WashButton" mnemonicParsing="false" onAction="#ActionWash" prefHeight="40.0" prefWidth="100.0" text="Wash">
+                        <Button id="WashButton" fx:id="WashButton" mnemonicParsing="false" onAction="#ActionWash" prefHeight="40.0" prefWidth="100.0">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
@@ -137,12 +137,12 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="132.0" prefWidth="131.0">
                      <children>
-                        <Button id="PlayButton" fx:id="PlayButton" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="40.0" prefWidth="100.0" text="Play">
+                        <Button id="PlayButton" fx:id="PlayButton" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="40.0" prefWidth="100.0">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
                         </Button>
-                        <Button id="WalkButton" fx:id="WalkButton" mnemonicParsing="false" onAction="#ActionWalk" prefHeight="40.0" prefWidth="100.0" text="Walk">
+                        <Button id="WalkButton" fx:id="WalkButton" mnemonicParsing="false" onAction="#ActionWalk" prefHeight="40.0" prefWidth="100.0">
                            <VBox.margin>
                               <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
@@ -158,7 +158,7 @@
    <left>
       <StackPane alignment="BOTTOM_CENTER" prefHeight="205.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ToolBar id="LifeHeartBar" prefHeight="40.0" prefWidth="200.0" >
+            <ToolBar id="LifeHeartBar" prefHeight="40.0" prefWidth="200.0">
                <items>
                   <ImageView id="LifeHeartImage1" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView id="LifeHeartImage2" fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
@@ -173,7 +173,7 @@
    <right>
       <StackPane alignment="BOTTOM_CENTER" prefHeight="285.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ToolBar id="HappiHeartBar" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" >
+            <ToolBar id="HappiHeartBar" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
                <items>
                   <ImageView id="HappiHeartImage1" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView id="HappiHeartImage2" fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />

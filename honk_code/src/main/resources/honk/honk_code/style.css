@@ -3,11 +3,11 @@
     -fx-background-image: url("textures/DAWOL.png");
 }
 
-ToolBar{
+ToolBar {
     -fx-background-color: transparent;
 }
 
-Label{
+Label {
     -fx-border-color: #6110a2;
     -fx-border-width: 5;
     -fx-border-radius: 10;
@@ -15,88 +15,90 @@ Label{
     -fx-background-color: #9241f3;
 }
 
-Button{
+Button {
     -fx-background-repeat: no-repeat;
     -fx-background-size: cover, auto;
     -fx-background-image: url("textures/gauges-and-buttons/MenuButton.png");
     -fx-background-color: transparent;
 }
 
-#FileButton1{
-    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
-}
-#FileButton2{
-    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
-}
-#FileButton3{
+#FileButton1 {
     -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
 }
 
-#StatsPane{
+#FileButton2 {
+    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
+}
+
+#FileButton3 {
+    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
+}
+
+#StatsPane {
     -fx-background-image: url("textures/DAWOL.png");
 }
 
-#ButtonsPane{
+#ButtonsPane {
     -fx-background-image: url("textures/DAWOL.png");
 }
 
-#EatButton{
+#EatButton {
     -fx-background-image: url("textures/gauges-and-buttons/EatButton.png");
 }
 
-#EatButton:pressed{
+#EatButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/EatButtonPressed.png");
 }
 
-#SleepButton{
+#SleepButton {
     -fx-background-image: url("textures/gauges-and-buttons/SleepButton.png");
 }
 
-#SleepButton:pressed{
+#SleepButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/SleepButtonPressed.png");
 }
 
-#PlayButton{
+#PlayButton {
     -fx-background-image: url("textures/gauges-and-buttons/ToyButton.png");
 }
 
-#PlayButton:pressed{
+#PlayButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/ToyButtonPressed.png");
 }
 
-#WalkButton{
+#WalkButton {
     -fx-background-image: url("textures/gauges-and-buttons/WalkButton.png");
 }
 
-#WalkButton:pressed{
+#WalkButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/WalkButtonPressed.png");
 }
 
-#WashButton{
+#WashButton {
     -fx-background-image: url("textures/gauges-and-buttons/WashButton.png");
 }
 
-#WashButton:pressed{
+#WashButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/WashButtonPressed.png");
 }
 
-#UpButton{
+#UpButton {
     -fx-background-image: url("textures/gauges-and-buttons/UpArrow.png");
 }
 
-#DownButton{
+#DownButton {
     -fx-background-image: url("textures/gauges-and-buttons/DownArrow.png");
 }
 
-#LeftButton{
+#LeftButton {
     -fx-background-image: url("textures/gauges-and-buttons/LeftArrow.png");
 }
 
-#RightButton{
+#RightButton {
     -fx-background-image: url("textures/gauges-and-buttons/RightArrow.png");
 }
 
-#textPiece{
+#textPiece {
     -fx-border-color: #6110a2;
     -fx-border-width: 5;
     -fx-border-radius: 10;
@@ -104,47 +106,47 @@ Button{
     -fx-background-color: #9241f3;
 }
 
-#LifeHeartImage1{
+#LifeHeartImage1 {
     -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
 }
 
-#LifeHeartImage2{
+#LifeHeartImage2 {
     -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
 }
 
-#LifeHeartImage3{
+#LifeHeartImage3 {
     -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
 }
 
-#LifeHeartImage4{
+#LifeHeartImage4 {
     -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
 }
 
-#LifeHeartImage5{
+#LifeHeartImage5 {
     -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
 }
 
-#HappiHeartImage1{
+#HappiHeartImage1 {
     -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
 }
 
-#HappiHeartImage2{
+#HappiHeartImage2 {
     -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
 }
 
-#HappiHeartImage3{
+#HappiHeartImage3 {
     -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
 }
 
-#HappiHeartImage4{
+#HappiHeartImage4 {
     -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
 }
 
-#HappiHeartImage5{
+#HappiHeartImage5 {
     -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
 }
 
-#backButton{
+#backButton {
     -fx-background-image: url("textures/gauges-and-buttons/ReturnButton.png");
 }
 
