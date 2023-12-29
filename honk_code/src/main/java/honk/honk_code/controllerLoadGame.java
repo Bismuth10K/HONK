@@ -24,7 +24,8 @@ public class controllerLoadGame implements Initializable {
 	
 	}
 	
-	public void goBack(ActionEvent event) throws IOException {
+	public void goBack(ActionEvent event) throws IOException, InterruptedException {
+
 		final Node source = (Node) event.getSource();
 		final Stage stage = (Stage) source.getScene().getWindow();
 		stage.close();

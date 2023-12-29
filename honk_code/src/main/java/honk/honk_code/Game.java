@@ -111,7 +111,7 @@ public class Game implements Initializable {
 		house.goBas();
 	}
 	
-	public void ActionEat(ActionEvent event) {
+	public void ActionEat(ActionEvent event){
 		tama.manger();
 		chronometer.addTimeSkip(chronometer.toMillis(1));
 	}

@@ -1,0 +1,153 @@
+
+#globalbg {
+    -fx-background-image: url("textures/DAWOL.png");
+}
+
+ToolBar{
+    -fx-background-color: transparent;
+}
+
+Label{
+    -fx-border-color: #6110a2;
+    -fx-border-width: 5;
+    -fx-border-radius: 10;
+    -fx-text-fill: #6110a2;
+    -fx-background-color: #9241f3;
+}
+
+Button{
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover, auto;
+    -fx-background-image: url("textures/gauges-and-buttons/MenuButton.png");
+    -fx-background-color: transparent;
+}
+
+#FileButton1{
+    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
+}
+#FileButton2{
+    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
+}
+#FileButton3{
+    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
+}
+
+#StatsPane{
+    -fx-background-image: url("textures/DAWOL.png");
+}
+
+#ButtonsPane{
+    -fx-background-image: url("textures/DAWOL.png");
+}
+
+#EatButton{
+    -fx-background-image: url("textures/gauges-and-buttons/EatButton.png");
+}
+
+#EatButton:pressed{
+    -fx-background-image: url("textures/gauges-and-buttons/EatButtonPressed.png");
+}
+
+#SleepButton{
+    -fx-background-image: url("textures/gauges-and-buttons/SleepButton.png");
+}
+
+#SleepButton:pressed{
+    -fx-background-image: url("textures/gauges-and-buttons/SleepButtonPressed.png");
+}
+
+#PlayButton{
+    -fx-background-image: url("textures/gauges-and-buttons/ToyButton.png");
+}
+
+#PlayButton:pressed{
+    -fx-background-image: url("textures/gauges-and-buttons/ToyButtonPressed.png");
+}
+
+#WalkButton{
+    -fx-background-image: url("textures/gauges-and-buttons/WalkButton.png");
+}
+
+#WalkButton:pressed{
+    -fx-background-image: url("textures/gauges-and-buttons/WalkButtonPressed.png");
+}
+
+#WashButton{
+    -fx-background-image: url("textures/gauges-and-buttons/WashButton.png");
+}
+
+#WashButton:pressed{
+    -fx-background-image: url("textures/gauges-and-buttons/WashButtonPressed.png");
+}
+
+#UpButton{
+    -fx-background-image: url("textures/gauges-and-buttons/UpArrow.png");
+}
+
+#DownButton{
+    -fx-background-image: url("textures/gauges-and-buttons/DownArrow.png");
+}
+
+#LeftButton{
+    -fx-background-image: url("textures/gauges-and-buttons/LeftArrow.png");
+}
+
+#RightButton{
+    -fx-background-image: url("textures/gauges-and-buttons/RightArrow.png");
+}
+
+#textPiece{
+    -fx-border-color: #6110a2;
+    -fx-border-width: 5;
+    -fx-border-radius: 10;
+    -fx-text-fill: #6110a2;
+    -fx-background-color: #9241f3;
+}
+
+#LifeHeartImage1{
+    -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
+}
+
+#LifeHeartImage2{
+    -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
+}
+
+#LifeHeartImage3{
+    -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
+}
+
+#LifeHeartImage4{
+    -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
+}
+
+#LifeHeartImage5{
+    -fx-image: url("textures/gauges-and-buttons/LifeFull.png");
+}
+
+#HappiHeartImage1{
+    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+}
+
+#HappiHeartImage2{
+    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+}
+
+#HappiHeartImage3{
+    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+}
+
+#HappiHeartImage4{
+    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+}
+
+#HappiHeartImage5{
+    -fx-image: url("textures/gauges-and-buttons/HappinessFull.png");
+}
+
+#backButton{
+    -fx-background-image: url("textures/gauges-and-buttons/ReturnButton.png");
+}
+
+#backButton:pressed {
+    -fx-background-image: url("textures/gauges-and-buttons/ReturnButtonPressed.png");
+}

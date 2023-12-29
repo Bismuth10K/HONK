@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Menu">
+<?import java.net.URL?>
+<AnchorPane id="globalbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Menu">
    <children>
       <VBox alignment="CENTER" layoutX="288.0" layoutY="154.0" prefHeight="268.0" prefWidth="192.0">
          <children>
@@ -27,4 +28,7 @@
          </children>
       </VBox>
    </children>
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
 </AnchorPane>
