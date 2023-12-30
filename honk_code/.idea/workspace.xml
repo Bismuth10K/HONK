@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="075518d4-ae6e-47a3-b859-11ee5f6b96c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Chronometer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Chronometer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Tamagotchi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Tamagotchi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +156,7 @@
       <workItem from="1703842015031" duration="686000" />
       <workItem from="1703864532125" duration="15722000" />
       <workItem from="1703937136855" duration="9035000" />
+      <workItem from="1703957944157" duration="656000" />
     </task>
     <servers />
   </component>

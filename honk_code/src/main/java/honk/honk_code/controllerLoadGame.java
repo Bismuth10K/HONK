@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class controllerLoadGame implements Initializable {
-	
+		
 	/**
 	 * Doit être là par défaut.
 	 * @param url

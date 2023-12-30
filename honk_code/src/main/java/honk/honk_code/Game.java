@@ -233,7 +233,6 @@ public class Game implements Initializable {
 	 * Lors de l'appui du bouton de pause.
 	 * Si le jeu est en pause : on arrête le chrono, on disable GamePane et on affiche OptionsPane.
 	 * Sinon, on cache OptionsPane et on enable GamePane pour continuer à jouer.
-	 * @param event
 	 */
 	public void pauseGame(ActionEvent event) {
 		gameIsPaused = !gameIsPaused; // on inverse le boolean
@@ -253,8 +252,6 @@ public class Game implements Initializable {
 	
 	/**
 	 * Lors de l'appui de sauvegarder et continuer dans les options.
-	 * @param event
-	 * @throws Exception
 	 */
 	public void saveAndPlay(ActionEvent event) throws Exception {
 		Saver.save(chronometer, typeTama, tama);
@@ -263,8 +260,6 @@ public class Game implements Initializable {
 	
 	/**
 	 * Lors de l'appui de quitter en sauvegardant dans les options.
-	 * @param event
-	 * @throws Exception
 	 */
 	public void saveAndQuit(ActionEvent event) throws Exception {
 		Saver.save(chronometer, typeTama, tama);
@@ -285,8 +280,6 @@ public class Game implements Initializable {
 	
 	/**
 	 * Lors de l'appui de quitter sans sauvegarder dans les options.
-	 * @param event
-	 * @throws IOException
 	 */
 	public void quit(ActionEvent event) throws IOException {
 		final Node source = (Node) event.getSource();
@@ -305,7 +298,6 @@ public class Game implements Initializable {
 	
 	/**
 	 * Lors de l'appui de retour, pour retourner au jeu.
-	 * @param event
 	 */
 	public void retour(ActionEvent event) {
 		pauseGame(event);
