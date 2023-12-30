@@ -31,6 +31,16 @@ public final class Chronometer {
 	}
 	
 	/**
+	 * Temps écoulé sans le timeSkip.
+	 * Utile pour la pause afin d'avoir juste ce morceau sans le timeSkip.
+	 * @return long : end - begin
+	 */
+	public long getEndMinusBegin() {
+		return (end - begin) * cheat_vit;
+	}
+	
+	/**
+	 * Temps écoulé en comptant le timeSkip.
 	 * @return temps écoulé de begin à end en millisecondes.
 	 */
 	public long getMilliseconds() {

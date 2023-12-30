@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="075518d4-ae6e-47a3-b859-11ee5f6b96c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savechien.json" beforeDir="false" afterPath="$PROJECT_DIR$/savechien.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Chronometer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Chronometer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Tamagotchi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Tamagotchi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerChooseTama.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/textures/gauges-and-buttons/HappinessEmpty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/textures/gauges-and-buttons/HappinessFull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/textures/gauges-and-buttons/HappinessHalf.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +140,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-920bfa72" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-29f91840" />
       </set>
     </attachedChunks>
   </component>
@@ -162,6 +159,7 @@
       <workItem from="1703758617229" duration="24173000" />
       <workItem from="1703842015031" duration="686000" />
       <workItem from="1703864532125" duration="15722000" />
+      <workItem from="1703937136855" duration="9035000" />
     </task>
     <servers />
   </component>

@@ -2,21 +2,25 @@ package honk.honk_code;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.beans.Observable;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -27,6 +31,7 @@ public class Game implements Initializable {
 	private Tamagotchi tama;
 	private String typeTama;
 	private ArrayList<String> actionsPossibles;
+	private boolean gameIsPaused = false;
 	@FXML
 	private Button WalkButton;
 	@FXML
@@ -65,6 +70,10 @@ public class Game implements Initializable {
 	private ToolBar HappyHeartBar;
 	@FXML
 	private ToolBar LifeHeartBar;
+	@FXML
+	private BorderPane GamePane;
+	@FXML
+	private BorderPane OptionsPane;
 	
 	/**
 	 * Game gère tout ce qui concerne le jeu.
@@ -190,31 +199,116 @@ public class Game implements Initializable {
 		chronometer.addTimeSkip(chronometer.toMillis(0.75));
 	}
 	
+	/**
+	 * Met à jour les cœurs sur la scène.
+	 * À savoir, une unité de valeur dans les statistiques Vie et Bonheur correspondent à un demi-coeur.
+	 */
 	public void updateHearts() {
 		double nbLife = (double) tama.getVie().getValue() / 2;
 		double nbHappy = (double) tama.getBhr().getValue() / 2;
 		ImageView LifeIV;
 		ImageView HappyIV;
-		for (int i = 4; i >= 0 ; i--) {
+		for (int i = 4; i >= 0; i--) {
 			LifeIV = (ImageView) LifeHeartBar.getItems().get(i);
 			HappyIV = (ImageView) HappyHeartBar.getItems().get(i);
-			if(nbLife >= 1)
+			if (nbLife >= 1)
 				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeFull.png"))));
 			else if (nbLife == 0.5)
 				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeHalf.png"))));
 			else
 				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeEmpty.png"))));
+			nbLife--;
 			
-			if(nbHappy >= 1)
+			if (nbHappy >= 1)
 				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyFull.png"))));
 			else if (nbHappy == 0.5)
 				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyHalf.png"))));
 			else
 				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyEmpty.png"))));
-			
-			nbLife--;
 			nbHappy--;
 		}
+	}
+	
+	/**
+	 * Lors de l'appui du bouton de pause.
+	 * Si le jeu est en pause : on arrête le chrono, on disable GamePane et on affiche OptionsPane.
+	 * Sinon, on cache OptionsPane et on enable GamePane pour continuer à jouer.
+	 * @param event
+	 */
+	public void pauseGame(ActionEvent event) {
+		gameIsPaused = !gameIsPaused; // on inverse le boolean
+		if (gameIsPaused) { // si le jeu s'arrête
+			chronometer.stop();
+			chronometer.addTimeSkip(chronometer.getEndMinusBegin());
+			GamePane.setDisable(true);
+			OptionsPane.setDisable(false);
+			OptionsPane.setVisible(true);
+		} else { // si je le jeu reprend
+			chronometer.start();
+			GamePane.setDisable(false);
+			OptionsPane.setDisable(true);
+			OptionsPane.setVisible(false);
+		}
+	}
+	
+	/**
+	 * Lors de l'appui de sauvegarder et continuer dans les options.
+	 * @param event
+	 * @throws Exception
+	 */
+	public void saveAndPlay(ActionEvent event) throws Exception {
+		Saver.save(chronometer, typeTama, tama);
+		pauseGame(event);
+	}
+	
+	/**
+	 * Lors de l'appui de quitter en sauvegardant dans les options.
+	 * @param event
+	 * @throws Exception
+	 */
+	public void saveAndQuit(ActionEvent event) throws Exception {
+		Saver.save(chronometer, typeTama, tama);
+		
+		final Node source = (Node) event.getSource();
+		final Stage stage = (Stage) source.getScene().getWindow();
+		stage.close();
+		
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("title-screen.fxml"));
+		AnchorPane anchorPane = fxmlLoader.load();
+		Scene scene = new Scene(anchorPane, 768, 576);
+		Stage stageTama = new Stage();
+		stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
+		stageTama.setTitle("H.O.N.K.!");
+		stageTama.setScene(scene);
+		stageTama.show();
+	}
+	
+	/**
+	 * Lors de l'appui de quitter sans sauvegarder dans les options.
+	 * @param event
+	 * @throws IOException
+	 */
+	public void quit(ActionEvent event) throws IOException {
+		final Node source = (Node) event.getSource();
+		final Stage stage = (Stage) source.getScene().getWindow();
+		stage.close();
+		
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("title-screen.fxml"));
+		AnchorPane anchorPane = fxmlLoader.load();
+		Scene scene = new Scene(anchorPane, 768, 576);
+		Stage stageTama = new Stage();
+		stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
+		stageTama.setTitle("H.O.N.K.!");
+		stageTama.setScene(scene);
+		stageTama.show();
+	}
+	
+	/**
+	 * Lors de l'appui de retour, pour retourner au jeu.
+	 * @param event
+	 */
+	public void retour(ActionEvent event) {
+		pauseGame(event);
 	}
 	
 	/**
@@ -224,13 +318,12 @@ public class Game implements Initializable {
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		// Tous les 0.2 seconde, on applique le code qui est dedans.
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
-			if (!tama.isDead()) { // Tant que le tamagotchi n'est pas mort :
+			if (!tama.isDead() && !gameIsPaused) { // Tant que le tamagotchi n'est pas mort :
 				tama.applyStatsTime(chronometer); // on voit si des statistiques peuvent baisser à cause du temps.
 				updateHearts();
 				
 				textChronometer.setText(chronometer.toString()); // maj des textes (chronomètre et pièce).
 				textPiece.setText(house.getPiece().getPiece());
-				
 				
 				HungerPBar.setProgress(tama.getSat().toPercent()); // maj des progress bars.
 				SleepPBar.setProgress(tama.getRep().toPercent());
@@ -258,15 +351,7 @@ public class Game implements Initializable {
 					WalkButton.setDisable(true);
 					WashButton.setDisable(true);
 				}
-				
-				if (chronometer.getHours() == 24) { // test de création de save.
-					try {
-						Saver.save(chronometer, typeTama, tama);
-					} catch (Exception ex) {
-						throw new RuntimeException(ex);
-					}
-				}
-			} else {
+			} else if (tama.isDead()) {
 				EatButton.setDisable(true); // Quand le tamagotchi meurt, on disable les actions.
 				SleepButton.setDisable(true);
 				PlayButton.setDisable(true);

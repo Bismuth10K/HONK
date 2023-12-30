@@ -209,7 +209,7 @@ abstract class Tamagotchi {
 			poi.resetLastUpdated();
 		}
 		if (chronometer.getTimeStats(bhr.getLastUpdated()) >= toMillis24) {
-			bhr.add(-4);
+			bhr.add(-3);
 			bhr.resetLastUpdated();
 		}
 		if (chronometer.getTimeStats(vie.getLastUpdated()) >= toMillis24) {

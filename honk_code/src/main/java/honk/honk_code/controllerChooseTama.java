@@ -11,6 +11,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -70,10 +71,10 @@ public class controllerChooseTama implements Initializable {
 			// et on crée une partie avec le bon tamagotchi
 			RadioButton rb = (RadioButton) animal.getSelectedToggle();
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
-			BorderPane borderPane = fxmlLoader.load();
+			StackPane stackPane = fxmlLoader.load();
 			Game game = fxmlLoader.getController(); // récupération du controller
 			game.setTama(rb.getText().toLowerCase()); // on set le Tamagotchi
-			Scene scene = new Scene(borderPane, 768, 576);
+			Scene scene = new Scene(stackPane, 768, 576);
 			Stage stageTama = new Stage();
 			stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
 			stageTama.setTitle("Let's play!");
