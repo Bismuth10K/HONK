@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<?import java.net.URL?>
-<AnchorPane id="globalbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Menu">
+<AnchorPane id="globalbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Menu">
    <children>
       <VBox alignment="CENTER" layoutX="288.0" layoutY="154.0" prefHeight="268.0" prefWidth="192.0">
          <children>
@@ -27,6 +28,7 @@
             </Button>
          </children>
       </VBox>
+      <ImageView id="TitleImage" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
    </children>
    <stylesheets>
       <URL value="@style.css" />

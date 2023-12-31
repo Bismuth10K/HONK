@@ -27,11 +27,14 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(1);
+	final Chronometer chronometer = new Chronometer(500);
 	private Tamagotchi tama;
 	private String typeTama;
 	private ArrayList<String> actionsPossibles;
 	private boolean gameIsPaused = false;
+
+	@FXML
+	private ImageView TamaImage;
 	@FXML
 	private Button WalkButton;
 	@FXML
@@ -45,7 +48,7 @@ public class Game implements Initializable {
 	@FXML
 	private Text textChronometer;
 	@FXML
-	private Text textPiece;
+	private Label RoomLabel;
 	@FXML
 	private Button UpButton;
 	@FXML
@@ -112,7 +115,29 @@ public class Game implements Initializable {
 				throw new Exception("Pas un Tamagotchi valide.");
 		}
 	}
-	
+
+	private void changeTamaSprite(){
+		switch(typeTama){
+			case "chat" : TamaImage.setImage(new Image(String.valueOf(Textures.class.getResource("textures/animals/CatFull.png")))); break;
+
+			case "chien" : TamaImage.setImage(new Image(String.valueOf(Textures.class.getResource("textures/animals/DogFull-export.png")))); break;
+
+			case "lapin" : TamaImage.setImage(new Image(String.valueOf(Textures.class.getResource("textures/animals/RabbitFull.png")))); break;
+
+			case "robot" : TamaImage.setImage(new Image(String.valueOf(Textures.class.getResource("textures/animals/RobotFull.png")))); break;
+
+			case "renard" : TamaImage.setImage(null);
+
+			case "lynx" : TamaImage.setImage(null);
+
+			case "lapin de paques" : TamaImage.setImage(null);
+
+			case "uwucopter" : TamaImage.setImage(null);
+
+			default : TamaImage.setImage(null);
+		}
+	}
+
 	/**
 	 * Lors de l'appui sur un bouton de direction.
 	 * Pour aller en haut.
@@ -308,14 +333,24 @@ public class Game implements Initializable {
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
+		// booleen pour charger les sprites qu'une fois dans le Timeline
+
 		// Tous les 0.2 seconde, on applique le code qui est dedans.
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
+
+			// SIEG
+			if(TamaImage.getImage() == null){
+				changeTamaSprite();
+				System.out.println("dum");
+			}
+
+
 			if (!tama.isDead() && !gameIsPaused) { // Tant que le tamagotchi n'est pas mort :
 				tama.applyStatsTime(chronometer); // on voit si des statistiques peuvent baisser à cause du temps.
 				updateHearts();
 				
 				textChronometer.setText(chronometer.toString()); // maj des textes (chronomètre et pièce).
-				textPiece.setText(house.getPiece().getPiece());
+				RoomLabel.setText(house.getPiece().getPiece());
 				
 				HungerPBar.setProgress(tama.getSat().toPercent()); // maj des progress bars.
 				SleepPBar.setProgress(tama.getRep().toPercent());
@@ -349,7 +384,7 @@ public class Game implements Initializable {
 				PlayButton.setDisable(true);
 				WalkButton.setDisable(true);
 				WashButton.setDisable(true);
-				textPiece.setText("Lol t mor uwu"); // On met un texte.
+				RoomLabel.setText("Lol t mor uwu"); // On met un texte.
 			}
 		}));
 		timeline.setCycleCount(Timeline.INDEFINITE);

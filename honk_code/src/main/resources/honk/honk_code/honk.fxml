@@ -47,7 +47,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane id="HonkPane" fx:id="HonkPane" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
+<StackPane id="HonkPane" fx:id="HonkPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
    <children>
       <BorderPane id="GamePane" fx:id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;">
          <top>
@@ -113,7 +113,7 @@
                         <Button id="LeftButton" fx:id="LeftButton" layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionLeft" prefHeight="32.0" prefWidth="32.0" />
                         <Button id="RightButton" fx:id="RightButton" layoutX="146.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionRight" prefHeight="32.0" prefWidth="32.0" />
                         <Button id="DownButton" fx:id="DownButton" layoutX="79.0" layoutY="124.0" mnemonicParsing="false" onAction="#ActionDown" prefHeight="32.0" prefWidth="32.0" />
-                        <Text fx:id="textPiece" fill="WHITE" layoutX="82.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KOUIZINE" />
+                        <Label id="RoomLabel" fx:id="RoomLabel" layoutX="72.0" layoutY="72.0" text="Label" />
                      </children>
                   </Pane>
                   <Pane prefHeight="177.0" prefWidth="314.0" HBox.hgrow="ALWAYS" />
@@ -150,7 +150,10 @@
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button id="SecretButton" mnemonicParsing="false" onAction="#pauseGame" prefHeight="40.0" prefWidth="100.0" text=":)" />
+                              <Button id="PauseButton" fx:id="PauseButton" mnemonicParsing="false" onAction="#pauseGame" prefHeight="40.0" prefWidth="40.0" text=":)">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin></Button>
                            </children>
                         </VBox>
                      </children>
@@ -191,7 +194,7 @@
          <center>
             <Pane id="TamagotchiScene" prefHeight="284.0" prefWidth="368.0" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView id="TamagotchiImage" fitHeight="64.0" fitWidth="64.0" layoutX="152.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView id="TamagotchiImage" fx:id="TamaImage" fitHeight="64.0" fitWidth="64.0" layoutX="152.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
          </center>

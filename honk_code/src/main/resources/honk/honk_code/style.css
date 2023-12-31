@@ -153,3 +153,11 @@ Button {
 #backButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/ReturnButtonPressed.png");
 }
+
+#PauseButton{
+    -fx-background-image: url("textures/gauges-and-buttons/PauseButton.png");
+}
+
+#PauseButton:pressed{
+    -fx-background-image: url("textures/gauges-and-buttons/PauseButtonPressed.png");
+}

@@ -73,11 +73,12 @@ public class controllerChooseTama implements Initializable {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
 			StackPane stackPane = fxmlLoader.load();
 			Game game = fxmlLoader.getController(); // récupération du controller
-			game.setTama(rb.getText().toLowerCase()); // on set le Tamagotchi
+			game.setTama(rb.getText().toLowerCase());// on set le Tamagotchi
+			System.out.println("in controllerChooseTama : " + rb.getText().toLowerCase());
 			Scene scene = new Scene(stackPane, 768, 576);
 			Stage stageTama = new Stage();
 			stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
-			stageTama.setTitle("Let's play!");
+			stageTama.setTitle(rb.getText().toLowerCase());
 			stageTama.setScene(scene);
 			stageTama.show();
 		}
