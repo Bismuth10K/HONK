@@ -39,7 +39,7 @@ public class Menu extends Application {
 		FXMLLoader titleScreen = new FXMLLoader(getClass().getResource("title-screen.fxml")); // On charge le fxml.
 		root.setCenter(titleScreen.load()); // On place le fxml dans le borderPane
 		Scene scene = new Scene(root, 768, 576); // Ce dernier qu'on place dans la scene
-		stage.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png")))); // On met un logo
+		stage.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png")))); // On met un logo
 		stage.setTitle("H.O.N.K.!"); // Le titre de la fenêtre
 		stage.setScene(scene); // La scène est placée dans stage.
 		stage.show(); // On affiche le stage.

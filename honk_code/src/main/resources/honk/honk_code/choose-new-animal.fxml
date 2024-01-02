@@ -24,7 +24,7 @@
                      <children>
                         <ImageView id="DogImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@textures/animals/DogFull-export.png" />
+                              <Image url="@textures/animals/DogFull.png" />
                            </image>
                         </ImageView>
                         <RadioButton id="DogButton" mnemonicParsing="false" prefHeight="64.0" text="Chien">

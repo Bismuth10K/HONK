@@ -236,7 +236,6 @@ public class Game implements Initializable {
 	 */
 	public void pauseGame(ActionEvent event) {
 		gameIsPaused = !gameIsPaused; // on inverse le boolean
-		tama.setPlayerLevel(11);
 		if (gameIsPaused) { // si le jeu s'arrête
 			chronometer.stop();
 			chronometer.addTimeSkip(chronometer.getEndMinusBegin());

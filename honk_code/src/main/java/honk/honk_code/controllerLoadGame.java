@@ -6,22 +6,27 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class controllerLoadGame implements Initializable {
-		
+	@FXML
+	private ListView listView;
+	
 	/**
 	 * Doit être là par défaut.
 	 * @param url
@@ -30,6 +35,16 @@ public class controllerLoadGame implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		// Comment ça va ?
+		try {
+			List<Path> paths = Files.walk(Paths.get(getClass().getProtectionDomain().getCodeSource().getLocation().getPath()), 1) //by mentioning max depth as 1 it will only traverse immediate level
+					.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".json")) // fetch only the files which are ending with .JSON
+					.toList();
+			for (Path path : paths)
+				listView.getItems().add(path.getFileName().toString());
+			listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -54,27 +69,29 @@ public class controllerLoadGame implements Initializable {
 	}
 	
 	public void loadGame(ActionEvent event) throws Exception {
-		final Node source = (Node) event.getSource();
-		final Stage stage = (Stage) source.getScene().getWindow();
-		stage.close();
-		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
-		StackPane stackPane = fxmlLoader.load();
-		Game game = fxmlLoader.getController(); // récupération du controller
-		game.setTama("chien");
-		try (FileReader json = new FileReader("savechien.json"))
-        {
-			game.setJSON(json); // on set le Tamagotchi
-		} catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-			throw new RuntimeException(e);
+		if (listView.getSelectionModel().getSelectedItem() != null) {
+			String selectedJSON = listView.getSelectionModel().getSelectedItem().toString();
+			final Node source = (Node) event.getSource();
+			final Stage stage = (Stage) source.getScene().getWindow();
+			stage.close();
+			
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
+			StackPane stackPane = fxmlLoader.load();
+			Game game = fxmlLoader.getController(); // récupération du controller
+			game.setTama(selectedJSON.substring(4, selectedJSON.length() - 5));
+			try (FileReader json = new FileReader(getClass().getProtectionDomain().getCodeSource().getLocation().getPath() + selectedJSON)) {
+				game.setJSON(json); // on set le Tamagotchi
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (ParseException e) {
+				throw new RuntimeException(e);
+			}
+			Scene scene = new Scene(stackPane, 768, 576);
+			Stage stageTama = new Stage();
+			stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
+			stageTama.setTitle("Let's play!");
+			stageTama.setScene(scene);
+			stageTama.show();
 		}
-		Scene scene = new Scene(stackPane, 768, 576);
-		Stage stageTama = new Stage();
-		stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
-		stageTama.setTitle("Let's play!");
-		stageTama.setScene(scene);
-		stageTama.show();
 	}
 }

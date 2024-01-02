@@ -59,7 +59,7 @@ public class Saver {
 		saveTama.add(tamaAll);
 		
 		//Write JSON file
-		try (FileWriter file = new FileWriter("save" + typeTama + ".json")) {
+		try (FileWriter file = new FileWriter(Saver.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "/save" + typeTama + ".json")) {
 			//We can write any JSONArray or JSONObject instance to the file
 			file.write(saveTama.toJSONString());
 			file.flush();
@@ -69,8 +69,6 @@ public class Saver {
 	}
 	
 	public static void parseStat(Statistique statistique, JSONObject jsonStat) {
-		System.out.println(jsonStat.get("value").toString());
-		System.out.println(jsonStat.get("lastUpdated").toString());
 		statistique.setValue(((Long) jsonStat.get("value")).intValue());
 		statistique.setLastUpdated((Long) jsonStat.get("lastUpdated"));
 	}
