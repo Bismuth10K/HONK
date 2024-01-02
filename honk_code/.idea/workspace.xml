@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="075518d4-ae6e-47a3-b859-11ee5f6b96c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Chronometer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Chronometer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,9 +87,15 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Application.Menu">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="honk.honk_code.Game" />
+=======
+  <component name="RunManager" selected="Application.HelloApplication">
+    <configuration name="GameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="honk.honk_code.GameController" />
+>>>>>>> Stashed changes
       <module name="honk_code" />
       <extension name="coverage">
         <pattern>
@@ -106,6 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< Updated upstream
     <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="honk.honk_code.Menu" />
       <module name="honk_code" />
@@ -115,27 +132,45 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+=======
+    <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+>>>>>>> Stashed changes
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+<<<<<<< Updated upstream
     <list>
       <item itemvalue="Application.Menu" />
       <item itemvalue="Application.Game" />
       <item itemvalue="Application.HelloApplication" />
     </list>
+=======
+>>>>>>> Stashed changes
     <recent_temporary>
       <list>
         <item itemvalue="Application.Menu" />
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.GameController" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+<<<<<<< Updated upstream
+        <option value="jdk-19.0.2-corretto-19.0.2-f644763e9732-f4b396da" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-29f91840" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-76dd8dae" />
+=======
         <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-920bfa72" />
+>>>>>>> Stashed changes
       </set>
     </attachedChunks>
   </component>
@@ -150,20 +185,14 @@
       <workItem from="1703529968095" duration="778000" />
       <workItem from="1703605744931" duration="10073000" />
       <workItem from="1703617709653" duration="124000" />
+<<<<<<< Updated upstream
       <workItem from="1703696264421" duration="12836000" />
       <workItem from="1703758617229" duration="24173000" />
       <workItem from="1703842015031" duration="686000" />
-<<<<<<< Updated upstream
-      <workItem from="1703864532125" duration="15722000" />
-      <workItem from="1703937136855" duration="9035000" />
-      <workItem from="1703957944157" duration="656000" />
 =======
-      <workItem from="1703852605932" duration="1572000" />
-      <workItem from="1703855118534" duration="4835000" />
-      <workItem from="1703860090835" duration="476000" />
-      <workItem from="1703861658814" duration="2812000" />
-      <workItem from="1703868404240" duration="2843000" />
-      <workItem from="1703871524937" duration="1268000" />
+      <workItem from="1703764596063" duration="2144000" />
+      <workItem from="1703846493864" duration="2310000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

@@ -194,6 +194,8 @@
             <Pane id="TamagotchiScene" prefHeight="284.0" prefWidth="368.0" BorderPane.alignment="CENTER">
                <children>
                   <ImageView id="TamagotchiImage" fx:id="TamaImage" fitHeight="64.0" fitWidth="64.0" layoutX="152.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+                  <ProgressBar id="XpProBar" fx:id="XPBar" prefHeight="11.0" prefWidth="156.0" />
+                  <Label id="LevelLabel" fx:id="textXP" text="Niveau : 01" />
                </children>
             </Pane>
          </center>
