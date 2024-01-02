@@ -24,4 +24,5 @@ hs_err_pid*
 
 *.kra~
 
-.idea/*
+.idea/workspace.xml
+honk_code/.idea/workspace.xml
