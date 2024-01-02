@@ -101,6 +101,13 @@ public class Statistique {
 	}
 	
 	/**
+	 * Setter de lastUpdated.
+	 * @param lastUpdated long : new value
+	 */
+	public void setLastUpdated(long lastUpdated) {
+		this.lastUpdated = lastUpdated;
+	}
+	/**
 	 * Renvoie une valeur en fonction des intervalles de stabilite.
 	 * @return -1 si <= palierMin, 1 si >= palierMax, 0 sinon
 	 */

@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="HONK" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="075518d4-ae6e-47a3-b859-11ee5f6b96c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Chronometer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Chronometer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/honk.fxml" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Saver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Statistique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Statistique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/Tamagotchi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/Tamagotchi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/honk/honk_code/controllerLoadGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/honk/honk_code/load-file.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/honk/honk_code/load-file.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +83,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
@@ -189,10 +192,11 @@
       <workItem from="1703696264421" duration="12836000" />
       <workItem from="1703758617229" duration="24173000" />
       <workItem from="1703842015031" duration="686000" />
-=======
-      <workItem from="1703764596063" duration="2144000" />
-      <workItem from="1703846493864" duration="2310000" />
->>>>>>> Stashed changes
+      <workItem from="1703864532125" duration="15722000" />
+      <workItem from="1703937136855" duration="9035000" />
+      <workItem from="1703957944157" duration="656000" />
+      <workItem from="1703959269426" duration="5295000" />
+      <workItem from="1704038604386" duration="8763000" />
     </task>
     <servers />
   </component>

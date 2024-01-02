@@ -11,9 +11,9 @@
    <children>
       <VBox alignment="TOP_CENTER" layoutX="259.0" layoutY="63.0" prefHeight="450.0" prefWidth="250.0">
          <children>
-            <Button id="FileButton1" alignment="CENTER" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" text="Vide" />
-            <Button id="FileButton2" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" text="Vide" />
-            <Button id="FileButton3" alignment="CENTER" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" text="Vide" />
+            <Button id="FileButton1" alignment="CENTER" mnemonicParsing="false" onAction="#loadGame" prefHeight="150.0" prefWidth="250.0" text="Vide" />
+            <Button id="FileButton2" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="150.0" prefWidth="250.0" text="Vide" />
+            <Button id="FileButton3" alignment="CENTER" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="150.0" prefWidth="250.0" text="Vide" />
          </children>
       </VBox>
       <Label layoutX="303.0" layoutY="14.0" text="Charger Fichier">

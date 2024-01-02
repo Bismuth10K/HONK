@@ -19,7 +19,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -79,8 +81,7 @@ public class Game implements Initializable {
 	private BorderPane OptionsPane;
 	
 	/**
-	 * Game gère tout ce qui concerne le jeu.
-	 * Elle contiendra la maison dans laquelle le joueur évolue, et le Tamagotchi.
+	 * Pour changer le Tamagotchi lorsque la partie est créée.
 	 * @param typeTama String : nom du Tamagotchi choisi par le joueur.
 	 * @throws Exception Au cas où typeTama n'est pas bon.
 	 */
@@ -97,18 +98,6 @@ public class Game implements Initializable {
 				tama = new Lapin();
 				break;
 			case "robot":
-				tama = new Robot();
-				break;
-			case "renard":
-				tama = new Chat();
-				break;
-			case "lynx":
-				tama = new Chien();
-				break;
-			case "lapin de paques":
-				tama = new Lapin();
-				break;
-			case "uwucopter":
 				tama = new Robot();
 				break;
 			default:
@@ -138,6 +127,13 @@ public class Game implements Initializable {
 		}
 	}
 
+	/**
+	 * Pour charger un JSON lorsque la partie est créée
+	 */
+	public void setJSON(FileReader toRead) throws IOException, ParseException {
+		Saver.parse(toRead, chronometer, typeTama, tama);
+	}
+	
 	/**
 	 * Lors de l'appui sur un bouton de direction.
 	 * Pour aller en haut.
