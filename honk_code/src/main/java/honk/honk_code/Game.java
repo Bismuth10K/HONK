@@ -135,13 +135,6 @@ public class Game implements Initializable {
 	}
 	
 	/**
-	 * Pour charger un JSON lorsque la partie est créée
-	 */
-	public void setJSON(FileReader toRead) throws IOException, ParseException {
-		Saver.parse(toRead, chronometer, typeTama, tama);
-	}
-	
-	/**
 	 * Lors de l'appui sur un bouton de direction.
 	 * Pour aller en haut.
 	 * @param event ActionEvent : appui du bouton.
