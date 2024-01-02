@@ -8,11 +8,14 @@ ToolBar {
 }
 
 Label {
-    -fx-border-color: #6110a2;
-    -fx-border-width: 5;
-    -fx-border-radius: 10;
+    -fx-alignment: center;
+    -fx-min-width: 80;
+    -fx-max-height: 24;
+    -fx-pref-width: 80;
+    -fx-pref-height: 24;
     -fx-text-fill: #6110a2;
     -fx-background-color: #9241f3;
+    -fx-background-image: url("textures/Label.png");
 }
 
 Button {
@@ -167,5 +170,5 @@ Button:pressed{
 }
 
 #OptionsPane{
-    -fx-background-image: url("textures/DAWOL.png");
+    -fx-background-image: url("textures/OptionsBg.png");
 }

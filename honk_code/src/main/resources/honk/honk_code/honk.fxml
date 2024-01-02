@@ -50,7 +50,7 @@
    <children>
       <BorderPane id="GamePane" fx:id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;">
          <top>
-            <BorderPane id="StatsPane" prefHeight="113.0" prefWidth="708.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+            <BorderPane id="StatsPane" prefHeight="139.0" prefWidth="768.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
                <left>
                   <VBox alignment="CENTER" prefHeight="94.0" prefWidth="209.0" BorderPane.alignment="CENTER">
                      <children>
@@ -91,7 +91,7 @@
                   </VBox>
                </right>
                <bottom>
-                  <VBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+                  <VBox alignment="TOP_CENTER" prefHeight="38.0" prefWidth="768.0" BorderPane.alignment="CENTER">
                      <children>
                         <ProgressBar id="XpProBar" fx:id="XPPBar" prefHeight="11.0" prefWidth="156.0" />
                         <Label id="LevelLabel" fx:id="textXP" text="Niveau : 01" />
@@ -99,7 +99,7 @@
                   </VBox>
                </bottom>
                <center>
-                  <Text fx:id="textChronometer" strokeType="OUTSIDE" strokeWidth="0.0" text="8:59:60" BorderPane.alignment="CENTER" />
+                  <Text fx:id="textChronometer" strokeType="OUTSIDE" strokeWidth="0.0" text="11:11:11" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
          </top>
@@ -112,7 +112,7 @@
                         <Button id="LeftButton" fx:id="LeftButton" layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionLeft" prefHeight="32.0" prefWidth="32.0" />
                         <Button id="RightButton" fx:id="RightButton" layoutX="146.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionRight" prefHeight="32.0" prefWidth="32.0" />
                         <Button id="DownButton" fx:id="DownButton" layoutX="79.0" layoutY="124.0" mnemonicParsing="false" onAction="#ActionDown" prefHeight="32.0" prefWidth="32.0" />
-                        <Label id="RoomLabel" fx:id="RoomLabel" layoutX="72.0" layoutY="72.0" text="Label" />
+                        <Label id="RoomLabel" fx:id="RoomLabel" layoutX="55.0" layoutY="73.0" text="Label" />
                      </children>
                   </Pane>
                   <Pane prefHeight="177.0" prefWidth="314.0" HBox.hgrow="ALWAYS" />
@@ -194,8 +194,6 @@
             <Pane id="TamagotchiScene" prefHeight="284.0" prefWidth="368.0" BorderPane.alignment="CENTER">
                <children>
                   <ImageView id="TamagotchiImage" fx:id="TamaImage" fitHeight="64.0" fitWidth="64.0" layoutX="152.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
-                  <ProgressBar id="XpProBar" fx:id="XPBar" prefHeight="11.0" prefWidth="156.0" />
-                  <Label id="LevelLabel" fx:id="textXP" text="Niveau : 01" />
                </children>
             </Pane>
          </center>
