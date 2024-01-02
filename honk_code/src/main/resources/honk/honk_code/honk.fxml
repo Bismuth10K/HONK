@@ -44,7 +44,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <StackPane id="HonkPane" fx:id="HonkPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
@@ -198,18 +197,15 @@
                </children>
             </Pane>
          </center>
-         <stylesheets>
-            <URL value="@style.css" />
-         </stylesheets>
       </BorderPane>
-      <BorderPane id="OptionsPane" fx:id="OptionsPane" disable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+      <BorderPane id="OptionsPane" fx:id="OptionsPane" disable="true" focusTraversable="true" maxHeight="400.0" maxWidth="350.0" prefHeight="500.0" prefWidth="350.0" visible="false">
          <center>
             <VBox alignment="CENTER" prefHeight="274.0" prefWidth="489.0" spacing="25.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#saveAndPlay" text="Sauvegarder et continuer" />
-                  <Button mnemonicParsing="false" onAction="#saveAndQuit" text="Sauvegarder et quitter" />
-                  <Button mnemonicParsing="false" onAction="#quit" text="Quitter sans sauvegarder" />
-                  <Button mnemonicParsing="false" onAction="#retour" text="Retour" />
+                  <Button mnemonicParsing="false" onAction="#saveAndPlay" prefHeight="40.0" prefWidth="180.0" text="Sauvegarder et continuer" />
+                  <Button mnemonicParsing="false" onAction="#saveAndQuit" prefHeight="40.0" prefWidth="180.0" text="Sauvegarder et quitter" />
+                  <Button mnemonicParsing="false" onAction="#quit" prefHeight="40.0" prefWidth="180.0" text="Quitter sans sauvegarder" />
+                  <Button id="backButton" mnemonicParsing="false" onAction="#retour" prefHeight="24.0" prefWidth="64.0" text="Retour" />
                </children>
                <BorderPane.margin>
                   <Insets />
@@ -217,12 +213,11 @@
             </VBox>
          </center>
          <top>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Options" translateY="30.0" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
+            <Label text="Options" BorderPane.alignment="CENTER" />
          </top>
       </BorderPane>
    </children>
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
 </StackPane>

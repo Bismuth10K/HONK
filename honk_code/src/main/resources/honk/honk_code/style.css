@@ -22,6 +22,10 @@ Button {
     -fx-background-color: transparent;
 }
 
+Button:pressed{
+    -fx-background-image: url("textures/gauges-and-buttons/MenuButtonPressed.png");
+}
+
 #FileButton1 {
     -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
 }
@@ -160,4 +164,8 @@ Button {
 
 #PauseButton:pressed{
     -fx-background-image: url("textures/gauges-and-buttons/PauseButtonPressed.png");
+}
+
+#OptionsPane{
+    -fx-background-image: url("textures/DAWOL.png");
 }

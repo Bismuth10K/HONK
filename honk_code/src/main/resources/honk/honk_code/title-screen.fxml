@@ -29,6 +29,7 @@
          </children>
       </VBox>
       <ImageView id="TitleImage" fitHeight="150.0" fitWidth="200.0" layoutX="284.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+      <Button id="backButton" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="64.0" text="Retour" />
    </children>
    <stylesheets>
       <URL value="@style.css" />
