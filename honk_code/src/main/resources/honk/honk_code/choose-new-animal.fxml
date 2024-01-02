@@ -64,30 +64,6 @@
                         <RadioButton id="RobotButton" mnemonicParsing="false" prefHeight="64.0" text="Robot" toggleGroup="$animal" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="202.0" prefHeight="64.0" prefWidth="200.0">
-                     <children>
-                        <ImageView id="FoxImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
-                        <RadioButton id="FoxButton" mnemonicParsing="false" prefHeight="64.0" text="Renard" toggleGroup="$animal" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="266.0" prefHeight="64.0" prefWidth="200.0">
-                     <children>
-                        <ImageView id="LynxImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
-                        <RadioButton id="LynxButton" mnemonicParsing="false" prefHeight="64.0" text="Lynx" toggleGroup="$animal" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="330.0" prefHeight="64.0" prefWidth="200.0">
-                     <children>
-                        <ImageView id="EasterImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
-                        <RadioButton id="EasterButton" mnemonicParsing="false" prefHeight="64.0" text="Lapin de Paques" toggleGroup="$animal" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="394.0" prefHeight="64.0" prefWidth="200.0">
-                     <children>
-                        <ImageView id="CopterImage" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true" />
-                        <RadioButton id="CopterButton" mnemonicParsing="false" prefHeight="64.0" text="UwUcopter" toggleGroup="$animal" />
-                     </children>
-                  </HBox>
                </children>
             </VBox>
          </content>

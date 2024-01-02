@@ -1,5 +1,7 @@
 package honk.honk_code;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -18,6 +20,8 @@ abstract class Tamagotchi {
 	private int playerLevel = 0; // niveau actuel du tama
 	private double currentXP = 0; // nombre de XP collectés
 	private double maxXP = 100; // le maximum à atteindre avant de passer au niveau suivant
+	Image sprite;
+	Image spriteEvo;
 	
 	/**
 	 * Super-classe des Tamagotchis.
@@ -40,6 +44,10 @@ abstract class Tamagotchi {
 		// Tous les Tamagotchis peuvent faire l'action promenade depuis le jardin,
 		// donc on l'ajoute dans la super-classe.
 		this.addListeActions("jardin", "promenade");
+	}
+	
+	public Image getSprite() {
+		return sprite;
 	}
 	
 	/**
@@ -218,7 +226,7 @@ abstract class Tamagotchi {
 			
 			if (currentXP >= maxXP) {
 				double reste = currentXP - maxXP;
-				playerLevel++;
+				setPlayerLevel(getPlayerLevel() + 1);
 				currentXP = reste;
 				maxXP *= rateXP;
 			}
@@ -247,6 +255,8 @@ abstract class Tamagotchi {
 	 */
 	public void setPlayerLevel(int playerLevel) {
 		this.playerLevel = playerLevel;
+		if (this.playerLevel >= 11)
+			sprite = spriteEvo;
 	}
 	
 	/**
@@ -308,6 +318,8 @@ class Chat extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
+		sprite = new Image(String.valueOf(getClass().getResource("textures/animals/CatFull.png")));
+		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/EatButton.png")));
 	}
 	
 	public String toString() {
@@ -326,6 +338,8 @@ class Chien extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
+		sprite = new Image(String.valueOf(getClass().getResource("textures/animals/DogFull.png")));
+		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/EatButton.png")));
 	}
 	
 	public String toString() {
@@ -344,6 +358,8 @@ class Lapin extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
+		sprite = new Image(String.valueOf(getClass().getResource("textures/animals/RabbitFull.png")));
+		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/EatButton.png")));
 	}
 	
 	public String toString() {
@@ -362,6 +378,8 @@ class Robot extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("salon", "jouer");
 		this.addListeActions("cuisine", "toilette");
+		sprite = new Image(String.valueOf(getClass().getResource("textures/animals/RobotFull.png")));
+		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/EatButton.png")));
 	}
 	
 	public String toString() {

@@ -29,12 +29,12 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(10000);
+	final Chronometer chronometer = new Chronometer(100);
 	private Tamagotchi tama;
 	private String typeTama;
 	private ArrayList<String> actionsPossibles;
 	private boolean gameIsPaused = false;
-
+	
 	@FXML
 	private ImageView TamaImage;
 	@FXML
@@ -103,30 +103,9 @@ public class Game implements Initializable {
 			default:
 				throw new Exception("Pas un Tamagotchi valide.");
 		}
+		TamaImage.setImage(tama.getSprite());
 	}
-
-	private void changeTamaSprite(){
-		switch(typeTama){
-			case "chat" : TamaImage.setImage(new Image(String.valueOf(Textures.class.getResource("textures/animals/CatFull.png")))); break;
-
-			case "chien" : TamaImage.setImage(new Image(String.valueOf(Textures.class.getResource("textures/animals/DogFull-export.png")))); break;
-
-			case "lapin" : TamaImage.setImage(new Image(String.valueOf(Textures.class.getResource("textures/animals/RabbitFull.png")))); break;
-
-			case "robot" : TamaImage.setImage(new Image(String.valueOf(Textures.class.getResource("textures/animals/RobotFull.png")))); break;
-
-			case "renard" : TamaImage.setImage(null);
-
-			case "lynx" : TamaImage.setImage(null);
-
-			case "lapin de paques" : TamaImage.setImage(null);
-
-			case "uwucopter" : TamaImage.setImage(null);
-
-			default : TamaImage.setImage(null);
-		}
-	}
-
+	
 	/**
 	 * Pour charger un JSON lorsque la partie est créée
 	 */
@@ -257,6 +236,7 @@ public class Game implements Initializable {
 	 */
 	public void pauseGame(ActionEvent event) {
 		gameIsPaused = !gameIsPaused; // on inverse le boolean
+		tama.setPlayerLevel(11);
 		if (gameIsPaused) { // si le jeu s'arrête
 			chronometer.stop();
 			chronometer.addTimeSkip(chronometer.getEndMinusBegin());
@@ -330,18 +310,11 @@ public class Game implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		// booleen pour charger les sprites qu'une fois dans le Timeline
-
+		
 		// Tous les 0.2 seconde, on applique le code qui est dedans.
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
-
-			// SIEG
-			if(TamaImage.getImage() == null){
-				changeTamaSprite();
-				System.out.println("dum");
-			}
-
-
-			if (!tama.isDead() && !gameIsPaused) { // Tant que le tamagotchi n'est pas mort :
+			TamaImage.setImage(tama.getSprite()); // Placer l'image
+			if (!tama.isDead() && !gameIsPaused) { // Tant que le tamagotchi n'est pas mort et que le n'est pas en pause :
 				tama.applyStatsTime(chronometer); // on voit si des statistiques peuvent baisser à cause du temps.
 				updateHearts();
 				

@@ -46,7 +46,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<StackPane id="HonkPane" fx:id="HonkPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
+<StackPane id="HonkPane" fx:id="HonkPane" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
    <children>
       <BorderPane id="GamePane" fx:id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;">
          <top>
@@ -149,7 +149,7 @@
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button id="PauseButton" fx:id="PauseButton" mnemonicParsing="false" onAction="#pauseGame" prefHeight="40.0" prefWidth="40.0" text=":)">
+                              <Button id="PauseButton" fx:id="PauseButton" mnemonicParsing="false" onAction="#pauseGame" prefHeight="40.0" prefWidth="40.0">
                                  <VBox.margin>
                                     <Insets bottom="5.0" top="5.0" />
                                  </VBox.margin></Button>
