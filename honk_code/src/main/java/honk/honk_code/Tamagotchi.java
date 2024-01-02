@@ -1,5 +1,7 @@
 package honk.honk_code;
 
+import javafx.scene.image.Image;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,14 +14,14 @@ abstract class Tamagotchi {
 	private final Poids poi;
 	private final Sante vie;
 	private final Sante bhr;
-	private final double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
-	// Dictionnaire qui va contenir les actions possibles (sous forme d'ArrayList) dans une pièce.
-	HashMap<String, ArrayList<String>> listeActions = new HashMap<String, ArrayList<String>>();
 	// Variables pour le XP
+	private final double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
 	private int playerLevel = 0; // niveau actuel du tama
 	private double currentXP = 0; // nombre de XP collectés
 	private double maxXP = 100; // le maximum à atteindre avant de passer au niveau suivant
-	// private 2DImage sprite;
+	Image spriteTama;
+	// Dictionnaire qui va contenir les actions possibles (sous forme d'ArrayList) dans une pièce.
+	HashMap<String, ArrayList<String>> listeActions = new HashMap<String, ArrayList<String>>();
 	
 	/**
 	 * Super-classe des Tamagotchis.
@@ -286,6 +288,7 @@ class Chat extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
+		spriteTama = Textures.CatTamaSpr;
 	}
 	
 	public String toString() {
@@ -304,6 +307,7 @@ class Chien extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
+		spriteTama = Textures.DogTamaSpr;
 	}
 	
 	public String toString() {
@@ -322,6 +326,7 @@ class Lapin extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
+		spriteTama = Textures.RabbitTamaSpr;
 	}
 	
 	public String toString() {
@@ -340,6 +345,7 @@ class Robot extends Tamagotchi {
 		this.addListeActions("jardin", "jouer");
 		this.addListeActions("salon", "jouer");
 		this.addListeActions("cuisine", "toilette");
+		spriteTama = Textures.RobotTamaSpr;
 	}
 	
 	public String toString() {
