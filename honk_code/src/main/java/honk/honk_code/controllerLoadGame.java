@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.image.Image;
@@ -14,6 +15,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
@@ -39,8 +41,11 @@ public class controllerLoadGame implements Initializable {
 			List<Path> paths = Files.walk(Paths.get(getClass().getProtectionDomain().getCodeSource().getLocation().getPath()), 1) //by mentioning max depth as 1 it will only traverse immediate level
 					.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".json")) // fetch only the files which are ending with .JSON
 					.toList();
-			for (Path path : paths)
-				listView.getItems().add(path.getFileName().toString());
+			if (paths.isEmpty())
+				listView.setPlaceholder(new Label("Pas de sauvegarde"));
+			else
+				for (Path path : paths)
+					listView.getItems().add(path.getFileName().toString());
 			listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,6 +71,29 @@ public class controllerLoadGame implements Initializable {
 		stageTama.setTitle("H.O.N.K.!");
 		stageTama.setScene(scene);
 		stageTama.show();
+	}
+	
+	public void deleteSave(ActionEvent event) {
+		if (listView.getSelectionModel().getSelectedItem() != null) {
+			File selectedJSON = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath() +
+					listView.getSelectionModel().getSelectedItem().toString());
+			selectedJSON.delete();
+			listView.getItems().clear();
+			
+			try {
+				List<Path> paths = Files.walk(Paths.get(getClass().getProtectionDomain().getCodeSource().getLocation().getPath()), 1) //by mentioning max depth as 1 it will only traverse immediate level
+						.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".json")) // fetch only the files which are ending with .JSON
+						.toList();
+				if (paths.isEmpty())
+					listView.setPlaceholder(new Label("Pas de sauvegarde"));
+				else
+					for (Path path : paths)
+						listView.getItems().add(path.getFileName().toString());
+				listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public void loadGame(ActionEvent event) throws Exception {

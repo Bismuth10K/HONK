@@ -18,7 +18,8 @@
          </font>
       </Label>
       <Button id="backButton" fx:id="backButton" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" onAction="#goBack" prefHeight="24.0" prefWidth="64.0" />
-      <Button layoutX="294.0" layoutY="465.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="40.0" prefWidth="180.0" text="Valider" />
+      <Button layoutX="404.0" layoutY="463.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="40.0" prefWidth="180.0" text="Valider" />
+      <Button layoutX="184.0" layoutY="463.0" mnemonicParsing="false" onAction="#deleteSave" prefHeight="40.0" prefWidth="180.0" text="Supprimer" />
       <ListView id="listView" fx:id="listView" editable="true" layoutX="284.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" />
       <VBox id="ChooseSaveBox" alignment="TOP_CENTER" disable="true" layoutX="284.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" visible="false">
          <children>
