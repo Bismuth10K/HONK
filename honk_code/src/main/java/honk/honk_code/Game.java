@@ -30,7 +30,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(100000);
+	final Chronometer chronometer = new Chronometer(1);
 	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
@@ -362,7 +362,7 @@ public class Game implements Initializable {
 				fadeIn.setToValue(1);
 				fadeIn.play();
 				
-				fadeIn.setOnFinished((ActionEvent event ) -> {
+				fadeIn.setOnFinished((ActionEvent event) -> {
 					try {
 						Thread.sleep(1500);
 					} catch (InterruptedException ex) {
