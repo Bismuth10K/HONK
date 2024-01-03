@@ -29,56 +29,32 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(100);
+	final Chronometer chronometer = new Chronometer(1000);
+	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
 	private ArrayList<String> actionsPossibles;
 	private boolean gameIsPaused = false;
-	
 	@FXML
 	private ImageView TamaImage;
 	@FXML
-	private Button WalkButton;
-	@FXML
-	private Button PlayButton;
-	@FXML
-	private Button WashButton;
-	@FXML
-	private Button SleepButton;
-	@FXML
-	private Button EatButton;
+	private Button WalkButton, PlayButton, WashButton, SleepButton, EatButton;
 	@FXML
 	private Text textChronometer;
 	@FXML
 	private Label RoomLabel;
 	@FXML
-	private Button UpButton;
+	private Button UpButton, LeftButton, RightButton, DownButton;
 	@FXML
-	private Button LeftButton;
-	@FXML
-	private Button RightButton;
-	@FXML
-	private Button DownButton;
-	@FXML
-	private ProgressBar HungerPBar;
-	@FXML
-	private ProgressBar SleepPBar;
-	@FXML
-	private ProgressBar HygPBar;
-	@FXML
-	private ProgressBar EnergyPBar;
+	private ProgressBar HungerPBar, SleepPBar, HygPBar, EnergyPBar;
 	@FXML
 	private ProgressBar XPPBar;
 	@FXML
 	private Label textXP;
 	@FXML
-	private ToolBar HappyHeartBar;
+	private ToolBar HappyHeartBar, LifeHeartBar;
 	@FXML
-	private ToolBar LifeHeartBar;
-	@FXML
-	private BorderPane GamePane;
-	@FXML
-	private BorderPane OptionsPane;
+	private BorderPane GamePane, OptionsPane;
 	
 	/**
 	 * Pour changer le Tamagotchi lorsque la partie est créée.
@@ -230,6 +206,25 @@ public class Game implements Initializable {
 	}
 	
 	/**
+	 * Met à jour les progress bars des statistiques globales
+	 * et change la couleur en fonction de la position dans l'intervalle de stabilité.
+	 * Inférieur à palierMin = rouge
+	 * Supérieur à palierMax = vert
+	 * Neutre = bleu
+	 * Pour le poids : vert si neutre, rouge sinon.
+	 */
+	private void updatePBars() {
+		HungerPBar.setProgress(tama.getSat().toPercent());
+		HungerPBar.setStyle("-fx-accent: " + colPBar[tama.getSat().posIntervalleStabilite() + 1]);
+		SleepPBar.setProgress(tama.getRep().toPercent());
+		SleepPBar.setStyle("-fx-accent: " + colPBar[tama.getRep().posIntervalleStabilite() + 1]);
+		HygPBar.setProgress(tama.getHyg().toPercent());
+		HygPBar.setStyle("-fx-accent: " + colPBar[tama.getHyg().posIntervalleStabilite() + 1]);
+		EnergyPBar.setProgress(tama.getNrj().toPercent());
+		EnergyPBar.setStyle("-fx-accent: " + colPBar[tama.getNrj().posIntervalleStabilite() + 1]);
+	}
+	
+	/**
 	 * Lors de l'appui du bouton de pause.
 	 * Si le jeu est en pause : on arrête le chrono, on disable GamePane et on affiche OptionsPane.
 	 * Sinon, on cache OptionsPane et on enable GamePane pour continuer à jouer.
@@ -308,8 +303,6 @@ public class Game implements Initializable {
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-		// booleen pour charger les sprites qu'une fois dans le Timeline
-		
 		// Tous les 0.2 seconde, on applique le code qui est dedans.
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
 			TamaImage.setImage(tama.getSprite()); // Placer l'image
@@ -320,10 +313,7 @@ public class Game implements Initializable {
 				textChronometer.setText(chronometer.toString()); // maj des textes (chronomètre et pièce).
 				RoomLabel.setText(house.getPiece().getPiece());
 				
-				HungerPBar.setProgress(tama.getSat().toPercent()); // maj des progress bars.
-				SleepPBar.setProgress(tama.getRep().toPercent());
-				HygPBar.setProgress(tama.getHyg().toPercent());
-				EnergyPBar.setProgress(tama.getNrj().toPercent());
+				updatePBars();
 				XPPBar.setProgress(tama.XPToPercent());
 				textXP.setText("Niveau : " + tama.getPlayerLevel()); // maj du texte des niveaux.
 				
