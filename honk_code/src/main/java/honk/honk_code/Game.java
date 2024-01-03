@@ -1,5 +1,6 @@
 package honk.honk_code;
 
+import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -29,22 +30,25 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(1000);
+	final Chronometer chronometer = new Chronometer(100000);
 	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
 	private ArrayList<String> actionsPossibles;
 	private boolean gameIsPaused = false;
+	private boolean endGameNotLaunched = false;
 	@FXML
 	private ImageView TamaImage;
 	@FXML
 	private Button WalkButton, PlayButton, WashButton, SleepButton, EatButton;
 	@FXML
+	private Button UpButton, LeftButton, RightButton, DownButton;
+	@FXML
+	private Button RevenirBouton;
+	@FXML
 	private Text textChronometer;
 	@FXML
 	private Label RoomLabel;
-	@FXML
-	private Button UpButton, LeftButton, RightButton, DownButton;
 	@FXML
 	private ProgressBar HungerPBar, SleepPBar, HygPBar, EnergyPBar;
 	@FXML
@@ -55,6 +59,8 @@ public class Game implements Initializable {
 	private ToolBar HappyHeartBar, LifeHeartBar;
 	@FXML
 	private BorderPane GamePane, OptionsPane;
+	@FXML
+	private AnchorPane YouDiedPane;
 	
 	/**
 	 * Pour changer le Tamagotchi lorsque la partie est créée.
@@ -336,13 +342,35 @@ public class Game implements Initializable {
 					WalkButton.setDisable(true);
 					WashButton.setDisable(true);
 				}
-			} else if (tama.isDead()) {
-				EatButton.setDisable(true); // Quand le tamagotchi meurt, on disable les actions.
-				SleepButton.setDisable(true);
-				PlayButton.setDisable(true);
-				WalkButton.setDisable(true);
-				WashButton.setDisable(true);
-				RoomLabel.setText("Lol t mor uwu"); // On met un texte.
+			} else if (tama.isDead() && !endGameNotLaunched) {
+				endGameNotLaunched = true;
+				GamePane.setDisable(true);
+				
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException ex) {
+					throw new RuntimeException(ex);
+				}
+				
+				YouDiedPane.setDisable(false);
+				YouDiedPane.setVisible(true);
+				
+				FadeTransition fadeIn = new FadeTransition();
+				fadeIn.setDuration(Duration.millis(2500));
+				fadeIn.setNode(YouDiedPane);
+				fadeIn.setFromValue(0);
+				fadeIn.setToValue(1);
+				fadeIn.play();
+				
+				fadeIn.setOnFinished((ActionEvent event ) -> {
+					try {
+						Thread.sleep(1500);
+					} catch (InterruptedException ex) {
+						throw new RuntimeException(ex);
+					}
+					RevenirBouton.setDisable(false);
+					RevenirBouton.setVisible(true);
+				});
 			}
 		}));
 		timeline.setCycleCount(Timeline.INDEFINITE);

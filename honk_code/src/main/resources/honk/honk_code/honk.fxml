@@ -38,7 +38,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -216,6 +218,16 @@
             <Label text="Options" BorderPane.alignment="CENTER" />
          </top>
       </BorderPane>
+      <AnchorPane id="YouDiedPane" fx:id="YouDiedPane" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <ImageView fitHeight="172.0" fitWidth="768.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@textures/you_died.png" />
+               </image>
+            </ImageView>
+            <Button id="RevenirBouton" fx:id="RevenirBouton" defaultButton="true" layoutX="325.0" layoutY="342.0" mnemonicParsing="false" onAction="#quit" prefHeight="24.0" prefWidth="119.0" text="Revenir au menu" visible="false" />
+         </children>
+      </AnchorPane>
    </children>
    <stylesheets>
       <URL value="@style.css" />
