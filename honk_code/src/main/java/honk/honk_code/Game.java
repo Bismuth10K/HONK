@@ -30,7 +30,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(1);
+	final Chronometer chronometer = new Chronometer(100000);
 	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
@@ -48,13 +48,11 @@ public class Game implements Initializable {
 	@FXML
 	private Text textChronometer;
 	@FXML
-	private Label RoomLabel;
+	private Label RoomLabel, textXP;
 	@FXML
 	private ProgressBar HungerPBar, SleepPBar, HygPBar, EnergyPBar;
 	@FXML
 	private ProgressBar XPPBar;
-	@FXML
-	private Label textXP;
 	@FXML
 	private ToolBar HappyHeartBar, LifeHeartBar;
 	@FXML
@@ -194,19 +192,19 @@ public class Game implements Initializable {
 			LifeIV = (ImageView) LifeHeartBar.getItems().get(i);
 			HappyIV = (ImageView) HappyHeartBar.getItems().get(i);
 			if (nbLife >= 1)
-				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeFull.png"))));
+				LifeIV.setImage(new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/LifeFull.png"))));
 			else if (nbLife == 0.5)
-				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeHalf.png"))));
+				LifeIV.setImage(new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/LifeHalf.png"))));
 			else
-				LifeIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/LifeEmpty.png"))));
+				LifeIV.setImage(new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/LifeEmpty.png"))));
 			nbLife--;
 			
 			if (nbHappy >= 1)
-				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyFull.png"))));
+				HappyIV.setImage(new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/HappyFull.png"))));
 			else if (nbHappy == 0.5)
-				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyHalf.png"))));
+				HappyIV.setImage(new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/HappyHalf.png"))));
 			else
-				HappyIV.setImage(new Image(String.valueOf(Textures.class.getResource("textures/gauges-and-buttons/HappyEmpty.png"))));
+				HappyIV.setImage(new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/HappyEmpty.png"))));
 			nbHappy--;
 		}
 	}
@@ -265,15 +263,13 @@ public class Game implements Initializable {
 	public void saveAndQuit(ActionEvent event) throws Exception {
 		Saver.save(chronometer, typeTama, tama);
 		
-		final Node source = (Node) event.getSource();
-		final Stage stage = (Stage) source.getScene().getWindow();
-		stage.close();
+		Menu.staticClose(event);
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("title-screen.fxml"));
 		AnchorPane anchorPane = fxmlLoader.load();
 		Scene scene = new Scene(anchorPane, 768, 576);
 		Stage stageTama = new Stage();
-		stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
+		stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
 		stageTama.setTitle("H.O.N.K.!");
 		stageTama.setScene(scene);
 		stageTama.show();
@@ -283,15 +279,13 @@ public class Game implements Initializable {
 	 * Lors de l'appui de quitter sans sauvegarder dans les options.
 	 */
 	public void quit(ActionEvent event) throws IOException {
-		final Node source = (Node) event.getSource();
-		final Stage stage = (Stage) source.getScene().getWindow();
-		stage.close();
+		Menu.staticClose(event);
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("title-screen.fxml"));
 		AnchorPane anchorPane = fxmlLoader.load();
 		Scene scene = new Scene(anchorPane, 768, 576);
 		Stage stageTama = new Stage();
-		stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
+		stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
 		stageTama.setTitle("H.O.N.K.!");
 		stageTama.setScene(scene);
 		stageTama.show();

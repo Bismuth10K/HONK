@@ -15,6 +15,11 @@ import java.io.IOException;
 
 public class Menu extends Application {
 	
+	/**
+	 * Launcher du menu.
+	 * Va lancer launch, qui va lancer start.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Menu menu = new Menu();
 		menu.launcher();
@@ -46,13 +51,21 @@ public class Menu extends Application {
 	}
 	
 	/**
+	 * Fonction appelable de partout pour fermer la fenêtre dont on appelle cette fonction.
+	 * @param event ActionEvent : une action pour déterminer d'où elle vient.
+	 */
+	static void staticClose(ActionEvent event) {
+		final Node source = (Node) event.getSource();
+		final Stage stage = (Stage) source.getScene().getWindow();
+		stage.close();
+	}
+	
+	/**
 	 * Pour fermer cette fenêtre.
 	 * @param event
 	 */
 	public void close(ActionEvent event) {
-		final Node source = (Node) event.getSource();
-		final Stage stage = (Stage) source.getScene().getWindow();
-		stage.close();
+		staticClose(event);
 	}
 	
 	/**
@@ -65,7 +78,7 @@ public class Menu extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("choose-new-animal.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
+		stage.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
 		stage.setTitle("Choisissez votre Tamagotchi !!!");
 		stage.setScene(scene);
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -82,7 +95,7 @@ public class Menu extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("load-file.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
+		stage.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
 		stage.setTitle("Choisissez votre sauvegarde !!!");
 		stage.setScene(scene);
 		stage.initModality(Modality.APPLICATION_MODAL);
@@ -99,7 +112,7 @@ public class Menu extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("load-file.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage = new Stage();
-		stage.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
+		stage.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
 		stage.setTitle("Les options");
 		stage.setScene(scene);
 		stage.initModality(Modality.APPLICATION_MODAL);
