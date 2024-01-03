@@ -17,11 +17,11 @@ abstract class Tamagotchi {
 	private final double rateXP = 1.1; // le taux qui va faire augmenter maxXP à chaque passage de level
 	// Dictionnaire qui va contenir les actions possibles (sous forme d'ArrayList) dans une pièce.
 	HashMap<String, ArrayList<String>> listeActions = new HashMap<String, ArrayList<String>>();
+	Image sprite;
+	Image spriteEvo;
 	private int playerLevel = 0; // niveau actuel du tama
 	private double currentXP = 0; // nombre de XP collectés
 	private double maxXP = 100; // le maximum à atteindre avant de passer au niveau suivant
-	Image sprite;
-	Image spriteEvo;
 	
 	/**
 	 * Super-classe des Tamagotchis.
@@ -255,8 +255,7 @@ abstract class Tamagotchi {
 	 */
 	public void setPlayerLevel(int playerLevel) {
 		this.playerLevel = playerLevel;
-		if (this.playerLevel >= 11)
-			sprite = spriteEvo;
+		if (this.playerLevel >= 11) sprite = spriteEvo;
 	}
 	
 	/**

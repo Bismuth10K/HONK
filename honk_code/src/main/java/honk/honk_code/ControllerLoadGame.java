@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -25,7 +24,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class controllerLoadGame implements Initializable {
+public class ControllerLoadGame implements Initializable {
 	@FXML
 	private ListView listView;
 	
@@ -59,15 +58,13 @@ public class controllerLoadGame implements Initializable {
 	 * @throws IOException
 	 */
 	public void goBack(ActionEvent event) throws IOException {
-		final Node source = (Node) event.getSource();
-		final Stage stage = (Stage) source.getScene().getWindow();
-		stage.close();
+		Menu.staticClose(event);
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("title-screen.fxml"));
 		AnchorPane anchorPane = fxmlLoader.load();
 		Scene scene = new Scene(anchorPane, 768, 576);
 		Stage stageTama = new Stage();
-		stageTama.getIcons().add(new Image(String.valueOf(Textures.class.getResource("textures/logo_honk.png"))));
+		stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
 		stageTama.setTitle("H.O.N.K.!");
 		stageTama.setScene(scene);
 		stageTama.show();
@@ -99,9 +96,7 @@ public class controllerLoadGame implements Initializable {
 	public void loadGame(ActionEvent event) throws Exception {
 		if (listView.getSelectionModel().getSelectedItem() != null) {
 			String selectedJSON = listView.getSelectionModel().getSelectedItem().toString();
-			final Node source = (Node) event.getSource();
-			final Stage stage = (Stage) source.getScene().getWindow();
-			stage.close();
+			Menu.staticClose(event);
 			
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
 			StackPane stackPane = fxmlLoader.load();
