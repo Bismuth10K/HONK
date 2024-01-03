@@ -94,19 +94,20 @@ public class Statistique {
 	}
 	
 	/**
-	 * Pour reset lastUpdated.
-	 */
-	public void resetLastUpdated() {
-		lastUpdated = currentTimeMillis();
-	}
-	
-	/**
 	 * Setter de lastUpdated.
 	 * @param lastUpdated long : new value
 	 */
 	public void setLastUpdated(long lastUpdated) {
 		this.lastUpdated = lastUpdated;
 	}
+	
+	/**
+	 * Pour reset lastUpdated.
+	 */
+	public void resetLastUpdated() {
+		lastUpdated = currentTimeMillis();
+	}
+	
 	/**
 	 * Renvoie une valeur en fonction des intervalles de stabilite.
 	 * @return -1 si <= palierMin, 1 si >= palierMax, 0 sinon
