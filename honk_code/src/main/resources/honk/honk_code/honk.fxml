@@ -215,7 +215,7 @@
             </VBox>
          </center>
          <top>
-            <Label text="Options" BorderPane.alignment="CENTER" />
+            <Label styleClass="TitleLabel" text="Options" BorderPane.alignment="CENTER" />
          </top>
       </BorderPane>
       <AnchorPane id="YouDiedPane" fx:id="YouDiedPane" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false">

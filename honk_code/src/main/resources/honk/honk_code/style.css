@@ -25,9 +25,11 @@ Button {
     -fx-background-color: transparent;
 }
 
+
 Button:pressed{
     -fx-background-image: url("textures/gauges-and-buttons/MenuButtonPressed.png");
 }
+
 
 #FileButton1 {
     -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
@@ -172,3 +174,13 @@ Button:pressed{
 #OptionsPane{
     -fx-background-image: url("textures/OptionsBg.png");
 }
+
+.TitleLabel{
+    -fx-min-width: 224;
+    -fx-min-height: 48;
+    -fx-pref-width: 224;
+    -fx-pref-height: 48;
+    -fx-background-image: url("textures/TitleFrame.png");
+    -fx-background-color: transparent;
+}
+

@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="globalbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.controllerLoadGame">
+<AnchorPane id="globalbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.controllerLoadGame">
    <children>
-      <Label layoutX="344.0" layoutY="14.0" maxHeight="26.0" prefHeight="26.0" prefWidth="359.0" text="Charger Fichier">
+      <Label layoutX="272.0" layoutY="14.0" maxHeight="48.0" minHeight="48.0" prefHeight="48.0" prefWidth="224.0" styleClass="TitleLabel" text="Charger Fichier">
          <font>
             <Font size="21.0" />
          </font>
@@ -20,7 +20,7 @@
       <Button id="backButton" fx:id="backButton" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" onAction="#goBack" prefHeight="24.0" prefWidth="64.0" />
       <Button layoutX="404.0" layoutY="463.0" mnemonicParsing="false" onAction="#loadGame" prefHeight="40.0" prefWidth="180.0" text="Valider" />
       <Button layoutX="184.0" layoutY="463.0" mnemonicParsing="false" onAction="#deleteSave" prefHeight="40.0" prefWidth="180.0" text="Supprimer" />
-      <ListView id="listView" fx:id="listView" editable="true" layoutX="284.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView id="listView" fx:id="listView" editable="true" layoutX="284.0" layoutY="102.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" />
       <VBox id="ChooseSaveBox" alignment="TOP_CENTER" disable="true" layoutX="284.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" visible="false">
          <children>
             <RadioButton mnemonicParsing="false" prefHeight="24.0" prefWidth="150.0" text="Test">
