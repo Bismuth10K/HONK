@@ -37,7 +37,7 @@ public class ControllerLoadGame implements Initializable {
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		// Comment ça va ?
 		try {
-			List<Path> paths = Files.walk(Paths.get(getClass().getProtectionDomain().getCodeSource().getLocation().getPath()), 1) //by mentioning max depth as 1 it will only traverse immediate level
+			List<Path> paths = Files.walk(Paths.get(Saver.locationSave), 1) //by mentioning max depth as 1 it will only traverse immediate level
 					.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".json")) // fetch only the files which are ending with .JSON
 					.toList();
 			if (paths.isEmpty())
@@ -72,13 +72,13 @@ public class ControllerLoadGame implements Initializable {
 	
 	public void deleteSave(ActionEvent event) {
 		if (listView.getSelectionModel().getSelectedItem() != null) {
-			File selectedJSON = new File(getClass().getProtectionDomain().getCodeSource().getLocation().getPath() +
+			File selectedJSON = new File(Saver.locationSave +
 					listView.getSelectionModel().getSelectedItem().toString());
 			selectedJSON.delete();
 			listView.getItems().clear();
 			
 			try {
-				List<Path> paths = Files.walk(Paths.get(getClass().getProtectionDomain().getCodeSource().getLocation().getPath()), 1) //by mentioning max depth as 1 it will only traverse immediate level
+				List<Path> paths = Files.walk(Paths.get(Saver.locationSave), 1) //by mentioning max depth as 1 it will only traverse immediate level
 						.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".json")) // fetch only the files which are ending with .JSON
 						.toList();
 				if (paths.isEmpty())
@@ -102,7 +102,7 @@ public class ControllerLoadGame implements Initializable {
 			StackPane stackPane = fxmlLoader.load();
 			Game game = fxmlLoader.getController(); // récupération du controller
 			game.setTama(selectedJSON.substring(4, selectedJSON.length() - 5));
-			try (FileReader json = new FileReader(getClass().getProtectionDomain().getCodeSource().getLocation().getPath() + selectedJSON)) {
+			try (FileReader json = new FileReader(Saver.locationSave + selectedJSON)) {
 				game.setJSON(json); // on set le Tamagotchi
 			} catch (IOException e) {
 				e.printStackTrace();

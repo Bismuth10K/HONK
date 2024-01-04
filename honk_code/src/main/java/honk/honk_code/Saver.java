@@ -8,8 +8,11 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Saver {
+	public static String locationSave = System.getProperty("user.home") + "/.honk_save/";
 	
 	/**
 	 * Automatisation de la création d'un JSONObjet pour une statistique.
@@ -31,7 +34,6 @@ public class Saver {
 	 * @param chronometer Chronometer : le chronomètre pour savoir combien de temps s'est écoulé depuis le début du jeu.
 	 * @param typeTama    String : pour savoir de quel type de Tamagotchi, il s'agit.
 	 * @param tamagotchi  Tamagotchi : pour récupérer son XP et les valeurs de ses statistiques.
-	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
 	public static void save(Chronometer chronometer, String typeTama, Tamagotchi tamagotchi) throws Exception {
@@ -58,8 +60,9 @@ public class Saver {
 		JSONArray saveTama = new JSONArray();
 		saveTama.add(tamaAll);
 		
+		Files.createDirectories(Paths.get(locationSave));
 		//Write JSON file
-		try (FileWriter file = new FileWriter(Saver.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "/save" + typeTama + ".json")) {
+		try (FileWriter file = new FileWriter(locationSave + "save" + typeTama + ".json")) {
 			//We can write any JSONArray or JSONObject instance to the file
 			file.write(saveTama.toJSONString());
 			file.flush();
@@ -68,12 +71,23 @@ public class Saver {
 		}
 	}
 	
+	/**
+	 * Parser de stats.
+	 * @param statistique Statistique : une des statistiques du Tamagotchi où on va mettre les résultats de jsonStat.
+	 * @param jsonStat JSONObject : un objet de la sauvegarde JSON où les valeurs ont été enregistréees.
+	 */
 	public static void parseStat(Statistique statistique, JSONObject jsonStat) {
 		statistique.setValue(((Long) jsonStat.get("value")).intValue());
 		statistique.setLastUpdated((Long) jsonStat.get("lastUpdated"));
 	}
 	
-	public static void parse(FileReader json, Chronometer chronometer, String typeTama, Tamagotchi tamagotchi) throws IOException, ParseException {
+	/**
+	 * Parser du fichier JSON.
+	 * @param json FileReader : fichier json à lire.
+	 * @param chronometer Chronometer : chronomètre à modifier.
+	 * @param tamagotchi Tamagotchi : tamagotchi à modifier.
+	 */
+	public static void parse(FileReader json, Chronometer chronometer, Tamagotchi tamagotchi) throws IOException, ParseException {
 		JSONParser jsonParser = new JSONParser();
 		//Read JSON file
 		JSONArray saveTama = (JSONArray) jsonParser.parse(json);
