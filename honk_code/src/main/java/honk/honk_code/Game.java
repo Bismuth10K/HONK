@@ -7,7 +7,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -30,7 +29,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(1);
+	final Chronometer chronometer = new Chronometer(100000);
 	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
@@ -46,11 +45,11 @@ public class Game implements Initializable {
 	@FXML
 	private Button RevenirBouton;
 	@FXML
-	private Text textChronometer;
+	private Label textChronometer;
 	@FXML
 	private Label RoomLabel, textXP;
 	@FXML
-	private ProgressBar HungerPBar, SleepPBar, HygPBar, EnergyPBar;
+	private ProgressBar HungerPBar, SleepPBar, HygPBar, EnergyPBar, PoiPBar;
 	@FXML
 	private ProgressBar XPPBar;
 	@FXML
@@ -226,6 +225,8 @@ public class Game implements Initializable {
 		HygPBar.setStyle("-fx-accent: " + colPBar[tama.getHyg().posIntervalleStabilite() + 1]);
 		EnergyPBar.setProgress(tama.getNrj().toPercent());
 		EnergyPBar.setStyle("-fx-accent: " + colPBar[tama.getNrj().posIntervalleStabilite() + 1]);
+		PoiPBar.setProgress(tama.getPoi().toPercent());
+		PoiPBar.setStyle("-fx-accent: " + colPBar[(tama.getPoi().posIntervalleStabilite() == 0 ? 2 : 0)]);
 	}
 	
 	/**
