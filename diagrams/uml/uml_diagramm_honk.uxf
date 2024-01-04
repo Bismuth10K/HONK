@@ -2,34 +2,10 @@
 <diagram program="umlet" version="15.1">
   <zoom_level>8</zoom_level>
   <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>1448</x>
-      <y>640</y>
-      <w>400</w>
-      <h>184</h>
-    </coordinates>
-    <panel_attributes>bg=orange
-TODO
-
-Facultatif :
-météo
-
-Done :
-Gestion sauvegarde
-Graphique de base
-Classes animaux (normalement)
-Classe game (save, timer)
-Classes pièces + classe maison (penser à fonction pour savoir qui agit où)
-Classes stats + actions
-Classe interface</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>416</y>
+      <x>456</x>
+      <y>400</y>
       <w>136</w>
       <h>416</h>
     </coordinates>
@@ -71,8 +47,8 @@ Tamagotchi (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>304</x>
-      <y>416</y>
+      <x>280</x>
+      <y>400</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -85,8 +61,8 @@ Chien
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>304</x>
-      <y>480</y>
+      <x>280</x>
+      <y>464</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -99,8 +75,8 @@ Chat
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>304</x>
-      <y>544</y>
+      <x>280</x>
+      <y>528</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -113,8 +89,8 @@ Lapin
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>304</x>
-      <y>608</y>
+      <x>280</x>
+      <y>592</y>
       <w>128</w>
       <h>56</h>
     </coordinates>
@@ -127,8 +103,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>416</y>
+      <x>400</x>
+      <y>400</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -138,8 +114,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>480</y>
+      <x>400</x>
+      <y>464</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -149,8 +125,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>544</y>
+      <x>400</x>
+      <y>528</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -160,8 +136,8 @@ Robot
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>608</y>
+      <x>400</x>
+      <y>592</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -171,8 +147,8 @@ Robot
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>776</y>
+      <x>776</x>
+      <y>760</y>
       <w>96</w>
       <h>80</h>
     </coordinates>
@@ -188,8 +164,8 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>968</x>
-      <y>792</y>
+      <x>944</x>
+      <y>776</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -199,8 +175,8 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>968</x>
-      <y>832</y>
+      <x>944</x>
+      <y>816</y>
       <w>72</w>
       <h>24</h>
     </coordinates>
@@ -210,8 +186,8 @@ Jauge (V)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>888</x>
-      <y>792</y>
+      <x>864</x>
+      <y>776</y>
       <w>96</w>
       <h>24</h>
     </coordinates>
@@ -221,8 +197,8 @@ Jauge (V)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>888</x>
-      <y>832</y>
+      <x>864</x>
+      <y>816</y>
       <w>96</w>
       <h>24</h>
     </coordinates>
@@ -232,8 +208,8 @@ Jauge (V)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>872</x>
-      <y>536</y>
+      <x>848</x>
+      <y>520</y>
       <w>120</w>
       <h>192</h>
     </coordinates>
@@ -258,8 +234,8 @@ Statistiques (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1008</x>
-      <y>688</y>
+      <x>984</x>
+      <y>672</y>
       <w>128</w>
       <h>64</h>
     </coordinates>
@@ -274,8 +250,8 @@ Poids
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1008</x>
-      <y>616</y>
+      <x>984</x>
+      <y>600</y>
       <w>128</w>
       <h>64</h>
     </coordinates>
@@ -290,8 +266,8 @@ Sante
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>984</x>
-      <y>616</y>
+      <x>960</x>
+      <y>600</y>
       <w>40</w>
       <h>24</h>
     </coordinates>
@@ -301,8 +277,8 @@ Sante
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>368</y>
+      <x>952</x>
+      <y>352</y>
       <w>112</w>
       <h>136</h>
     </coordinates>
@@ -322,8 +298,8 @@ Sante
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1192</x>
-      <y>304</y>
+      <x>1168</x>
+      <y>288</y>
       <w>96</w>
       <h>144</h>
     </coordinates>
@@ -344,8 +320,8 @@ Piece (M)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>736</x>
-      <y>376</y>
+      <x>712</x>
+      <y>360</y>
       <w>168</w>
       <h>96</h>
     </coordinates>
@@ -363,8 +339,8 @@ Game (C)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>776</x>
-      <y>96</y>
+      <x>752</x>
+      <y>80</y>
       <w>192</w>
       <h>256</h>
     </coordinates>
@@ -390,8 +366,8 @@ Menu (C)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1032</x>
-      <y>96</y>
+      <x>1008</x>
+      <y>80</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -401,8 +377,8 @@ Menu (C)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1032</x>
-      <y>128</y>
+      <x>1008</x>
+      <y>112</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -412,8 +388,8 @@ Menu (C)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>608</x>
-      <y>544</y>
+      <x>584</x>
+      <y>528</y>
       <w>280</w>
       <h>48</h>
     </coordinates>
@@ -429,8 +405,8 @@ Un Tamagotchi a besoin de
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1080</x>
-      <y>368</y>
+      <x>1056</x>
+      <y>352</y>
       <w>128</w>
       <h>32</h>
     </coordinates>
@@ -442,8 +418,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
-      <y>96</y>
+      <x>936</x>
+      <y>80</y>
       <w>88</w>
       <h>32</h>
     </coordinates>
@@ -455,8 +431,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>816</x>
-      <y>720</y>
+      <x>792</x>
+      <y>704</y>
       <w>152</w>
       <h>72</h>
     </coordinates>
@@ -472,8 +448,8 @@ utilisent une jauge normale</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1032</x>
-      <y>680</y>
+      <x>1008</x>
+      <y>664</y>
       <w>224</w>
       <h>160</h>
     </coordinates>
@@ -492,8 +468,8 @@ les trois états.
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1032</x>
-      <y>608</y>
+      <x>1008</x>
+      <y>592</y>
       <w>360</w>
       <h>256</h>
     </coordinates>
@@ -510,8 +486,8 @@ constituée de coeurs.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>984</x>
-      <y>688</y>
+      <x>960</x>
+      <y>672</y>
       <w>40</w>
       <h>24</h>
     </coordinates>
@@ -521,8 +497,8 @@ constituée de coeurs.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
-      <y>128</y>
+      <x>936</x>
+      <y>112</y>
       <w>88</w>
       <h>32</h>
     </coordinates>
@@ -534,8 +510,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>608</x>
-      <y>416</y>
+      <x>584</x>
+      <y>400</y>
       <w>144</w>
       <h>40</h>
     </coordinates>
@@ -547,8 +523,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>896</x>
-      <y>384</y>
+      <x>872</x>
+      <y>368</y>
       <w>96</w>
       <h>40</h>
     </coordinates>
@@ -561,8 +537,8 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>656</x>
-      <y>96</y>
+      <x>632</x>
+      <y>80</y>
       <w>56</w>
       <h>40</h>
     </coordinates>
@@ -574,8 +550,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>704</x>
-      <y>96</y>
+      <x>680</x>
+      <y>80</y>
       <w>88</w>
       <h>24</h>
     </coordinates>
@@ -585,8 +561,8 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1032</x>
-      <y>160</y>
+      <x>1008</x>
+      <y>144</y>
       <w>80</w>
       <h>24</h>
     </coordinates>
@@ -596,8 +572,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>960</x>
-      <y>160</y>
+      <x>936</x>
+      <y>144</y>
       <w>88</w>
       <h>32</h>
     </coordinates>
@@ -609,8 +585,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>864</x>
-      <y>344</y>
+      <x>840</x>
+      <y>328</y>
       <w>24</w>
       <h>48</h>
     </coordinates>
@@ -620,8 +596,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>208</y>
+      <x>496</x>
+      <y>192</y>
       <w>96</w>
       <h>192</h>
     </coordinates>
@@ -646,8 +622,8 @@ Chronometer (M)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>608</x>
-      <y>328</y>
+      <x>584</x>
+      <y>312</y>
       <w>144</w>
       <h>80</h>
     </coordinates>
@@ -659,8 +635,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1080</x>
-      <y>456</y>
+      <x>1056</x>
+      <y>440</y>
       <w>88</w>
       <h>32</h>
     </coordinates>
@@ -672,8 +648,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1152</x>
-      <y>456</y>
+      <x>1128</x>
+      <y>440</y>
       <w>136</w>
       <h>96</h>
     </coordinates>

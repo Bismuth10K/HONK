@@ -1,0 +1,34 @@
+Ce qu'il manque :
+
+- Sprites :
+    [ ] Pièces
+    [-] Evolutions (voir si on peut pas mettre les images directement dans Tamagotchi)
+    [-] CSS choix tamagotchi
+
+- Classes :
+    [ ] Tests unitaires
+    [-] Ouverture par rapport à n'importe quel save
+    [-] Suppression save
+
+- FXML
+    [-] Image lors de la mort du tamagotchi (à rajouter dans honk.fxml)
+    [-] honk.fxml texte et PBar en trop
+    [-] load-file.fxml changer pour une liste de tous les jsons
+
+- Rendus livrables :
+Un seul document .pdf, max 10MB, contenant les documents suivants
+(la première page obligatoirement ; pour les autres documents, SEULEMENT si il y a eu de modifications par rapport à la version soumise au premier livrable ; pas tous les documents, mais seulement les documents dans lesquels il y a eu des changements ; il faut marquer les modifications, dans le texte et sur les images, de préférence avec une même couleur lisible - par exemple violet - mais pas rouge qui restera réservée au correcteur) :
+
+    [ ] Une page avec le nom de l'équipe et les prénoms et noms de tous les membres, toutes les responsabilités de chaque membre (chef de projet inclus), ainsi que la répartition du travail dans l'équipe sous forme de listes de taches.
+    [ ] Tableau de suivi de l'avancement du projet, idéalement avec un diagramme Gantt, etc,
+    [ ] Diagramme de cas d'utilisation,
+    [ ] Cas d’utilisation (min. 3),
+    [ ] Cas de test (min. 3 x 5 scenarii = min. 15 scenarii test),
+    [ ] Diagramme UML de classes,
+    [ ] Diagrammes de séquence (min. 3) (pour les scenarii des cas d'utilisation décrits à l'étape précédente),
+    [ ] Schéma conceptuel des données persistantes.
+
+Une seule archive .zip, max 100MB, dont le nom doit être le nom de l'équipe (et rien d'autre). Cette archive ne doit pas contenir des fichiers  - .class, etc - ou des bibliothèques - jdbc, etc - ou d'autres dépendances, mais juste :
+
+    [ ] Code source, test unitaires et un fichier readme.txt (avec le nom de l'équipe et les prénoms et noms des membres de l'équipe).
+    [ ] jar executable avec le jeu
