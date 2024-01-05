@@ -32,6 +32,18 @@ Button:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/MenuButtonPressed.png");
 }
 
+ToggleButton{
+    -fx-background-image: url("textures/gauges-and-buttons/ToggleButtonOn.png");
+}
+
+ToggleButton:selected{
+    -fx-background-image: url("textures/gauges-and-buttons/ToggleButtonOff.png");
+}
+
+ToggleButton:pressed{
+    -fx-background-image: url("textures/gauges-and-buttons/ToggleButtonPressed.png");
+}
+
 
 #StatsPane {
     -fx-background-image: url("textures/DAWOL.png");

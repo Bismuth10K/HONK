@@ -222,7 +222,7 @@
                   <Button mnemonicParsing="false" onAction="#quit" prefHeight="40.0" prefWidth="180.0" text="Quitter sans sauvegarder" />
                   <HBox alignment="CENTER">
                      <children>
-                        <ToggleButton mnemonicParsing="false" text="On" />
+                        <ToggleButton fx:id="AutoSaveToggle" mnemonicParsing="false" onAction="#setActivateAutoSave" prefHeight="24.0" prefWidth="48.0" text="On" />
                         <Label text="Sauv.Auto." />
                      </children>
                   </HBox>
