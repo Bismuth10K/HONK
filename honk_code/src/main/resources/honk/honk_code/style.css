@@ -24,23 +24,14 @@ Button {
     -fx-background-color: transparent;
 }
 
+Button:hover{
+    -fx-background-image: url("textures/gauges-and-buttons/MenuButtonHover.png");
+}
 
 Button:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/MenuButtonPressed.png");
 }
 
-
-#FileButton1 {
-    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
-}
-
-#FileButton2 {
-    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
-}
-
-#FileButton3 {
-    -fx-background-image: url("textures/gauges-and-buttons/CreatedSaveButton.png");
-}
 
 #StatsPane {
     -fx-background-image: url("textures/DAWOL.png");
@@ -54,12 +45,20 @@ Button:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/EatButton.png");
 }
 
+#EatButton:hover{
+    -fx-background-image: url("textures/gauges-and-buttons/EatButtonHover.png");
+}
+
 #EatButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/EatButtonPressed.png");
 }
 
 #SleepButton {
     -fx-background-image: url("textures/gauges-and-buttons/SleepButton.png");
+}
+
+#SleepButton:hover{
+    -fx-background-image: url("textures/gauges-and-buttons/SleepButtonHover.png");
 }
 
 #SleepButton:pressed {
@@ -70,6 +69,10 @@ Button:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/ToyButton.png");
 }
 
+#PlayButton:hover{
+    -fx-background-image: url("textures/gauges-and-buttons/ToyButtonHover.png");
+}
+
 #PlayButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/ToyButtonPressed.png");
 }
@@ -78,12 +81,20 @@ Button:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/WalkButton.png");
 }
 
+#WalkButton:hover{
+    -fx-background-image: url("textures/gauges-and-buttons/WalkButtonHover.png");
+}
+
 #WalkButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/WalkButtonPressed.png");
 }
 
 #WashButton {
     -fx-background-image: url("textures/gauges-and-buttons/WashButton.png");
+}
+
+#WashButton:hover{
+    -fx-background-image: url("textures/gauges-and-buttons/WashButtonHover.png");
 }
 
 #WashButton:pressed {
@@ -158,12 +169,20 @@ Button:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/ReturnButton.png");
 }
 
+#backButton:hover{
+    -fx-background-image: url("textures/gauges-and-buttons/ReturnButtonHover.png");
+}
+
 #backButton:pressed {
     -fx-background-image: url("textures/gauges-and-buttons/ReturnButtonPressed.png");
 }
 
 #PauseButton {
     -fx-background-image: url("textures/gauges-and-buttons/PauseButton.png");
+}
+
+#EatButton:hover{
+    -fx-background-image: url("textures/gauges-and-buttons/PauseButtonHover.png");
 }
 
 #PauseButton:pressed {

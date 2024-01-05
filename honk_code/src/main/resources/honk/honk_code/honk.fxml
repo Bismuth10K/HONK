@@ -37,6 +37,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -47,7 +48,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane id="HonkPane" fx:id="HonkPane" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
+<StackPane id="HonkPane" fx:id="HonkPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
    <children>
       <BorderPane id="GamePane" fx:id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;">
          <top>
@@ -212,14 +213,19 @@
             </Pane>
          </center>
       </BorderPane>
-      <BorderPane id="OptionsPane" fx:id="OptionsPane" disable="true" focusTraversable="true" maxHeight="400.0" maxWidth="350.0" prefHeight="500.0" prefWidth="350.0" visible="false">
+      <BorderPane id="OptionsPane" fx:id="OptionsPane" focusTraversable="true" maxHeight="400.0" maxWidth="350.0" prefHeight="500.0" prefWidth="350.0" visible="false">
          <center>
             <VBox alignment="CENTER" prefHeight="274.0" prefWidth="489.0" spacing="25.0" BorderPane.alignment="CENTER">
                <children>
                   <Button mnemonicParsing="false" onAction="#saveAndPlay" prefHeight="40.0" prefWidth="180.0" text="Sauvegarder et continuer" />
                   <Button mnemonicParsing="false" onAction="#saveAndQuit" prefHeight="40.0" prefWidth="180.0" text="Sauvegarder et quitter" />
                   <Button mnemonicParsing="false" onAction="#quit" prefHeight="40.0" prefWidth="180.0" text="Quitter sans sauvegarder" />
-                  <Button id="backButton" mnemonicParsing="false" onAction="#retour" prefHeight="24.0" prefWidth="64.0" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ToggleButton mnemonicParsing="false" text="On" />
+                        <Label text="Sauv.Auto." />
+                     </children>
+                  </HBox>
                </children>
                <BorderPane.margin>
                   <Insets />
@@ -227,8 +233,11 @@
             </VBox>
          </center>
          <top>
-            <Label styleClass="TitleLabel" text="Options" BorderPane.alignment="CENTER" />
+            <Label styleClass="TitleLabel" text="Pause" BorderPane.alignment="CENTER" />
          </top>
+         <bottom>
+            <Button id="backButton" mnemonicParsing="false" onAction="#retour" prefHeight="24.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
+         </bottom>
       </BorderPane>
       <AnchorPane id="YouDiedPane" fx:id="YouDiedPane" disable="true" opacity="0.0" prefHeight="200.0" prefWidth="200.0" visible="false">
          <children>

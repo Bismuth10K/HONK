@@ -29,7 +29,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(100000);
+	final Chronometer chronometer = new Chronometer(1000);
 	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
