@@ -1,8 +1,10 @@
 package honk.honk_code;
 
+import javafx.scene.image.Image;
+
 public class Piece {
 	private final String nom;
-	// 2DImage sprite;
+	private Image spritePiece;
 	private Piece haut;
 	private Piece bas;
 	private Piece gauche;
@@ -72,5 +74,13 @@ public class Piece {
 	 */
 	public Piece getDroite() {
 		return droite;
+	}
+	
+	/**
+	 * Renvoie le sprite de la pièce.
+	 * @return Image : sprite de la pièce.
+	 */
+	public Image getSpritePiece() {
+		return spritePiece;
 	}
 }
