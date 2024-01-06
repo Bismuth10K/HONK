@@ -46,8 +46,15 @@ abstract class Tamagotchi {
 		this.addListeActions("jardin", "promenade");
 	}
 	
+	/**
+	 * Getter sprite
+	 * @return Image : sprite si niveau < 11, spriteEvo sinon.
+	 */
 	public Image getSprite() {
-		return sprite;
+		if (playerLevel < 11)
+			return sprite;
+		else
+			return spriteEvo;
 	}
 	
 	/**
@@ -226,7 +233,7 @@ abstract class Tamagotchi {
 			
 			if (currentXP >= maxXP) {
 				double reste = currentXP - maxXP;
-				setPlayerLevel(getPlayerLevel() + 1);
+				playerLevel++;
 				currentXP = reste;
 				maxXP *= rateXP;
 			}
@@ -255,7 +262,6 @@ abstract class Tamagotchi {
 	 */
 	public void setPlayerLevel(int playerLevel) {
 		this.playerLevel = playerLevel;
-		if (this.playerLevel >= 11) sprite = spriteEvo;
 	}
 	
 	/**

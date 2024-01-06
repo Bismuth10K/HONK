@@ -13,7 +13,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.json.simple.parser.ParseException;
@@ -26,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(100);
+	final Chronometer chronometer = new Chronometer(1);
 	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
@@ -58,8 +57,8 @@ public class Game implements Initializable {
 	private AnchorPane YouDiedPane;
 	@FXML
 	private ToggleButton AutoSaveToggle;
-	private int waitTenMinutes = 1; // ca sert à s'incrémenter dans le Timeline pour effectuer une action tout les x temps
-	//oui c'est de la malveillance
+	private int waitTenMinutes = 1; // s'incrémente dans la Timeline pour effectuer une action tous les x temps.
+	
 	/**
 	 * Pour changer le Tamagotchi lorsque la partie est créée.
 	 * @param typeTama String : nom du Tamagotchi choisi par le joueur.
@@ -292,21 +291,21 @@ public class Game implements Initializable {
 		stageTama.setScene(scene);
 		stageTama.show();
 	}
-
+	
 	/**
 	 * Setter pour l'attribut d'activation de la sauvegarde automatique.
 	 */
-	public void setActivateAutoSave(ActionEvent event){
-		if(activateAutoSave){
+	public void setActivateAutoSave(ActionEvent event) {
+		if (activateAutoSave) {
 			activateAutoSave = false;
 			AutoSaveToggle.setText("Off");
-		}else{
+		} else {
 			activateAutoSave = true;
 			AutoSaveToggle.setText("On");
 		}
 	}
-
-
+	
+	
 	/**
 	 * Lors de l'appui de retour, pour retourner au jeu.
 	 */
@@ -320,7 +319,6 @@ public class Game implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		// Tous les 0.2 seconde, on applique le code qui est dedans.
-
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
 			TamaImage.setImage(tama.getSprite()); // Placer l'image
 			if (!tama.isDead() && !gameIsPaused) { // Tant que le tamagotchi n'est pas mort et que le n'est pas en pause :
@@ -353,19 +351,18 @@ public class Game implements Initializable {
 					WalkButton.setDisable(true);
 					WashButton.setDisable(true);
 				}
-
+				
 				// AUTO SAVE
-				if(waitTenMinutes == 300 && activateAutoSave){
-                    try {
-                        Saver.save(chronometer,typeTama,tama);
-						System.out.println("Malveillance MAX");
-                    } catch (Exception ex) {
-                        throw new RuntimeException(ex);
-                    }
+				if (activateAutoSave && waitTenMinutes == 3000) {
+					try {
+						Saver.save(chronometer, typeTama, tama);
+					} catch (Exception ex) {
+						throw new RuntimeException(ex);
+					}
 					waitTenMinutes = 0;
-                }
+				}
 				waitTenMinutes++;
-
+				
 			} else if (tama.isDead() && !endGameNotLaunched) {
 				endGameNotLaunched = true;
 				GamePane.setDisable(true);
