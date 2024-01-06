@@ -193,7 +193,7 @@ ToggleButton:pressed{
     -fx-background-image: url("textures/gauges-and-buttons/PauseButton.png");
 }
 
-#EatButton:hover{
+#PauseButton:hover{
     -fx-background-image: url("textures/gauges-and-buttons/PauseButtonHover.png");
 }
 
