@@ -22,11 +22,6 @@
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button id="options" layoutX="16.0" layoutY="154.0" mnemonicParsing="false" onAction="#createOptions" prefHeight="40.0" prefWidth="180.0" text="Options">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </Button>
          </children>
       </VBox>
       <ImageView id="TitleImage" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
