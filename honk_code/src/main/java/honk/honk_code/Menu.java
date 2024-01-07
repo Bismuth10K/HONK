@@ -27,9 +27,7 @@ public class Menu extends Application {
 	/**
 	 * Pour lancer l'interface graphique.
 	 */
-	public void launcher() {
-		launch();
-	}
+
 	
 	/**
 	 * Quand on lance launch, cette fonction se lance.
