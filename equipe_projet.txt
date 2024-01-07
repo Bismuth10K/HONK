@@ -3,10 +3,8 @@ Rôles principaux :
     Analyste de besoins : Marius
     Architecte logicielle : Ewen
     Dev : Ewen
-    Testeur : Jean
-    QA / Équilibrage : Jean
+    Testeur : Ewen
+    QA / Équilibrage : Marius
 
 Autres :
     graphiste : Marius
-
-langage = Java
