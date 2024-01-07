@@ -24,7 +24,6 @@ public class Menu extends Application {
 	public static void main() {
 =======
 	public static void main(String[] args) {
->>>>>>> Stashed changes
 		launch();
 	}
 	
