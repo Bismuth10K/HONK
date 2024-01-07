@@ -1,12 +1,12 @@
 Ce qu'il manque :
 
 - Sprites :
-    [-] Pièces
+    [x] Pièces
     [-] Evolutions (voir si on peut pas mettre les images directement dans Tamagotchi)
     [-] CSS choix tamagotchi
 
 - Classes :
-    [ ] Tests unitaires
+    [~] Tests unitaires
     [-] Ouverture par rapport à n'importe quel save
     [-] Suppression save
 
