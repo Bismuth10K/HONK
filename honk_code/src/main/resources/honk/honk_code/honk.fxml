@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane id="HonkPane" fx:id="HonkPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Game">
+   <children>
+      <BorderPane id="GamePane" fx:id="GamePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;">
+         <top>
+            <BorderPane id="StatsPane" prefHeight="139.0" prefWidth="768.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+               <left>
+                  <VBox alignment="CENTER" prefHeight="94.0" prefWidth="209.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label id="HungerBarLabel" text="Satiété" />
+                        <ProgressBar id="HungerProBar" fx:id="HungerPBar" prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </ProgressBar>
+                        <ProgressBar id="SleepProBar" fx:id="SleepPBar" prefWidth="200.0">
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </ProgressBar>
+                        <Label id="SleepBarLabel" text="Repos" />
+                     </children>
+                  </VBox>
+               </left>
+               <right>
+                  <VBox alignment="CENTER" prefHeight="121.0" prefWidth="209.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label id="HygienaBarLabel" text="Hygiène" />
+                        <ProgressBar id="HygienaProBar" fx:id="HygPBar" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </ProgressBar>
+                        <ProgressBar id="EnergyProBar" fx:id="EnergyPBar" prefWidth="200.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </ProgressBar>
+                        <Label id="EnergyBarLabel" text="Énergie" />
+                     </children>
+                  </VBox>
+               </right>
+               <bottom>
+                  <VBox alignment="TOP_CENTER" prefHeight="38.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ProgressBar id="XpProBar" fx:id="XPPBar" prefHeight="11.0" prefWidth="156.0" />
+                        <Label id="LevelLabel" fx:id="textXP" text="Niveau : 01" />
+                     </children>
+                  </VBox>
+               </bottom>
+               <center>
+                  <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label id="HygienaBarLabel" text="Poids" translateY="-12.0" />
+                        <ProgressBar id="HygienaProBar" fx:id="PoiPBar" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" translateY="-12.0">
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
+                        </ProgressBar>
+                        <Label fx:id="textChronometer" text="11:11:11" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </top>
+         <bottom>
+            <HBox id="ButtonsPane" prefHeight="166.0" prefWidth="768.0" style="-fx-background-color: gray;" BorderPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <Pane id="MoveButtonsPane" prefHeight="170.0" prefWidth="201.0">
+                     <children>
+                        <Button id="UpButton" fx:id="UpButton" layoutX="79.0" layoutY="14.0" mnemonicParsing="false" onAction="#ActionUp" prefHeight="32.0" prefWidth="32.0" />
+                        <Button id="LeftButton" fx:id="LeftButton" layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionLeft" prefHeight="32.0" prefWidth="32.0" />
+                        <Button id="RightButton" fx:id="RightButton" layoutX="146.0" layoutY="69.0" mnemonicParsing="false" onAction="#ActionRight" prefHeight="32.0" prefWidth="32.0" />
+                        <Button id="DownButton" fx:id="DownButton" layoutX="79.0" layoutY="124.0" mnemonicParsing="false" onAction="#ActionDown" prefHeight="32.0" prefWidth="32.0" />
+                        <Label id="RoomLabel" fx:id="RoomLabel" layoutX="55.0" layoutY="73.0" text="Label" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="177.0" prefWidth="314.0" HBox.hgrow="ALWAYS" />
+                  <HBox>
+                     <children>
+                        <VBox id="ActionButtonsPane" alignment="TOP_CENTER" prefHeight="132.0" prefWidth="131.0">
+                           <children>
+                              <Button id="EatButton" fx:id="EatButton" contentDisplay="CENTER" layoutX="56.0" layoutY="76.0" mnemonicParsing="false" onAction="#ActionEat" prefHeight="40.0" prefWidth="100.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button id="SleepButton" fx:id="SleepButton" mnemonicParsing="false" onAction="#ActionSleep" prefHeight="40.0" prefWidth="100.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button id="WashButton" fx:id="WashButton" mnemonicParsing="false" onAction="#ActionWash" prefHeight="40.0" prefWidth="100.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="132.0" prefWidth="131.0">
+                           <children>
+                              <Button id="PlayButton" fx:id="PlayButton" mnemonicParsing="false" onAction="#ActionPlay" prefHeight="40.0" prefWidth="100.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button id="WalkButton" fx:id="WalkButton" mnemonicParsing="false" onAction="#ActionWalk" prefHeight="40.0" prefWidth="100.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button id="PauseButton" fx:id="PauseButton" mnemonicParsing="false" onAction="#pauseGame" prefHeight="40.0" prefWidth="40.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin></Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </bottom>
+         <left>
+            <StackPane alignment="BOTTOM_CENTER" prefHeight="205.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ToolBar id="LifeHeartBar" fx:id="LifeHeartBar" prefHeight="40.0" prefWidth="200.0">
+                     <items>
+                        <ImageView id="LifeHeartImage1" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="LifeHeartImage2" fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="LifeHeartImage3" fitHeight="32.0" fitWidth="32.0" layoutX="46.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="LifeHeartImage4" fitHeight="32.0" fitWidth="32.0" layoutX="82.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="LifeHeartImage5" fitHeight="32.0" fitWidth="32.0" layoutX="118.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                     </items>
+                  </ToolBar>
+               </children>
+            </StackPane>
+         </left>
+         <right>
+            <StackPane alignment="BOTTOM_CENTER" prefHeight="285.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ToolBar id="HappyHeartBar" fx:id="HappyHeartBar" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+                     <items>
+                        <ImageView id="HappiHeartImage1" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="HappiHeartImage2" fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="HappiHeartImage3" fitHeight="32.0" fitWidth="32.0" layoutX="46.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="HappiHeartImage4" fitHeight="32.0" fitWidth="32.0" layoutX="82.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView id="HappiHeartImage5" fitHeight="32.0" fitWidth="32.0" layoutX="118.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                     </items>
+                  </ToolBar>
+               </children>
+            </StackPane>
+         </right>
+         <center>
+            <Pane id="TamagotchiScene" prefHeight="284.0" prefWidth="368.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView id="TamagotchiImage" fx:id="TamaImage" fitHeight="64.0" fitWidth="64.0" layoutX="152.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+      <BorderPane id="OptionsPane" fx:id="OptionsPane" focusTraversable="true" maxHeight="400.0" maxWidth="350.0" prefHeight="500.0" prefWidth="350.0" visible="false">
+         <center>
+            <VBox alignment="CENTER" prefHeight="274.0" prefWidth="489.0" spacing="25.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#saveAndPlay" prefHeight="40.0" prefWidth="180.0" text="Sauvegarder et continuer" />
+                  <Button mnemonicParsing="false" onAction="#saveAndQuit" prefHeight="40.0" prefWidth="180.0" text="Sauvegarder et quitter" />
+                  <Button mnemonicParsing="false" onAction="#quit" prefHeight="40.0" prefWidth="180.0" text="Quitter sans sauvegarder" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ToggleButton fx:id="AutoSaveToggle" mnemonicParsing="false" onAction="#setActivateAutoSave" prefHeight="24.0" prefWidth="48.0" text="On" />
+                        <Label text="Sauv.Auto." />
+                     </children>
+                  </HBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <top>
+            <Label styleClass="TitleLabel" text="Pause" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <Button id="backButton" mnemonicParsing="false" onAction="#retour" prefHeight="24.0" prefWidth="64.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+      <AnchorPane id="YouDiedPane" fx:id="YouDiedPane" disable="true" opacity="0.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <ImageView fitHeight="172.0" fitWidth="768.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@textures/you_died.png" />
+               </image>
+            </ImageView>
+            <Button id="RevenirBouton" fx:id="RevenirBouton" defaultButton="true" layoutX="325.0" layoutY="342.0" mnemonicParsing="false" onAction="#quit" prefHeight="24.0" prefWidth="119.0" text="Revenir au menu" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
+</StackPane>

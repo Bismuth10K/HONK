@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="globalbg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="honk.honk_code.Menu">
+   <children>
+      <VBox alignment="CENTER" layoutX="288.0" layoutY="174.0" prefHeight="268.0" prefWidth="192.0">
+         <children>
+            <Button id="newGame" fx:id="newGame" mnemonicParsing="false" onAction="#createNewGame" prefHeight="40.0" prefWidth="180.0" text="Nouvelle Partie">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button id="loadGame" mnemonicParsing="false" onAction="#createLoadGame" prefHeight="40.0" prefWidth="180.0" text="Charger une Partie">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <ImageView id="TitleImage" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@textures/logo_honk.png" />
+         </image></ImageView>
+      <Button id="backButton" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="64.0" />
+   </children>
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
+</AnchorPane>
