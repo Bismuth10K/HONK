@@ -26,7 +26,7 @@ Un seul document .pdf, max 10MB, contenant les documents suivants
     [ ] Cas de test (min. 3 x 5 scenarii = min. 15 scenarii test),
     [-] Diagramme UML de classes,
     [ ] Diagrammes de séquence (min. 3) (pour les scenarii des cas d'utilisation décrits à l'étape précédente),
-    [ ] Schéma conceptuel des données persistantes.
+    [-] Schéma conceptuel des données persistantes.
 
 Une seule archive .zip, max 100MB, dont le nom doit être le nom de l'équipe (et rien d'autre). Cette archive ne doit pas contenir des fichiers  - .class, etc - ou des bibliothèques - jdbc, etc - ou d'autres dépendances, mais juste :
 
