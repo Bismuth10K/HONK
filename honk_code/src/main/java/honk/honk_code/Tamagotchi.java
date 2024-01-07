@@ -324,7 +324,7 @@ class Chat extends Tamagotchi {
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
 		sprite = new Image(String.valueOf(getClass().getResource("textures/animals/CatFull.png")));
-		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/EatButton.png")));
+		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/animals/LynxFull.png")));
 	}
 	
 	public String toString() {
@@ -344,7 +344,7 @@ class Chien extends Tamagotchi {
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
 		sprite = new Image(String.valueOf(getClass().getResource("textures/animals/DogFull.png")));
-		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/EatButton.png")));
+		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/animals/FoxFullUwU.png")));
 	}
 	
 	public String toString() {
@@ -364,7 +364,7 @@ class Lapin extends Tamagotchi {
 		this.addListeActions("hall", "jouer");
 		this.addListeActions("sdb", "toilette");
 		sprite = new Image(String.valueOf(getClass().getResource("textures/animals/RabbitFull.png")));
-		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/EatButton.png")));
+		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/animals/EasterFull.png")));
 	}
 	
 	public String toString() {
@@ -384,7 +384,7 @@ class Robot extends Tamagotchi {
 		this.addListeActions("salon", "jouer");
 		this.addListeActions("cuisine", "toilette");
 		sprite = new Image(String.valueOf(getClass().getResource("textures/animals/RobotFull.png")));
-		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/gauges-and-buttons/EatButton.png")));
+		spriteEvo = new Image(String.valueOf(getClass().getResource("textures/animals/UwUCopterFull.png")));
 	}
 	
 	public String toString() {
