@@ -20,7 +20,11 @@ public class Menu extends Application {
 	 * Va lancer launch, qui va lancer start.
 	 * @param args
 	 */
+<<<<<<< Updated upstream
 	public static void main() {
+=======
+	public static void main(String[] args) {
+>>>>>>> Stashed changes
 		launch();
 	}
 	
