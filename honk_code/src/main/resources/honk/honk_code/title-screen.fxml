@@ -17,7 +17,7 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <Button id="loadGame" mnemonicParsing="false" onAction="#createLoadGame" prefHeight="40.0" prefWidth="180.0" text="Charger Partie">
+            <Button id="loadGame" mnemonicParsing="false" onAction="#createLoadGame" prefHeight="40.0" prefWidth="180.0" text="Charger une Partie">
                <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
