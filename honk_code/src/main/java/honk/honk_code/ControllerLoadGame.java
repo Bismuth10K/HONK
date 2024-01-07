@@ -108,6 +108,10 @@ public class ControllerLoadGame implements Initializable {
 				e.printStackTrace();
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
+			} catch (Exception e) {
+				File deleteJson = new File(Saver.locationSave + selectedJSON);
+				deleteJson.delete();
+				System.exit(0);
 			}
 			Scene scene = new Scene(stackPane, 768, 576);
 			Stage stageTama = new Stage();

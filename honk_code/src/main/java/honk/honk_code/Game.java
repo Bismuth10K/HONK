@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(1);
+	final Chronometer chronometer = new Chronometer(200);
 	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
@@ -88,7 +88,7 @@ public class Game implements Initializable {
 	/**
 	 * Pour charger un JSON lorsque la partie est créée
 	 */
-	public void setJSON(FileReader toRead) throws IOException, ParseException {
+	public void setJSON(FileReader toRead) throws Exception {
 		Saver.parse(toRead, chronometer, tama);
 	}
 	

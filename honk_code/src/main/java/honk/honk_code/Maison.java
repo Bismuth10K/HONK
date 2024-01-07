@@ -2,6 +2,7 @@ package honk.honk_code;
 
 public class Maison {
 	private Piece piece;
+	private Piece[] pieces;
 	
 	/**
 	 * Maison représente l'environnement dans lequel le joueur évolue.
@@ -26,10 +27,20 @@ public class Maison {
 		chambre.setPieces(null, null, salon, null);
 		
 		// La pièce par défaut est choisie au hasard.
-		Piece[] pieces = {jardin, cuisine, hall, garage, sdb, salon, chambre};
+		pieces = new Piece[]{jardin, cuisine, hall, garage, sdb, salon, chambre};
 		java.util.Random random = new java.util.Random();
 		int randomPiece = random.nextInt(pieces.length);
 		piece = pieces[randomPiece];
+	}
+	
+	/**
+	 * Pour aller directement dans une pièce sans essayer de se déplacer à l'aveugle lors de tests.
+	 * @param nom
+	 */
+	public void goToPiece(String nom) {
+		for (Piece curPiece : pieces)
+			if (curPiece.getPiece().equals(nom))
+				piece = curPiece;
 	}
 	
 	/**

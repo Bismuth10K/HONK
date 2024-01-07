@@ -41,10 +41,10 @@ public class Statistique {
 	 * Setter de value.
 	 * @param newValue int : Nouvelle valeur.
 	 */
-	public void setValue(int newValue) {
+	public void setValue(int newValue) throws Exception {
 		value = newValue;
 		if (value < 0) value = 0;
-		else if (value > max) value = max;
+		else if (value > max) throw new Exception("Valeur trop grande");
 	}
 	
 	/**

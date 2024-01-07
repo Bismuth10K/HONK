@@ -3,8 +3,8 @@ package honk.honk_code;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -74,11 +74,16 @@ public class Saver {
 	/**
 	 * Parser de stats.
 	 * @param statistique Statistique : une des statistiques du Tamagotchi où on va mettre les résultats de jsonStat.
-	 * @param jsonStat JSONObject : un objet de la sauvegarde JSON où les valeurs ont été enregistréees.
+	 * @param jsonStat    JSONObject : un objet de la sauvegarde JSON où les valeurs ont été enregistréees.
+	 * @return
 	 */
-	public static void parseStat(Statistique statistique, JSONObject jsonStat) {
-		statistique.setValue(((Long) jsonStat.get("value")).intValue());
-		statistique.setLastUpdated((Long) jsonStat.get("lastUpdated"));
+	public static void parseStat(Statistique statistique, JSONObject jsonStat) throws Exception {
+		try {
+			statistique.setValue(((Long) jsonStat.get("value")).intValue());
+			statistique.setLastUpdated((Long) jsonStat.get("lastUpdated"));
+		} catch (Exception e) {
+			throw new Exception("Valeurs absurdes ou fichier corrompu");
+		}
 	}
 	
 	/**
@@ -87,28 +92,30 @@ public class Saver {
 	 * @param chronometer Chronometer : chronomètre à modifier.
 	 * @param tamagotchi Tamagotchi : tamagotchi à modifier.
 	 */
-	public static void parse(FileReader json, Chronometer chronometer, Tamagotchi tamagotchi) throws IOException, ParseException {
-		JSONParser jsonParser = new JSONParser();
-		//Read JSON file
-		JSONArray saveTama = (JSONArray) jsonParser.parse(json);
-		JSONObject tamaJSON = (JSONObject) saveTama.getFirst();
-		
-		chronometer.addTimeSkip((Long) tamaJSON.get("Chronometre"));
-		
-		JSONObject tamaXP = (JSONObject) tamaJSON.get("XP");
-		tamagotchi.setCurrentXP((Double) tamaXP.get("currentXP"));
-		tamagotchi.setMaxXP((Double) tamaXP.get("maxXP"));
-		tamagotchi.setPlayerLevel(((Long) tamaXP.get("playerLevel")).intValue());
-		
-		JSONObject tamaStat = (JSONObject) tamaJSON.get("Statistiques");
-		parseStat(tamagotchi.getNrj(), (JSONObject) tamaStat.get("Energie"));
-		parseStat(tamagotchi.getSat(), (JSONObject) tamaStat.get("Satiete"));
-		parseStat(tamagotchi.getRep(), (JSONObject) tamaStat.get("Repos"));
-		parseStat(tamagotchi.getHyg(), (JSONObject) tamaStat.get("Hygiene"));
-		parseStat(tamagotchi.getPoi(), (JSONObject) tamaStat.get("Poids"));
-		parseStat(tamagotchi.getVie(), (JSONObject) tamaStat.get("Vie"));
-		parseStat(tamagotchi.getBhr(), (JSONObject) tamaStat.get("Bonheur"));
-		
-		// bisous bisous
+	public static void parse(FileReader json, Chronometer chronometer, Tamagotchi tamagotchi) throws Exception {
+		try {
+			JSONParser jsonParser = new JSONParser();
+			//Read JSON file
+			JSONArray saveTama = (JSONArray) jsonParser.parse(json);
+			JSONObject tamaJSON = (JSONObject) saveTama.getFirst();
+			
+			chronometer.addTimeSkip((Long) tamaJSON.get("Chronometre"));
+			
+			JSONObject tamaXP = (JSONObject) tamaJSON.get("XP");
+			tamagotchi.setCurrentXP((Double) tamaXP.get("currentXP"));
+			tamagotchi.setMaxXP((Double) tamaXP.get("maxXP"));
+			tamagotchi.setPlayerLevel(((Long) tamaXP.get("playerLevel")).intValue());
+			
+			JSONObject tamaStat = (JSONObject) tamaJSON.get("Statistiques");
+			parseStat(tamagotchi.getNrj(), (JSONObject) tamaStat.get("Energie"));
+			parseStat(tamagotchi.getSat(), (JSONObject) tamaStat.get("Satiete"));
+			parseStat(tamagotchi.getRep(), (JSONObject) tamaStat.get("Repos"));
+			parseStat(tamagotchi.getHyg(), (JSONObject) tamaStat.get("Hygiene"));
+			parseStat(tamagotchi.getPoi(), (JSONObject) tamaStat.get("Poids"));
+			parseStat(tamagotchi.getVie(), (JSONObject) tamaStat.get("Vie"));
+			parseStat(tamagotchi.getBhr(), (JSONObject) tamaStat.get("Bonheur"));
+		} catch (Exception e) {
+			throw new Exception("Fichier incorrect");
+		}
 	}
 }
