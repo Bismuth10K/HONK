@@ -73,7 +73,7 @@ public class ControllerChooseTama implements Initializable {
 			Scene scene = new Scene(stackPane, 768, 576);
 			Stage stageTama = new Stage();
 			stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
-			stageTama.setTitle(rb.getText().toLowerCase());
+			stageTama.setTitle("LE " + tamaname.getText().toUpperCase());
 			stageTama.setScene(scene);
 			stageTama.show();
 		}

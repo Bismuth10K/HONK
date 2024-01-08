@@ -97,11 +97,12 @@ public class ControllerLoadGame implements Initializable {
 		if (listView.getSelectionModel().getSelectedItem() != null) {
 			String selectedJSON = listView.getSelectionModel().getSelectedItem().toString();
 			Menu.staticClose(event);
+			String subsName = selectedJSON.substring(4, selectedJSON.length() - 5);
 			
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
 			StackPane stackPane = fxmlLoader.load();
 			Game game = fxmlLoader.getController(); // récupération du controller
-			game.setTama(selectedJSON.substring(4, selectedJSON.length() - 5));
+			game.setTama(subsName);
 			try (FileReader json = new FileReader(Saver.locationSave + selectedJSON)) {
 				game.setJSON(json); // on set le Tamagotchi
 			} catch (IOException e) {
@@ -116,7 +117,7 @@ public class ControllerLoadGame implements Initializable {
 			Scene scene = new Scene(stackPane, 768, 576);
 			Stage stageTama = new Stage();
 			stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
-			stageTama.setTitle("Let's play!");
+			stageTama.setTitle("LE " + subsName.toUpperCase());
 			stageTama.setScene(scene);
 			stageTama.show();
 		}
