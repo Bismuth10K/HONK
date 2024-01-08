@@ -20,11 +20,8 @@ public class Menu extends Application {
 	 * Va lancer launch, qui va lancer start.
 	 * @param args
 	 */
-
-	public static void main() {
-
 	public static void main(String[] args) {
-		launch();
+		launch(args);
 	}
 	
 	/**
