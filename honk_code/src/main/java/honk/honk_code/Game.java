@@ -3,7 +3,6 @@ package honk.honk_code;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +16,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -59,6 +60,15 @@ public class Game implements Initializable {
 	@FXML
 	private ToggleButton AutoSaveToggle;
 	private int waitTenMinutes = 1; // s'incrémente dans la Timeline pour effectuer une action tous les x temps.
+	private final Media mediaNoTail = new Media(String.valueOf(getClass().getResource("audio/honk_theme_no_tail.wav")));
+	private final MediaPlayer mediaPlayerNoTail = new MediaPlayer(mediaNoTail);
+	private final Media mediaWithTail = new Media(String.valueOf(getClass().getResource("audio/honk_theme_with_tail.wav")));
+	private final MediaPlayer mediaPlayerWithTail = new MediaPlayer(mediaWithTail);
+	
+	/*
+	private float volume=(float)(Math.log(maxVolume-currVolume)/Math.log(maxVolume));
+	yourMediaPlayer.setVolume(log1,log1); //set volume takes two paramater */
+
 	
 	public Game() throws Exception {
 	}
@@ -340,6 +350,15 @@ public class Game implements Initializable {
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		// Tous les 0.2 seconde, on applique le code qui est dedans.
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
+			mediaPlayerNoTail.play();
+			mediaPlayerNoTail.setOnEndOfMedia(new Runnable() {
+				@Override
+				public void run() {
+					mediaPlayerNoTail.stop();
+					mediaPlayerWithTail.play();
+					mediaPlayerWithTail.setCycleCount(MediaPlayer.INDEFINITE);
+				}
+			});
 			TamaImage.setImage(tama.getSprite()); // Placer l'image
 			if (!tama.isDead() && !gameIsPaused) { // Tant que le tamagotchi n'est pas mort et que le n'est pas en pause :
 				tama.applyStatsTime(chronometer); // on voit si des statistiques peuvent baisser à cause du temps.
