@@ -11,6 +11,8 @@ module honk.honk_code {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 	requires json.simple;
+	requires junit;
+	requires org.testng;
 	
 	opens honk.honk_code to javafx.fxml;
     exports honk.honk_code;

@@ -3,6 +3,7 @@ package honk.honk_code;
 import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,9 +14,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -59,6 +60,9 @@ public class Game implements Initializable {
 	private ToggleButton AutoSaveToggle;
 	private int waitTenMinutes = 1; // s'incrémente dans la Timeline pour effectuer une action tous les x temps.
 	
+	public Game() throws Exception {
+	}
+	
 	/**
 	 * Pour changer le Tamagotchi lorsque la partie est créée.
 	 * @param typeTama String : nom du Tamagotchi choisi par le joueur.
@@ -83,6 +87,22 @@ public class Game implements Initializable {
 				throw new Exception("Pas un Tamagotchi valide.");
 		}
 		TamaImage.setImage(tama.getSprite());
+	}
+	
+	/**
+	 * Getter de Tamagotchi, utile pour les tests unitaires.
+	 * @return Tamagotchi : le Tamagotchi de game.
+	 */
+	public Tamagotchi getTama() {
+		return tama;
+	}
+	
+	/**
+	 * Getter de Maison, utile pour les tests unitaires.
+	 * @return Maison : la maison où l'on se déplace dans le jeu.
+	 */
+	public Maison getMaison() {
+		return house;
 	}
 	
 	/**
@@ -396,5 +416,18 @@ public class Game implements Initializable {
 		}));
 		timeline.setCycleCount(Timeline.INDEFINITE);
 		timeline.play();
+	}
+	
+	public void start(Stage stage) throws Exception {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
+		StackPane stackPane = fxmlLoader.load();
+		Game game = fxmlLoader.getController(); // récupération du controller
+		game.setTama("robot");// on set le Tamagotchi
+		Scene scene = new Scene(stackPane, 768, 576);
+		Stage stageTama = new Stage();
+		stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
+		stageTama.setTitle("yolo");
+		stageTama.setScene(scene);
+		stageTama.show();
 	}
 }
