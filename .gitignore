@@ -26,3 +26,5 @@ hs_err_pid*
 
 .idea/**
 honk_code/.idea/**
+
+honk_code/.idea/
