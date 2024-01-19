@@ -24,5 +24,12 @@ hs_err_pid*
 
 *.kra~
 
-.idea/workspace.xml
-honk_code/.idea/workspace.xml
+.idea/**
+honk_code/.idea/**
+
+honk_code/.idea/
+
+# Project management files
+equipe_projet.txt
+oral_texte.txt
+rendus/**

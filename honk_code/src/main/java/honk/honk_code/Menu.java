@@ -20,16 +20,14 @@ public class Menu extends Application {
 	 * Va lancer launch, qui va lancer start.
 	 * @param args
 	 */
-	public static void main() {
-		launch();
+	public static void main(String[] args) {
+		launch(args);
 	}
 	
 	/**
 	 * Pour lancer l'interface graphique.
 	 */
-	public void launcher() {
-		launch();
-	}
+
 	
 	/**
 	 * Quand on lance launch, cette fonction se lance.

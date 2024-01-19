@@ -13,9 +13,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.json.simple.parser.ParseException;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,7 +27,7 @@ import java.util.ResourceBundle;
 
 public class Game implements Initializable {
 	final Maison house = new Maison();
-	final Chronometer chronometer = new Chronometer(200);
+	final Chronometer chronometer = new Chronometer(150);
 	private final String[] colPBar = {"#B21030", "#2800BA", "#51A200"};
 	private Tamagotchi tama;
 	private String typeTama;
@@ -58,6 +60,18 @@ public class Game implements Initializable {
 	@FXML
 	private ToggleButton AutoSaveToggle;
 	private int waitTenMinutes = 1; // s'incrémente dans la Timeline pour effectuer une action tous les x temps.
+	private final Media mediaNoTail = new Media(String.valueOf(getClass().getResource("audio/honk_theme_no_tail.wav")));
+	private final MediaPlayer mediaPlayerNoTail = new MediaPlayer(mediaNoTail);
+	private final Media mediaWithTail = new Media(String.valueOf(getClass().getResource("audio/honk_theme_with_tail.wav")));
+	private final MediaPlayer mediaPlayerWithTail = new MediaPlayer(mediaWithTail);
+	
+	/*
+	private float volume=(float)(Math.log(maxVolume-currVolume)/Math.log(maxVolume));
+	yourMediaPlayer.setVolume(log1,log1); //set volume takes two paramater */
+
+	
+	public Game() throws Exception {
+	}
 	
 	/**
 	 * Pour changer le Tamagotchi lorsque la partie est créée.
@@ -83,6 +97,22 @@ public class Game implements Initializable {
 				throw new Exception("Pas un Tamagotchi valide.");
 		}
 		TamaImage.setImage(tama.getSprite());
+	}
+	
+	/**
+	 * Getter de Tamagotchi, utile pour les tests unitaires.
+	 * @return Tamagotchi : le Tamagotchi de game.
+	 */
+	public Tamagotchi getTama() {
+		return tama;
+	}
+	
+	/**
+	 * Getter de Maison, utile pour les tests unitaires.
+	 * @return Maison : la maison où l'on se déplace dans le jeu.
+	 */
+	public Maison getMaison() {
+		return house;
 	}
 	
 	/**
@@ -320,6 +350,15 @@ public class Game implements Initializable {
 	public void initialize(URL url, ResourceBundle resourceBundle) {
 		// Tous les 0.2 seconde, on applique le code qui est dedans.
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), e -> {
+			mediaPlayerNoTail.play();
+			mediaPlayerNoTail.setOnEndOfMedia(new Runnable() {
+				@Override
+				public void run() {
+					mediaPlayerNoTail.stop();
+					mediaPlayerWithTail.play();
+					mediaPlayerWithTail.setCycleCount(MediaPlayer.INDEFINITE);
+				}
+			});
 			TamaImage.setImage(tama.getSprite()); // Placer l'image
 			if (!tama.isDead() && !gameIsPaused) { // Tant que le tamagotchi n'est pas mort et que le n'est pas en pause :
 				tama.applyStatsTime(chronometer); // on voit si des statistiques peuvent baisser à cause du temps.
@@ -396,5 +435,18 @@ public class Game implements Initializable {
 		}));
 		timeline.setCycleCount(Timeline.INDEFINITE);
 		timeline.play();
+	}
+	
+	public void start(Stage stage) throws Exception {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
+		StackPane stackPane = fxmlLoader.load();
+		Game game = fxmlLoader.getController(); // récupération du controller
+		game.setTama("robot");// on set le Tamagotchi
+		Scene scene = new Scene(stackPane, 768, 576);
+		Stage stageTama = new Stage();
+		stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
+		stageTama.setTitle("yolo");
+		stageTama.setScene(scene);
+		stageTama.show();
 	}
 }

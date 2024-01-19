@@ -35,9 +35,8 @@ public class ControllerLoadGame implements Initializable {
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle resourceBundle) {
-		// Comment ça va ?
 		try {
-			List<Path> paths = Files.walk(Paths.get(Saver.locationSave), 1) //by mentioning max depth as 1 it will only traverse immediate level
+			List<Path> paths = Files.walk(Paths.get(Saver.locationSave), 1) // Regarde juste dans ~/.honk_save/ et pas plus loin
 					.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".json")) // fetch only the files which are ending with .JSON
 					.toList();
 			if (paths.isEmpty())
@@ -70,6 +69,10 @@ public class ControllerLoadGame implements Initializable {
 		stageTama.show();
 	}
 	
+	/**
+	 * Supprime une sauvegarde.
+	 * @param event Appui du bouton Supprimer.
+	 */
 	public void deleteSave(ActionEvent event) {
 		if (listView.getSelectionModel().getSelectedItem() != null) {
 			File selectedJSON = new File(Saver.locationSave +
@@ -93,32 +96,53 @@ public class ControllerLoadGame implements Initializable {
 		}
 	}
 	
+	/**
+	 * Charge une partie sur la base d'une sauvegarde
+	 * @param event Appui du bouton Valider
+	 * @throws Exception
+	 */
 	public void loadGame(ActionEvent event) throws Exception {
 		if (listView.getSelectionModel().getSelectedItem() != null) {
 			String selectedJSON = listView.getSelectionModel().getSelectedItem().toString();
-			Menu.staticClose(event);
+			String subsName = selectedJSON.substring(4, selectedJSON.length() - 5);
 			
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("honk.fxml"));
 			StackPane stackPane = fxmlLoader.load();
 			Game game = fxmlLoader.getController(); // récupération du controller
-			game.setTama(selectedJSON.substring(4, selectedJSON.length() - 5));
+			game.setTama(subsName);
 			try (FileReader json = new FileReader(Saver.locationSave + selectedJSON)) {
 				game.setJSON(json); // on set le Tamagotchi
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
-			} catch (Exception e) {
+			} catch (Exception e) { // Si le fichier est corrompu, on le supprime, on rescan toutes les saves et on reste dans ce menu.
 				File deleteJson = new File(Saver.locationSave + selectedJSON);
 				deleteJson.delete();
-				System.exit(0);
+				try {
+					listView.getItems().clear();
+					List<Path> paths = Files.walk(Paths.get(Saver.locationSave), 1) //by mentioning max depth as 1 it will only traverse immediate level
+							.filter(Files::isRegularFile).filter(path -> path.getFileName().toString().endsWith(".json")) // fetch only the files which are ending with .JSON
+							.toList();
+					if (paths.isEmpty())
+						listView.setPlaceholder(new Label("Pas de sauvegarde"));
+					else
+						for (Path path : paths)
+							listView.getItems().add(path.getFileName().toString());
+					listView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+				return;
 			}
 			Scene scene = new Scene(stackPane, 768, 576);
 			Stage stageTama = new Stage();
 			stageTama.getIcons().add(new Image(String.valueOf(getClass().getResource("textures/logo_honk.png"))));
-			stageTama.setTitle("Let's play!");
+			stageTama.setTitle("LE " + subsName.toUpperCase());
 			stageTama.setScene(scene);
 			stageTama.show();
+			
+			Menu.staticClose(event);
 		}
 	}
 }
